@@ -63,7 +63,7 @@ save(ICSR_df, file = "Rda/ICSR_df.Rda")
 # or absence from ATC
 ATC <- read_delim("ATC.csv", ";", escape_double = FALSE,
                   trim_ws = TRUE)
-D_list <- list(ICSR_df$`Suspect Product Active Ingredients`) %>%
+D_df <- list(ICSR_df$`Suspect Product Active Ingredients`) %>%
   unlist() %>%
   strsplit(";") %>%
   unlist() %>%
@@ -75,16 +75,13 @@ D_list <- list(ICSR_df$`Suspect Product Active Ingredients`) %>%
   unique() %>% 
   as.data.frame() %>%
   rename("Search term" = ".") %>%
-  left_join(ATC, by = "Search term")
-write_csv2(D_list, "D_list.csv")
-save(Flist, file = "Rda/D_list.Rda")
-
-#Crea lista di farmaci effettivamente usata in df unico
-ATC_used <- read_delim("ATC-used.csv", 
-                       ";", escape_double = FALSE, trim_ws = TRUE)
-Flist <- list(ATC_used$`Search term`) %>%
+  left_join(ATC, by = "Search term") %>% 
+  arrange(Code)
+D_df$Substance <- tolower(D_df$Substance)
+# Manual integration of missing ATCs
+D_list <- list(D_df$`Search term`) %>%
   flatten()
-save(Flist, file = "Rda/F.Rda")
+save(D_list, file = "Rda/D_list.Rda")
 
 #Crea lista di farmaci effettivamente usata in df_ATC
 ATC_used <- read_delim("ATC-used.csv", 
