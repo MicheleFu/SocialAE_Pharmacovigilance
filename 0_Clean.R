@@ -2,33 +2,31 @@
 # This script creates the environment used in the study
 # Fusaroli Michele, 2019, SDR of Social ADR.
 
-# Librerie necessarie ---------------------------------------------------------
+# Libraries -------------------------------------------------------------------
 library(tidyverse)
 library(readxl)
 
 # fileList ----------------------------------------------------------------------
+# List of xlsx with observations from FAERS public dashboard
 fileList <- list.files(path="FAERS ID",pattern="xlsx",full.names = T)
 
-# EAlist ----------------------------------------------------------------------
-# si crea la lista dei nomi degli EA a partire dai nomi dei file
-EAlist <- list()
+# AE_list ----------------------------------------------------------------------
+# List of AE created from fileList
+AE_list <- list()
 for (f in fileList){
   s <- gsub("FAERS ID/","",f)
   s <- gsub(".xlsx","",s)
   s <- gsub("_", " ",s)
-  EAlist <- c(EAlist, s)
+  AE_list <- c(AE_list, s)
 }
-# si toglie gambling disorder (duplicato)
-EAlist[[13]] <- NULL
-# si salva
-EAlist <- tolower(EAlist)
-save(EAlist, file = "Rda/EA.Rda")
+AE_list <- tolower(AE_list)
+save(AE_list, file = "Rda/AE_list.Rda")
 
-# df---------------------------------------------------------------------------
-# si crea una matrice vuota con 24 colonne e senza osservazioni,
-# e si impostano i nomi delle variabili rispettando la struttura del FAERS
-df <- data.frame(matrix(ncol = 24, nrow = 0))
-x  <- c("Case ID",
+# df_ICSR---------------------------------------------------------------------------
+# Dataframe containing all the observations obtained from FAERS-pd,
+# removing duplicates
+ICSR_df <- data.frame(matrix(ncol = 24, nrow = 0))
+colnames(ICSR_df) <- c("Case ID",
         "Suspect Product Names",
         "Suspect Product Active Ingredients",
         "Reason for Use", "Reactions", "Serious",
@@ -50,63 +48,36 @@ x  <- c("Case ID",
         "Manufacturer Control Number",
         "Literature Reference",
         "Compounded Flag")
-colnames(df) <- x
-# si riempie la matrice con gli ICSR dei df EA
 for (f in fileList) {
   d  <- read_xlsx(f)
-  df <- rbind(df, d)
+  ICSR_df <- rbind(ICSR_df, d)
 }
-# si rimuovono i duplicati (gli ICSR possono essere presenti in più df)
-df <- distinct(df)
-# si trasforma tutta la colonna dei farmaci in minuscolo in modo da confrontarla
-# poi con la lista ATC
-df$`Suspect Product Active Ingredients` <- tolower(df$`Suspect Product Active Ingredients`)
-# si salva
-save(df, file = "Rda/df_unico.Rda")
+ICSR_df <- distinct(ICSR_df)
+ICSR_df$`Suspect Product Active Ingredients` <- tolower(ICSR_df$`Suspect Product Active Ingredients`)
+ICSR_df$`Reactions` <- tolower(ICSR_df$`Reactions`)
+save(ICSR_df, file = "Rda/ICSR_df.Rda")
 
-# F_list ----------------------------------------------------------------------
-# crea la lista che viene poi confrontata con l'ATC per affrontare problemi di
-# ortografia, definizione molteplice, e mancata comparsa nel sistema atc
-# si crea una lista con tutti i valori della variabile farmaci sospettati
-F_list <- list(df$`Suspect Product Active Ingredients`)
-# si sistema la lista in modo che tutti i farmaci siano separati,
-# che siano sullo stesso livello
-# e che non vi siano duplicati
-F_list <- F_list %>%
-  # si appiattisce la lista (i farmaci sospettati insieme sono in cluster: "a;b""c"
+# D_list ----------------------------------------------------------------------
+# List of suspect product active ingredients reported in FAERS, needed to
+# confront with problems like different spelling or name,
+# or absence from ATC
+ATC <- read_delim("ATC.csv", ";", escape_double = FALSE,
+                  trim_ws = TRUE)
+D_list <- list(ICSR_df$`Suspect Product Active Ingredients`) %>%
   unlist() %>%
-  # si separano i farmaci segnalati insieme (a;b)
   strsplit(";") %>%
-  # si appiattisce nuovamente ("a""b")
   unlist() %>%
-  # si rimuovono i duplicati
+  trimws() %>%
   unique() %>%
-  # si separano le combinazioni di farmaci (a1\a2)
-  strsplit("\\\\") %>%
-  # si appiattisce nuovamente ("a1""a2")
-  unlist() %>%
-  # si rimuovono i duplicati
-  unique() %>% {
-    # si rimuove la punteggiatura finale
-    gsub("[[:punct:]]*$", "", .) %>%
-      # si rimuove tutto ciò che sta dopo frontslash
-      gsub("/.*$", "", .) %>%
-      # si rimuovono slash e parentesi
-      gsub("\\(.*$", "", .) %>%
-      # si rimuove lo spazio finale
-      gsub(" *$", "", .) %>%
-      # si rimuove la punteggiatura finale
-      gsub("[[:punct:]]*$", "", .)
-  } %>%
-  # si rimuovono i duplicati
-  unique(F_list)
-# Si ritrasforma in una lista
-Flist <- list()
-for (f in F_list) {
-  Flist <- c(Flist, f)
-}
-# si salva
-save(Flist, file = "Rda/F.Rda")
+  strsplit("\\\\") %>% 
+  unlist() %>% 
+  trimws() %>%
+  unique() %>% 
+  as.data.frame() %>%
+  rename("Search term" = ".") %>%
+  left_join(ATC, by = "Search term")
+write_csv2(D_list, "D_list.csv")
+save(Flist, file = "Rda/D_list.Rda")
 
 #Crea lista di farmaci effettivamente usata in df unico
 ATC_used <- read_delim("ATC-used.csv", 
