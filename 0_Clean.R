@@ -78,11 +78,12 @@ D_df <- list(ICSR_df$`Suspect Product Active Ingredients`) %>%
   left_join(ATC, by = "Search term") %>% 
   arrange(Code)
 D_df$Substance <- tolower(D_df$Substance)
-### Manual integration of missing ATCs
-D_list <- list(D_df$`Code`) %>%
+### Manual integration of missing ATCs in the file ATC.csv
+D_list <- list(ATC$`Code`) %>%
   flatten() %>%
+  unlist %>% 
   unique() %>%
-save(D_list, file = "Rda/D_list.Rda")
+  save(D_list, file = "Rda/D_list.Rda")
 
 # Tidy ICSR_df-----------------------------------------------------------------
 # Suspect Product Active Ingredients referred to with different names
