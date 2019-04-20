@@ -78,67 +78,31 @@ D_df <- list(ICSR_df$`Suspect Product Active Ingredients`) %>%
   left_join(ATC, by = "Search term") %>% 
   arrange(Code)
 D_df$Substance <- tolower(D_df$Substance)
-# Manual integration of missing ATCs
-D_list <- list(D_df$`Search term`) %>%
-  flatten()
+### Manual integration of missing ATCs
+D_list <- list(D_df$`Code`) %>%
+  flatten() %>%
+  unique() %>%
 save(D_list, file = "Rda/D_list.Rda")
 
-#Crea lista di farmaci effettivamente usata in df_ATC
-ATC_used <- read_delim("ATC-used.csv", 
-                       ";", escape_double = FALSE, trim_ws = TRUE)
-Flist <- list(ATC_used$`Code`) %>%
-  flatten() %>%
-  unique()
-save(Flist, file = "Rda/F_ATC.Rda")
+# Tidy ICSR_df-----------------------------------------------------------------
+# Suspect Product Active Ingredients referred to with different names
+# are converted to unique ATCs, and the df loose unused data
+ATC <- read_delim("ATC.csv", ";",
+                  escape_double = FALSE, trim_ws = TRUE)
+load("Rda/ICSR_df.Rda")
 
-#Creazione df-sep -------------------------------------------------------------
-ATC_used <- read_delim("ATC-used.csv", ";",
-                       escape_double = FALSE, trim_ws = TRUE)
-ATC_used$Substance <- tolower(ATC_used$Substance)
+ICSR_df <- ICSR_df %>% 
+  separate_rows(`Suspect Product Active Ingredients`, sep = ";") %>%
+  separate_rows(`Suspect Product Active Ingredients`, sep = "\\\\")
+ICSR_df$`Suspect Product Active Ingredients` <- trimws(ICSR_df$`Suspect Product Active Ingredients`)
 
-x <- df %>% 
-  separate_rows(`Suspect Product Active Ingredients`, sep = ";") %>% 
-  separate_rows(`Reactions`, sep = ";")
-
-for (i in seq(nrow(ATC_used))){
+for (i in seq(nrow(ATC))){
   print(i)
-  x$Substance[str_detect(x$`Suspect Product Active Ingredients`,ATC_used$`Search term`[i])]=ATC_used$Substance[i]
+  ICSR_df$`Suspect Product Active Ingredients`[ICSR_df$`Suspect Product Active Ingredients`== ATC$`Search term`[i]] = ATC$Code[i]
 }
-
-# elimino search term e duplicati
-x <- x %>% select(-`Suspect Product Active Ingredients`) %>% distinct()
-
-EAlist <- tolower(EAlist)
-x$Reactions <- tolower(x$Reactions)
-x$Reactions <- trimws(x$Reactions)
-t <- x
-for (i in seq(length(EAlist))){
-  print(i)
-  x$AE[str_detect(x$`Reactions`, EAlist[[i]])] = EAlist[[i]]
-}
-x <- x %>% select(-`Reactions`) %>% distinct()
-df_sep <- x
-
-save(df_sep, file = "RDA/df_separated.RDA")
-
-# Eventualmente riguardare gli altri NA di Substance per altri eventuali farmaci per cui impostare ATC
-## unique(x$`Suspect Product Active Ingredients`[is.na(x$Substance)])
-## Se son misspellings possibile anche gsub all'inizio dello script
-
-#Creazione df_ATC--------------------------------------------------------------
-ATC_used <- read_delim("ATC-used.csv", ";",
-                       escape_double = FALSE, trim_ws = TRUE)
-ATC_used$Substance <- tolower(ATC_used$Substance)
-
-x <- df %>% 
-  separate_rows(`Suspect Product Active Ingredients`, sep = ";")
-
-for (i in seq(nrow(ATC_used))){
-  print(i)
-  x$`Suspect Product Active Ingredients`[str_detect(x$`Suspect Product Active Ingredients`,ATC_used$`Search term`[i])]=ATC_used$Code[i]
-}
-x <- x %>% distinct()
-t <- x %>%
+ICSR_df <- ICSR_df %>%
+  separate_rows(`Suspect Product Active Ingredients`, sep = " & ") %>%
+  distinct() %>%
   group_by(`Case ID`) %>%
   summarise(`Suspect Product Active Ingredients` = paste(`Suspect Product Active Ingredients`, collapse = ";"),
             `Reactions` = first(`Reactions`),
@@ -146,39 +110,17 @@ t <- x %>%
             `Reporter Type` = first(`Reporter Type`),
             `Serious` = first(`Serious`),
             `Outcomes` = first(`Outcomes`),
-            `Sex` = first(`Sex`))
-x <- t
-x <- x %>% separate_rows(`Reactions`, sep = ";")
-EAlist <- tolower(EAlist)
-x$Reactions <- tolower(x$Reactions)
-x$Reactions <- trimws(x$Reactions)
+            `Sex` = first(`Sex`),
+            `Patient Age`= first(`Patient Age`),
+            `Patient Weight`= first(`Patient Weight`),
+            `Concomitant Product Names` = first(`Concomitant Product Names`))
+save(ICSR_df, file = "RDA/ICSR_df.RDA")
 
-for (i in seq(length(EAlist))){
-  print(i)
-  x$AE[str_detect(x$`Reactions`, EAlist[[i]])] = EAlist[[i]]
-}
-x <- x %>% select(-`Reactions`) %>% distinct()
-x <- x %>%
-  subset(!is.na(`AE`))
-
-t <- x %>%
-  group_by(`Case ID`) %>%
-  summarise(`Suspect Product Active Ingredients` = first(`Suspect Product Active Ingredients`),
-            `AE` = paste(`AE`, collapse = ";"),
-            `Reason for Use` = first(`Reason for Use`),
-            `Reporter Type` = first(`Reporter Type`),
-            `Serious` = first(`Serious`),
-            `Outcomes` = first(`Outcomes`),
-            `Sex` = first(`Sex`))
-df_ATC <- t
-save(df_ATC, file = "RDA/df_ATC.RDA")
-
-# df_ATC_HCP/PZ-------------------------------------------------------------------
-df_ATC_HCP <- df_ATC %>%
+# HCP_df and PZ_df-------------------------------------------------------------
+load("Rda/ICSR_df.Rda")
+HCP_df <- ICSR_df %>%
   filter(`Reporter Type` == "Healthcare Professional")
-df_ATC_PZ <- df_ATC %>%
+save(HCP_df, file = "RDA/HCP_df.RDA")
+PZ_df <- ICSR_df %>%
   filter(`Reporter Type` == "Consumer")
-df_ATC_NS <- df_ATC %>%
-  filter(`Reporter Type` == "Not Specified")
-save(df_ATC_HCP, file = "RDA/df_ATC_HCP.RDA")
-save(df_ATC_PZ, file = "RDA/df_ATC_PZ.RDA")
+save(PZ_df, file = "RDA/PZ_df.RDA")
