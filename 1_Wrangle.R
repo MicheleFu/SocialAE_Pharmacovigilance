@@ -81,7 +81,7 @@ Wrangle <- function(df, D) {
 Wrangle_df <- Wrangle(ICSR_df,D_list)
 save(Wrangle_df, file = "Rda/Wrangle_df.Rda")
 
-# ROR_matrix ------------------------------------------------------------------
+# ROR_matrix and IC_matrix ------------------------------------------------------------------
 load("Rda/Wrangle_df.Rda")
 load("Rda/AE_list.Rda")
 load("Rda/D_list.Rda")
@@ -106,51 +106,56 @@ for (e in AE_list) {
 }
 save(Heatmatrix, file = "Rda/Heatmatrix.Rda")
 
+IC_matrix <- matrix(ncol = length(AE_list), nrow = length(D_list))
+rownames(IC_matrix) <- D_list
+colnames(IC_matrix) <- AE_list
+for (e in AE_list) {
+  x <- subset(Wrangle_df, AE == e)
+  for (d in D_list){
+    print(d)
+    if (!is.na(x$ROR_m[x$Drug_Code == d])) {
+      if(x$ROR_m[x$Drug_Code == d] > 1) {
+        IC_matrix[d,e] = x$IC[x$Drug_Code == d]
+      }
+    }
+  }
+}
+save(IC_matrix, file = "RDA/IC_matrix.Rda")
+
 # Print the Heatmap -----------------------------------------------------------
 load("Rda/Heatmatrix.Rda")
-onlyNAcolumns_idx <- Heatmatrix %>%
-  is.na() %>%
-  apply(MARGIN = 2, FUN = all)
-Heatmatrix <- Heatmatrix[,!onlyNAcolumns_idx]
-Heatmatrix <- Heatmatrix[rowSums(is.na(Heatmatrix)) != ncol(Heatmatrix), ]
-MAT <- Significance_Matrix
-MAT <- MAT %>%
-  as.data.frame()
-MAT <- setNames(cbind(rownames(MAT), MAT, row.names = NULL), c("Code",colnames(MAT)))
-MAT <- MAT %>%
-  left_join(ATC_unique, by = "Code") %>%
-  select(Code, "Substance", everything()) %>%
-  unite(Drug, c(Code, "Substance"), sep = ": ")
-MAT <- unique(MAT)
-# Si crea il codice ATC di 4 caratteri che viene usato nella heatmap per clusterizzare
-Code_member <- substr(MAT$Drug, start = 1, stop = 4)
+load("Rda/IC_matrix.Rda")
+ATC <- read_delim("ATC.csv", ";", escape_double = FALSE, 
+                  trim_ws = TRUE)
+ATC <- select(ATC, -"Search term") %>%
+  unique()
+ATC <- ATC[!grepl("&", ATC$Code),]
 
-# si ritrasforma in una matrice
-Heatmatrix <- MAT %>%
-  remove_rownames() %>%
-  column_to_rownames(var = "Drug") %>%
-  as.matrix()
-
-#Creo la matrice alternativa con le etichette da apporre all'heatmap
-MAT1 <- MAT %>%
-  remove_rownames() %>%
-  column_to_rownames(var = "Drug") %>%
-  as.matrix()
-MAT1[is.na(MAT1)] <- ""
-
-# Heatmatrix[!is.na(Heatmatrix)] <- 1
-# Heatmatrix[is.na(Heatmatrix)] <- 0
-# Si prende il solo ROR senza IC e si converte gli Inf e tutto ciò che sta
-# sopra a 100 a 100 (solo per determinare il colore)
-Heatmatrix[,] <- sub(".*?\\|", "", Heatmatrix[,])
-Heatmatrix[,] <- sub("\\|.*$", "", Heatmatrix[,])
+Clean_Matrix <- function(m) {
+  onlyNAcolumns_idx <- m %>%
+    is.na() %>%
+    apply(MARGIN = 2, FUN = all)
+  m <- m[,!onlyNAcolumns_idx]
+  m <- m[rowSums(is.na(m)) != ncol(m), ]
+  m <- m %>%
+    as.data.frame()
+  m <- setNames(cbind(rownames(m), m, row.names = NULL), c("Code",colnames(m)))
+  m <- m %>%
+    left_join(ATC, by = "Code") %>%
+    select(Code, "Substance", everything()) %>%
+    unite(Drug, c(Code, "Substance"), sep = ": ") %>% 
+    remove_rownames() %>%
+    column_to_rownames(var = "Drug") %>%
+    as.matrix()
+  }
+Heatmatrix <- Clean_Matrix(Heatmatrix)
+IC_matrix <- Clean_Matrix(IC_matrix)
+IC_matrix[is.na(IC_matrix)] <- ""
+Code_member <- substr(Heatmatrix$Drug, start = 1, stop = 4)
 Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
-Heatmatrix <- as.data.frame(Heatmatrix)
-Heatmatrix <- type.convert(Heatmatrix)
 Heatmatrix[Heatmatrix[,] > 100] <- 100
-Heatmatrix <- as.matrix(Heatmatrix)
 
-png("Color_ATC.png", height = 15000, width = 8000) #if desired 5lvl remember to turn active left.label
+png("Color_ATC.png", height = 15000, width = 8000)
 superheat(Heatmatrix,
           heat.pal = c("white", "red", "#b35806","#542788"),
           heat.pal.values = c(0, 0.1, 0.5, 1),
@@ -166,7 +171,7 @@ superheat(Heatmatrix,
           grid.hline.col = "gray",
           grid.vline.col = "gray",
           heat.na.col= "white",
-          X.text = MAT1,
+          X.text = IC_matrix,
           X.text.size = 3,
           left.label.text.alignment = "right",
           pretty.order.rows = FALSE,
