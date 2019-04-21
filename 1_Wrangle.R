@@ -81,26 +81,38 @@ Wrangle <- function(df, D) {
 Wrangle_df <- Wrangle(ICSR_df,D_list)
 save(Wrangle_df, file = "Rda/Wrangle_df.Rda")
 
-# Heatmatrix ------------------------------------------------------------------
+# ROR_matrix ------------------------------------------------------------------
 load("Rda/Wrangle_df.Rda")
+load("Rda/AE_list.Rda")
+load("Rda/D_list.Rda")
+D_list <- as.data.frame(D_list)
+D_list <- list(D_list[!grepl("&", D_list$D_list),]) %>%
+  unique() %>% 
+  unlist() %>%
+  trimws()
 Heatmatrix <- matrix(ncol = length(AE_list), nrow = length(D_list))
 rownames(Heatmatrix) <- D_list
 colnames(Heatmatrix) <- AE_list
 for (e in AE_list) {
+  x <- subset(Wrangle_df, AE == e)
   for (d in D_list){
-    Heatmatrix[d,e] = Wrangle_df$ROR[Wrangle_df$Drug_Code == d, Wrangle_df$AE == e]
+    print(d)
+    if (!is.na(x$ROR_m[x$Drug_Code == d])) {
+      if(x$ROR_m[x$Drug_Code == d] > 1) {
+        Heatmatrix[d,e] = x$ROR[x$Drug_Code == d]
+      }
+    }
   }
 }
 save(Heatmatrix, file = "Rda/Heatmatrix.Rda")
 
-## remove not significant columns and rows?
+# Print the Heatmap -----------------------------------------------------------
+load("Rda/Heatmatrix.Rda")
 onlyNAcolumns_idx <- Heatmatrix %>%
   is.na() %>%
   apply(MARGIN = 2, FUN = all)
 Heatmatrix <- Heatmatrix[,!onlyNAcolumns_idx]
 Heatmatrix <- Heatmatrix[rowSums(is.na(Heatmatrix)) != ncol(Heatmatrix), ]
-
-#Si sostituisce, nella matrice, al search term "Code: Substance"
 MAT <- Significance_Matrix
 MAT <- MAT %>%
   as.data.frame()
