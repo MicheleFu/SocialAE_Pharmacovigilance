@@ -106,46 +106,33 @@ HCP_PZ_Wrangled <- HCP_PZ_Wrangled_df %>%
 # ROR_matrix and IC_matrix ------------------------------------------------------------------
 ## load("Rda/Wrangle_df.Rda")
 
-Heatmatrix <- matrix(ncol = length(AE_list), nrow = length(D_list))
-rownames(Heatmatrix) <- D_list
-colnames(Heatmatrix) <- AE_list
-for (e in AE_list) {
-  x <- subset(Wrangle_df, AE == e)
-  for (d in D_list){
-    print(d)
-    if (!is.na(x$ROR_m[x$Drug_Code == d])) {
-      if(x$ROR_m[x$Drug_Code == d] > 1) {
-        Heatmatrix[d,e] = x$ROR[x$Drug_Code == d]
+Create_Matrix <- function(index) {
+  Heatmatrix <- matrix(ncol = length(AE_list), nrow = length(D_list))
+  rownames(Heatmatrix) <- D_list
+  colnames(Heatmatrix) <- AE_list
+  for (e in AE_list) {
+    x <- subset(Wrangle_df, AE == e)
+    for (d in D_list){
+      print(d)
+      if (!is.na(x$ROR_m[x$Drug_Code == d])) {
+        if(x$ROR_m[x$Drug_Code == d] > 1) {
+          Heatmatrix[d,e] = x[[index]][x$Drug_Code == d]
+        }
       }
     }
   }
+  return(Heatmatrix)
 }
+
+Heatmatrix <- Create_Matrix("ROR")
 save(Heatmatrix, file = "Rda/Heatmatrix.Rda")
 
-IC_matrix <- matrix(ncol = length(AE_list), nrow = length(D_list))
-rownames(IC_matrix) <- D_list
-colnames(IC_matrix) <- AE_list
-for (e in AE_list) {
-  x <- subset(Wrangle_df, AE == e)
-  for (d in D_list){
-    print(d)
-    if (!is.na(x$ROR_m[x$Drug_Code == d])) {
-      if(x$ROR_m[x$Drug_Code == d] > 1) {
-        IC_matrix[d,e] = x$IC[x$Drug_Code == d]
-      }
-    }
-  }
-}
+IC_matrix <- Create_Matrix("IC")
 save(IC_matrix, file = "RDA/IC_matrix.Rda")
 
 # Print the Heatmap -----------------------------------------------------------
-load("Rda/Heatmatrix.Rda")
-load("Rda/IC_matrix.Rda")
-ATC <- read_delim("ATC.csv", ";", escape_double = FALSE, 
-                  trim_ws = TRUE)
-ATC <- select(ATC, -"Search term") %>%
-  unique()
-ATC <- ATC[!grepl("&", ATC$Code),]
+## load("Rda/Heatmatrix.Rda")
+## load("Rda/IC_matrix.Rda")
 
 Clean_Matrix <- function(m) {
   onlyNAcolumns_idx <- m %>%
@@ -198,7 +185,3 @@ superheat(Heatmatrix,
           column.title = "Adverse Event",
           column.title.size = 6)
 dev.off()
-
-# HCP_PZ ----------------------------------------------------------------------
-Wrangle_df <- data.frame(matrix(ncol = 10, nrow = 0))
-colnames(Wrangle_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA", "F_nEA", "ROR", "s", "ROR_m", "ROR_M", "IC")
