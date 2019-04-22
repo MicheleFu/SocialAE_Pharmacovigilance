@@ -155,7 +155,7 @@ Code_member <- substr(Heatmatrix$Drug, start = 1, stop = 4)
 Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
 Heatmatrix[Heatmatrix[,] > 100] <- 100
 
-png("Color_ATC.png", height = 15000, width = 8000)
+png("Heatmap.png", height = 15000, width = 8000)
 superheat(Heatmatrix,
           heat.pal = c("white", "red", "#b35806","#542788"),
           heat.pal.values = c(0, 0.1, 0.5, 1),
