@@ -103,38 +103,23 @@ save(HCP_PZ_Wrangled_df, file = "Rda/HCP_PZ_Wrangled_df.Rda")
 ## HCP_PZ_Wrangled <- HCP_PZ_Wrangled_df %>%
 ##  filter (!is.na(ROR))
 
-# ROR_matrix and IC_matrix ------------------------------------------------------------------
-## load("Rda/Wrangle_df.Rda")
+# Print_Heatmap ------------------------------------------------------------------
 
-Create_Matrix <- function(index) {
-  Heatmatrix <- matrix(ncol = length(AE_list), nrow = length(D_list))
-  rownames(Heatmatrix) <- D_list
-  colnames(Heatmatrix) <- AE_list
+Create_Matrix <- function(df, index) {
+  m <- matrix(ncol = length(AE_list), nrow = length(D_list))
+  rownames(m) <- D_list
+  colnames(m) <- AE_list
   for (e in AE_list) {
-    x <- subset(Wrangle_df, AE == e)
+    x <- subset(df, AE == e)
     for (d in D_list){
       print(d)
       if (!is.na(x$ROR_m[x$Drug_Code == d])) {
         if(x$ROR_m[x$Drug_Code == d] > 1) {
-          Heatmatrix[d,e] = x[[index]][x$Drug_Code == d]
+          m[d,e] = x[[index]][x$Drug_Code == d]
         }
       }
     }
   }
-  return(Heatmatrix)
-}
-
-Heatmatrix <- Create_Matrix("ROR")
-save(Heatmatrix, file = "Rda/Heatmatrix.Rda")
-
-IC_matrix <- Create_Matrix("IC")
-save(IC_matrix, file = "RDA/IC_matrix.Rda")
-
-# Print the Heatmap -----------------------------------------------------------
-## load("Rda/Heatmatrix.Rda")
-## load("Rda/IC_matrix.Rda")
-
-Clean_Matrix <- function(m) {
   onlyNAcolumns_idx <- m %>%
     is.na() %>%
     apply(MARGIN = 2, FUN = all)
@@ -146,42 +131,57 @@ Clean_Matrix <- function(m) {
   m <- m %>%
     left_join(ATC, by = "Code") %>%
     select(Code, "Substance", everything()) %>%
-    unite(Drug, c(Code, "Substance"), sep = ": ") %>% 
+    unite(Drug, c(Code, "Substance"), sep = ": ")
+  return(m)
+}
+
+Print_Heatmap <- function(df) {
+  Heatmatrix <- Create_Matrix(df,"ROR")
+  Code_member <- substr(Heatmatrix$Drug, start = 1, stop = 4)
+  Heatmatrix <- Heatmatrix %>%
     remove_rownames() %>%
     column_to_rownames(var = "Drug") %>%
     as.matrix()
-  }
-Heatmatrix <- Clean_Matrix(Heatmatrix)
-IC_matrix <- Clean_Matrix(IC_matrix)
-IC_matrix[is.na(IC_matrix)] <- ""
-Code_member <- substr(Heatmatrix$Drug, start = 1, stop = 4)
-Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
-Heatmatrix[Heatmatrix[,] > 100] <- 100
+  IC_matrix <- Create_Matrix(df, "IC")
+  IC_matrix <- IC_matrix %>%
+    remove_rownames() %>%
+    column_to_rownames(var = "Drug") %>%
+    as.matrix()
+  IC_matrix[is.na(IC_matrix)] <- ""
+  Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
+  Heatmatrix[Heatmatrix[,] > 100] <- 100
+  l <- paste("Hm_",deparse(substitute((df))),".png", sep = "")
+  png(l, height = 15000, width = 8000)
+  superheat(Heatmatrix,
+            heat.pal = c("white", "red", "#b35806","#542788"),
+            heat.pal.values = c(0, 0.1, 0.5, 1),
+            heat.col.scheme = "red",
+            heat.lim = c(1,100),
+            bottom.label.text.angle = 90,
+            bottom.label.text.size = 10,
+            bottom.label.size = 0.1,
+            force.left.label = TRUE,
+            left.label.text.size = 4,
+            left.label.size = 0.4,
+            force.grid.hline = TRUE,
+            grid.hline.col = "gray",
+            grid.vline.col = "gray",
+            heat.na.col= "white",
+            X.text = IC_matrix,
+            X.text.size = 3,
+            left.label.text.alignment = "right",
+            pretty.order.rows = FALSE,
+            membership.rows = Code_member,
+            left.label = "variable",
+            row.title = "Substance",
+            row.title.size = 6,
+            column.title = "Adverse Event",
+            column.title.size = 6)
+  dev.off()
+}
 
-png("Heatmap.png", height = 15000, width = 8000)
-superheat(Heatmatrix,
-          heat.pal = c("white", "red", "#b35806","#542788"),
-          heat.pal.values = c(0, 0.1, 0.5, 1),
-          heat.col.scheme = "red",
-          heat.lim = c(1,100),
-          bottom.label.text.angle = 90,
-          bottom.label.text.size = 10,
-          bottom.label.size = 0.1,
-          force.left.label = TRUE,
-          left.label.text.size = 4,
-          left.label.size = 0.4,
-          force.grid.hline = TRUE,
-          grid.hline.col = "gray",
-          grid.vline.col = "gray",
-          heat.na.col= "white",
-          X.text = IC_matrix,
-          X.text.size = 3,
-          left.label.text.alignment = "right",
-          pretty.order.rows = FALSE,
-          membership.rows = Code_member,
-          left.label = "variable",
-          row.title = "Substance",
-          row.title.size = 6,
-          column.title = "Adverse Event",
-          column.title.size = 6)
-dev.off()
+Print_Heatmap(Wrangle_df)
+HCP <- filter(HCP_PZ_Wrangled_df, HCP_PZ_Wrangled_df$Reporter_Type == "HCP")
+Print_Heatmap(HCP)
+PZ <- filter(HCP_PZ_Wrangled_df, HCP_PZ_Wrangled_df$Reporter_Type == "PZ")
+Print_Heatmap(PZ)
