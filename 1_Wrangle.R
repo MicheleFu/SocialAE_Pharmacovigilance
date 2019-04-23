@@ -14,8 +14,8 @@ library(RColorBrewer)
 # Data Needed ------------------------------------------------------------------
 load("Rda/ICSR_df.Rda")
 load("Rda/AE_list.Rda")
-load("RDA/HCP_df.Rda")
-load("RDA/PZ_df.Rda")
+load("Rda/HCP_df.Rda")
+load("Rda/PZ_df.Rda")
 load("Rda/D_list.Rda")
 D_list <- as.data.frame(D_list)
 D_list <- list(D_list[!grepl("&", D_list$D_list),]) %>%
@@ -46,7 +46,7 @@ Wrangle <- function(df, D) {
     x <- subset(df, str_detect(Reactions, AE_list[i]))
     for (d in D) {
       print(d)
-      if (!str_detect(x$`Suspect Product Active Ingredients`, d)) {
+      if (sum(str_detect(x$`Suspect Product Active Ingredients`, d))==0) {
         new_row <- list(d, ATC$Substance[ATC$Code == d], AE_list[i], 0, sum(str_detect(df$`Suspect Product Active Ingredients`, d)), NA, NA, NA, NA, NA)
       } else {
         tab <- table(str_detect(df$`Suspect Product Active Ingredients`, d),
@@ -100,8 +100,8 @@ PZ_Wrangle_df <- Wrangle(PZ_df,D_list) %>%
 HCP_PZ_Wrangled_df <- rbind(HCP_Wrangle_df,PZ_Wrangle_df) %>%
   arrange(Drug_Code, AE)
 save(HCP_PZ_Wrangled_df, file = "Rda/HCP_PZ_Wrangled_df.Rda")
-HCP_PZ_Wrangled <- HCP_PZ_Wrangled_df %>%
-  filter (!is.na(ROR))
+## HCP_PZ_Wrangled <- HCP_PZ_Wrangled_df %>%
+##  filter (!is.na(ROR))
 
 # ROR_matrix and IC_matrix ------------------------------------------------------------------
 ## load("Rda/Wrangle_df.Rda")
