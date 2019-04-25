@@ -195,15 +195,46 @@ PZ <- filter(HCP_PZ_Wrangled_df, HCP_PZ_Wrangled_df$Reporter_Type == "PZ")
 Print_Heatmap(PZ)
 
 # Comparation HCP/PZ ----------------------------------------------------------
+Comparation_df <- data.frame(matrix(ncol = 15, nrow = 0))
+colnames(Comparation_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA_HCP",
+                              "F_nEA_HCP", "nF_EA_HCP","nF_nEA_HCP",
+                              "F_EA_PZ","F_nEA_PZ", "nF_EA_PZ", "nF_nEA_PZ",
+                              "Log(odds)_EA_HCP(nF)", "Log(odds)_EA_PZ/HCP(nF)",
+                              "Log(Odds)_F_HCP","Comparation_Index")
 for (e in AE_list) {
   print(e)
   for (d in D_list) {
     print(d)
     x <- subset(HCP_PZ_Wrangled_df, Drug_Code == d & AE == e)
-    m <- glm(cbind(F_EA,F_nEA) ~ 1 + Reporter_Type, family=binomial, data=x)
-    
+    y <- matrix(ncol=4, nrow=4)
+    colnames(y)  <-  c("EA","nEA", "Reporter_Type", "F")
+    rownames(y) <- c("F_HCP", "nF_HCP", "F_PZ", "nF_PZ")
+    y[1,1] <- x$F_EA[x$Reporter_Type == "HCP"]
+    y[1,2] <- x$F_nEA[x$Reporter_Type == "HCP"]
+    y[1,3] <- "HCP"
+    y[1,4] <- "1"
+    y[2,1] <- x$nF_EA[x$Reporter_Type == "HCP"]
+    y[2,2] <- x$nF_nEA[x$Reporter_Type == "HCP"]
+    y[2,3] <- "HCP"
+    y[2,4] <- "0"
+    y[3,1] <- x$F_EA[x$Reporter_Type == "PZ"]
+    y[3,2] <- x$F_nEA[x$Reporter_Type == "PZ"]
+    y[3,3] <- "PZ"
+    y[3,4] <- "1"
+    y[4,1] <- x$nF_EA[x$Reporter_Type == "PZ"]
+    y[4,2] <- x$nF_nEA[x$Reporter_Type == "PZ"]
+    y[4,3] <- "PZ"
+    y[4,4] <- "0"
+    y <- as.data.frame(y)
+    m <- glm(cbind(EA,nEA) ~ 1 + Reporter_Type*F, family=binomial, data=y)
+    y <- as.matrix(y)
+    new_row <- list(d, ATC$Substance[ATC$Code == d], e, y[1,1],y[1,2], y[2,1],y[2,2],
+                    y[3,1],y[3,2], y[4,1], y[4,2], m[[1]][[1]], m[[1]][[2]],
+                    m[[1]][[3]], m[[1]][[4]])
+    Comparation_df[nrow(Comparation_df)+1,] <-  new_row
   }
 }
+save(Comparation_df, file="Rda/Comparation_df.Rda")
 
 ## Per la binomiale
 ### EA e nEA per F (HCP) quindi con F = 1
@@ -212,7 +243,7 @@ for (e in AE_list) {
 ### EA e nEA per nF (PZ) quindi con F = 0
 
 ### x <- subset(HCP_PZ_Wrangled_df, Drug_Name=="alcohol" & AE=="aggression")
-### m<- glm(cbind(EA,nEA) ~ 1 + Reporter_Type * F, family=binomial,data=x)
+### m<- glm(cbind(EA,nEA) ~ 1 + Reporter_Type*F, family=binomial,data=x)
 ### summary(m)
 
 ## (Intercept)            log odds of EA riguarda i nF HCP
