@@ -39,15 +39,21 @@ Wrangle <- function(df, D) {
   #
   # Returns:
   #   Wrangle_df : Disproportionality Analysis and summarized data
-  Wrangle_df <- data.frame(matrix(ncol = 10, nrow = 0))
-  colnames(Wrangle_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA", "F_nEA", "ROR", "s", "ROR_m", "ROR_M", "IC")
+  Wrangle_df <- data.frame(matrix(ncol = 12, nrow = 0))
+  colnames(Wrangle_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA", "F_nEA", "nF_EA","nF_nEA", "ROR", "s", "ROR_m", "ROR_M", "IC")
   for (i in 1:length(AE_list)) {
-    print(i)
+    EA_Name <- AE_list[i]
+    print(EA_Name)
     x <- subset(df, str_detect(Reactions, AE_list[i]))
     for (d in D) {
       print(d)
+      D_Name <- ATC$Substance[ATC$Code == d]
+      y <- subset(df,!str_detect(`Suspect Product Active Ingredients`,d))
       if (sum(str_detect(x$`Suspect Product Active Ingredients`, d))==0) {
-        new_row <- list(d, ATC$Substance[ATC$Code == d], AE_list[i], 0, sum(str_detect(df$`Suspect Product Active Ingredients`, d)), NA, NA, NA, NA, NA)
+        F_nEA <- sum(str_detect(df$`Suspect Product Active Ingredients`, d))
+        nF_EA <- sum(str_detect(y$Reactions,EA_Name))
+        nF_nEA <- sum(!str_detect(y$Reactions,EA_Name))
+        new_row <- list(d, D_Name, EA_Name, 0, F_nEA, nF_EA, nF_nEA, NA, NA, NA, NA, NA)
       } else {
         tab <- table(str_detect(df$`Suspect Product Active Ingredients`, d),
                      str_detect(df$Reactions, AE_list[i]))
@@ -58,6 +64,8 @@ Wrangle <- function(df, D) {
         t <- as.data.frame.matrix(tab)
         F_EA <- t["F","EA"]
         F_nEA <- t["F","nEA"]
+        nF_EA <- t["nF","EA"]
+        nF_nEA <- t["nF","nEA"]
         ROR_m <- NA
         ROR_M <- NA
         ROR <- NA
@@ -80,7 +88,7 @@ Wrangle <- function(df, D) {
                         sep = "")
             }
           }
-        new_row <- list(d, ATC$Substance[ATC$Code == d], AE_list[i], F_EA, F_nEA, ROR, s, ROR_m, ROR_M, IC)
+        new_row <- list(d, D_Name, EA_Name, F_EA, F_nEA, nF_EA, nF_nEA, ROR, s, ROR_m, ROR_M, IC)
       }
       Wrangle_df[nrow(Wrangle_df)+1,] <-  new_row
     }
@@ -90,8 +98,8 @@ Wrangle <- function(df, D) {
 
 # Wrangled_dfs-------------------------------------------------------------------
 # Df with all the data needed already summarized
-Wrangle_df <- Wrangle(ICSR_df,D_list)
-save(Wrangle_df, file = "Rda/Wrangle_df.Rda")
+TOT_df <- Wrangle(ICSR_df,D_list)
+save(TOT_df, file = "Rda/Tot_df.Rda")
 
 HCP_Wrangle_df <- Wrangle(HCP_df,D_list) %>%
   mutate(Reporter_Type = "HCP")
@@ -185,3 +193,35 @@ HCP <- filter(HCP_PZ_Wrangled_df, HCP_PZ_Wrangled_df$Reporter_Type == "HCP")
 Print_Heatmap(HCP)
 PZ <- filter(HCP_PZ_Wrangled_df, HCP_PZ_Wrangled_df$Reporter_Type == "PZ")
 Print_Heatmap(PZ)
+
+# Comparation HCP/PZ ----------------------------------------------------------
+for (e in AE_list) {
+  print(e)
+  for (d in D_list) {
+    print(d)
+    x <- subset(HCP_PZ_Wrangled_df, Drug_Code == d & AE == e)
+    m <- glm(cbind(F_EA,F_nEA) ~ 1 + Reporter_Type, family=binomial, data=x)
+    
+  }
+}
+
+## Per la binomiale
+### EA e nEA per F (HCP) quindi con F = 1
+### EA e nEA per nF (HCP) quindi con F = 0
+### EA e nEA per F (PZ) quindi con F = 1
+### EA e nEA per nF (PZ) quindi con F = 0
+
+### x <- subset(HCP_PZ_Wrangled_df, Drug_Name=="alcohol" & AE=="aggression")
+### m<- glm(cbind(EA,nEA) ~ 1 + Reporter_Type * F, family=binomial,data=x)
+### summary(m)
+
+## (Intercept)            log odds of EA riguarda i nF HCP
+## Reporter_TypePZ        differenza in log odds of EA riguarda i nF PZ comparata a (intercept)
+## F                      differenza in log odds riguarda i F HCP comparata a (intercept)
+## Reporter_TypePZ : F    log odds (differenza di differenze) riguarda l'effetto che ti interessa: se il reporter fa una differenza tra il tasso di occorrenza dell'AE con/senza F nei due reporter types
+
+log odds of EA = Intercept + 
+                 ReporterTypePZ * ReporterType (HCP è 0, pz è 1) + 
+                 F (coefficient) * F (presenza di farmaco) + 
+                 Reporter_TypePZ : F * ReporterType * F
+
