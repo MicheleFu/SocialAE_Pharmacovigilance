@@ -195,12 +195,12 @@ PZ <- filter(HCP_PZ_Wrangled_df, HCP_PZ_Wrangled_df$Reporter_Type == "PZ")
 Print_Heatmap(PZ)
 
 # Comparation HCP/PZ ----------------------------------------------------------
-Comparation_df <- data.frame(matrix(ncol = 15, nrow = 0))
+Comparation_df <- data.frame(matrix(ncol = 16, nrow = 0))
 colnames(Comparation_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA_HCP",
                               "F_nEA_HCP", "nF_EA_HCP","nF_nEA_HCP",
                               "F_EA_PZ","F_nEA_PZ", "nF_EA_PZ", "nF_nEA_PZ",
                               "Log(odds)_EA_HCP(nF)", "Log(odds)_EA_PZ/HCP(nF)",
-                              "Log(Odds)_F_HCP","Comparation_Index")
+                              "Log(Odds)_F_HCP","Comparation_Index", "Pr")
 for (e in AE_list) {
   print(e)
   for (d in D_list) {
@@ -230,7 +230,7 @@ for (e in AE_list) {
     y <- as.matrix(y)
     new_row <- list(d, ATC$Substance[ATC$Code == d], e, y[1,1],y[1,2], y[2,1],y[2,2],
                     y[3,1],y[3,2], y[4,1], y[4,2], m[[1]][[1]], m[[1]][[2]],
-                    m[[1]][[3]], m[[1]][[4]])
+                    m[[1]][[3]], m[[1]][[4]], coef(summary(m))[4,4])
     Comparation_df[nrow(Comparation_df)+1,] <-  new_row
   }
 }
@@ -251,8 +251,14 @@ save(Comparation_df, file="Rda/Comparation_df.Rda")
 ## F                      differenza in log odds riguarda i F HCP comparata a (intercept)
 ## Reporter_TypePZ : F    log odds (differenza di differenze) riguarda l'effetto che ti interessa: se il reporter fa una differenza tra il tasso di occorrenza dell'AE con/senza F nei due reporter types
 
+##Intercetta = valore in HCP (Reporter=0) e nF (F=0)
+##Reporter_TypePZ = ruolo del Reporter Type (F=0)
+##F1 = ruolo del farmaco (Reporter=0)
+##Reporter_TypePZ : F = ruolo combinato di F e Reporter
+
+
 log odds of EA = Intercept + 
                  ReporterTypePZ * ReporterType (HCP è 0, pz è 1) + 
                  F (coefficient) * F (presenza di farmaco) + 
                  Reporter_TypePZ : F * ReporterType * F
-
+ 
