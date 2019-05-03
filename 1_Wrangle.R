@@ -207,7 +207,7 @@ for (e in AE_list) {
     print(d)
     x <- subset(HCP_PZ_Wrangled_df, Drug_Code == d & AE == e)
     y <- matrix(ncol=4, nrow=4)
-    colnames(y)  <-  c("EA","nEA", "Reporter_Type", "F")
+    colnames(y)  <-  c("EA","nEA", "Reporter_Type", "Drug")
     rownames(y) <- c("F_HCP", "nF_HCP", "F_PZ", "nF_PZ")
     y[1,1] <- x$F_EA[x$Reporter_Type == "HCP"]
     y[1,2] <- x$F_nEA[x$Reporter_Type == "HCP"]
@@ -226,7 +226,7 @@ for (e in AE_list) {
     y[4,3] <- "PZ"
     y[4,4] <- "0"
     y <- as.data.frame(y)
-    m <- glm(cbind(EA,nEA) ~ 1 + Reporter_Type*F, family=binomial, data=y)
+    m <- glm(cbind(EA,nEA) ~ 1 + Reporter_Type*Drug, family=binomial, data=y)
     y <- as.matrix(y)
     new_row <- list(d, ATC$Substance[ATC$Code == d], e, y[1,1],y[1,2], y[2,1],y[2,2],
                     y[3,1],y[3,2], y[4,1], y[4,2], m[[1]][[1]], m[[1]][[2]],
@@ -236,29 +236,7 @@ for (e in AE_list) {
 }
 save(Comparation_df, file="Rda/Comparation_df.Rda")
 
-## Per la binomiale
-### EA e nEA per F (HCP) quindi con F = 1
-### EA e nEA per nF (HCP) quindi con F = 0
-### EA e nEA per F (PZ) quindi con F = 1
-### EA e nEA per nF (PZ) quindi con F = 0
-
-### x <- subset(HCP_PZ_Wrangled_df, Drug_Name=="alcohol" & AE=="aggression")
-### m<- glm(cbind(EA,nEA) ~ 1 + Reporter_Type*F, family=binomial,data=x)
-### summary(m)
-
-## (Intercept)            log odds of EA riguarda i nF HCP
-## Reporter_TypePZ        differenza in log odds of EA riguarda i nF PZ comparata a (intercept)
-## F                      differenza in log odds riguarda i F HCP comparata a (intercept)
-## Reporter_TypePZ : F    log odds (differenza di differenze) riguarda l'effetto che ti interessa: se il reporter fa una differenza tra il tasso di occorrenza dell'AE con/senza F nei due reporter types
-
 ##Intercetta = valore in HCP (Reporter=0) e nF (F=0)
 ##Reporter_TypePZ = ruolo del Reporter Type (F=0)
 ##F1 = ruolo del farmaco (Reporter=0)
 ##Reporter_TypePZ : F = ruolo combinato di F e Reporter
-
-
-log odds of EA = Intercept + 
-                 ReporterTypePZ * ReporterType (HCP è 0, pz è 1) + 
-                 F (coefficient) * F (presenza di farmaco) + 
-                 Reporter_TypePZ : F * ReporterType * F
- 
