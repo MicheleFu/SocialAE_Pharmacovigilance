@@ -240,3 +240,14 @@ save(Comparation_df, file="Rda/Comparation_df.Rda")
 ##Reporter_TypePZ = ruolo del Reporter Type (F=0)
 ##F1 = ruolo del farmaco (Reporter=0)
 ##Reporter_TypePZ : F = ruolo combinato di F e Reporter
+
+mP <- read_delim("mP.csv", ";", escape_double = FALSE, 
+                  trim_ws = TRUE)
+png(filename = "Parkinson_Gambling")
+ggplot(data=mP) +
+  geom_boxplot(mapping=aes(x=reorder(Drug_Name, -ROR), middle = ROR, lower = ROR_m, ymin=ROR_m, upper = ROR_M, ymax=ROR_M), stat = "identity") +
+  labs(title    = "Gambling RORs of anti-Parkinson Drugs") +
+  xlab("Drug") +
+  geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 3, colour = "red", fill="white") +
+  coord_flip()
+dev.off()
