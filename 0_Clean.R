@@ -117,6 +117,11 @@ ICSR_df <- ICSR_df %>%
             `Concomitant Product Names` = first(`Concomitant Product Names`))
 save(ICSR_df, file = "RDA/ICSR_df.RDA")
 
+# Remove underdetailed report--------------------------------------------------
+Filtered_df <- ICSR_df %>%
+  filter(`Reporter Type` != "Not Specified") %>%
+  filter(`Sex` != "Not Specified")
+
 # HCP_df and PZ_df-------------------------------------------------------------
 load("Rda/ICSR_df.Rda")
 HCP_df <- ICSR_df %>%
