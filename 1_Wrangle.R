@@ -1,8 +1,8 @@
 # Introduction ----------------------------------------------------------------
-# Questo codice esegue esegue analisi di disproporzionalità con ROR + IC
-# e crea una matrice con per righe i farmaci e per colonne gli EA
-# e in ogni cella, se significativo (i.e. IC-min > 1), una lista
-# contenente (IC_min,ROR,IC_max), F_EA, F_nEA
+# Questo codice esegue esegue analisi di disproporzionalità con ROR + CI 95%,
+# stampa una heatmap con i risultati,
+# esegue un confronto fra HCP e PZ,
+# e costruisce dei linear regression model basati su dati di farmacodinamica
 # Fusaroli Michele, 2019, SDR of Social ADR.
 
 # Libraries Needed ------------------------------------------------------------
@@ -251,3 +251,77 @@ ggplot(data=mP) +
   geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 3, colour = "red", fill="white") +
   coord_flip()
 dev.off()
+
+# Linear Regression Model -----------------------------------------------------
+##x <- subset(Wrangle_df, Wrangle_df$AE == "gambling")
+##x <- subset(x, str_detect(x$Drug_Code, "^N04"))
+##x <- subset(x, is.na(x$ROR) == FALSE)
+##mP <- x
+##write.csv2(mP, "mP.csv")
+y <- subset(mP, is.na(mP$D2R)==FALSE)
+ggplot(data = y, aes(x=y$D2R, y=y$ROR, main= paste("ROR ~ D2R"))) +
+  geom_smooth(method ="lm") +
+  geom_point() +
+  labs(title = "D2R", subtitle = paste("intercept: ",
+                                     round(coefficients(summary(lm(y$ROR~y$D2R)))[1],2),
+                                     "     slope: ",
+                                     round(coefficients(summary(lm(y$ROR~y$D2R)))[2],2),
+                                     "     p-value: ",
+                                     round(coefficients(summary(lm(y$ROR~y$D2R)))[8],2))) +
+  xlab("D2R") +
+  ylab("ROR")
+
+y <- subset(mP, is.na(mP$D5R)==FALSE)
+ggplot(data = y, aes(x=y$D5R, y=y$ROR, main= paste("ROR ~ D5R"))) +
+  geom_smooth(method ="lm") +
+  geom_point() +
+  labs(title = "D5R", subtitle = paste("intercept: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D5R)))[1],2),
+                                       "     slope: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D5R)))[2],2),
+                                       "     p-value: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D5R)))[8],2))) +
+  xlab("D5R") +
+  ylab("ROR")
+
+y <- subset(mP, is.na(mP$D3R)==FALSE)
+ggplot(data = y, aes(x=y$D3R, y=y$ROR, main= paste("ROR ~ D3R"))) +
+  geom_smooth(method ="lm") +
+  geom_point() +
+  labs(title = "D3R", subtitle = paste("intercept: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D3R)))[1],2),
+                                       "     slope: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D3R)))[2],2),
+                                       "     p-value: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D3R)))[8],2))) +
+  xlab("D3R") +
+  ylab("ROR")
+
+
+scatter.smooth(x=y$D2R, y=y$ROR, main= "ROR ~D2R")
+par(mfrow=c(1,2))
+boxplot(y$D2R, main= "D2R", sub=paste("Outlier rows: ",boxplot.stats(y$D2R)$out))
+boxplot(y$ROR, main="ROR", sub=paste("Outliers rows: ", boxplot.stats(y$ROR)$out))
+cor(y$D2R,y$ROR)
+
+y <- subset(mP, is.na(mP$D3R)==FALSE)
+y <- select (y, Drug_Name, ROR, D3R)
+ggplot(data = y, aes(x=y$D2R, y=y$ROR, main= "ROR ~ D2R")) +
+  geom_smooth(method ="lm") +
+  geom_point() +
+  labs(title = "D2R", subtitle = paste("intercept: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D2R)))[1],2),
+                                       "     slope: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D2R)))[2],2),
+                                       "     p-value: ",
+                                       round(coefficients(summary(lm(y$ROR~y$D2R)))[5],2))) +
+  xlab("D2R") +
+  ylab("ROR")
+par(mfrow=c(1,2))
+boxplot(y$D3R, main= "D3R", sub=paste("Outlier rows: ",boxplot.stats(y$D3R)$out))
+boxplot(y$ROR, main="ROR", sub=paste("Outliers rows: ", boxplot.stats(y$ROR)$out))
+cor(y$D3R,y$ROR)
+linearMod <- lm(ROR~D3R, data=y)
+print(linearMod)
+summary(linearMod)
+glm(ROR~D1R+D2R+D3R+D4R+D5R,data=mP)
