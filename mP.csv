@@ -1,4 +1,4 @@
-Drug_Name;AE;F_EA;F_nEA;nF_EA;nF_nEA;ROR;s;ROR_m;ROR_M;IC;5HT1A;5HT1B;5HT1D;5HT2A;5HT2B;5HT2C;5HT6;5HT7;D1R;D2R;D3R;D4R;D5R;α1A;α2A;α2B;α2C
+Drug_Name;AE;F_EA;F_nEA;nF_EA;nF_nEA;ROR;s;ROR_m;ROR_M;IC;5HT1A;5HT1B;5HT1D;5HT2A;5HT2B;5HT2C;5HT6;5HT7;D1R;D2R;D3R;D4R;D5R;a1A;a2A;a2B;a2C
 rasagiline;gambling;3;86;1668;171427;3.6;0.587849125269892;1.1;11.3;[1.1|3.6|11.3];;;;;;;;;;;;;;;;;
 levodopa and decarboxylase inhibitor;gambling;40;1098;1631;170415;3.8;0.162879512601278;2.8;5.2;[2.8|3.8|5.2];;;;;;;;;;;;;;;;;
 entacapone;gambling;15;324;1656;171189;4.8;0.265259858725133;2.8;8;[2.8|4.8|8];;;;;;;;;;;;;;;;;
