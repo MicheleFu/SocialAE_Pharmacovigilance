@@ -241,61 +241,41 @@ save(Comparation_df, file="Rda/Comparation_df.Rda")
 ##F1 = ruolo del farmaco (Reporter=0)
 ##Reporter_TypePZ : F = ruolo combinato di F e Reporter
 
+# boxplot (ROR-CI) and LRM-----------------------------------------------------
+
 mP <- read_delim("mP.csv", ";", escape_double = FALSE, 
                   trim_ws = TRUE)
-png(filename = "Parkinson_Gambling")
-ggplot(data=mP) +
+pdf("mP_LRM.pdf")
+print(ggplot(data=mP) +
   geom_boxplot(mapping=aes(x=reorder(Drug_Name, -ROR), middle = ROR, lower = ROR_m, ymin=ROR_m, upper = ROR_M, ymax=ROR_M), stat = "identity") +
   labs(title    = "Gambling RORs of anti-Parkinson Drugs") +
   xlab("Drug") +
   geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 3, colour = "red", fill="white") +
-  coord_flip()
+  coord_flip())
+PhD <- as.list(colnames(mP))
+PhD <- PhD[12:length(PhD)]
+for (m in PhD){
+  y <- subset(mP, is.na(mP[[m]])==FALSE)
+  print(ggplot(data = y, aes(x=y[[m]], y=y$ROR, main= paste("ROR",m))) +
+          geom_smooth(method ="lm") +
+          geom_point() +
+          labs(title = m, subtitle = paste("intercept: ",
+                                           round(coefficients(summary(lm(y$ROR~y[[m]])))[1],2),
+                                           "     slope: ",
+                                           round(coefficients(summary(lm(y$ROR~y[[m]])))[2],2),
+                                           "     p-value: ",
+                                           round(coefficients(summary(lm(y$ROR~y[[m]])))[8],2))) +
+          xlab(m) +
+          ylab("ROR"))
+}
 dev.off()
 
 # Linear Regression Model -----------------------------------------------------
-##x <- subset(Wrangle_df, Wrangle_df$AE == "gambling")
-##x <- subset(x, str_detect(x$Drug_Code, "^N04"))
+##x <- subset(Wrangle_df, Wrangle_df$AE == "aggression")
+##x <- subset(x, str_detect(x$Drug_Code, "^N05A"))
 ##x <- subset(x, is.na(x$ROR) == FALSE)
-##mP <- x
-##write.csv2(mP, "mP.csv")
-y <- subset(mP, is.na(mP$D2R)==FALSE)
-ggplot(data = y, aes(x=y$D2R, y=y$ROR, main= paste("ROR ~ D2R"))) +
-  geom_smooth(method ="lm") +
-  geom_point() +
-  labs(title = "D2R", subtitle = paste("intercept: ",
-                                     round(coefficients(summary(lm(y$ROR~y$D2R)))[1],2),
-                                     "     slope: ",
-                                     round(coefficients(summary(lm(y$ROR~y$D2R)))[2],2),
-                                     "     p-value: ",
-                                     round(coefficients(summary(lm(y$ROR~y$D2R)))[8],2))) +
-  xlab("D2R") +
-  ylab("ROR")
-
-y <- subset(mP, is.na(mP$D5R)==FALSE)
-ggplot(data = y, aes(x=y$D5R, y=y$ROR, main= paste("ROR ~ D5R"))) +
-  geom_smooth(method ="lm") +
-  geom_point() +
-  labs(title = "D5R", subtitle = paste("intercept: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D5R)))[1],2),
-                                       "     slope: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D5R)))[2],2),
-                                       "     p-value: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D5R)))[8],2))) +
-  xlab("D5R") +
-  ylab("ROR")
-
-y <- subset(mP, is.na(mP$D3R)==FALSE)
-ggplot(data = y, aes(x=y$D3R, y=y$ROR, main= paste("ROR ~ D3R"))) +
-  geom_smooth(method ="lm") +
-  geom_point() +
-  labs(title = "D3R", subtitle = paste("intercept: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D3R)))[1],2),
-                                       "     slope: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D3R)))[2],2),
-                                       "     p-value: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D3R)))[8],2))) +
-  xlab("D3R") +
-  ylab("ROR")
+##AP <- x
+##write.csv2(AP, "AP.csv")
 
 
 scatter.smooth(x=y$D2R, y=y$ROR, main= "ROR ~D2R")
@@ -304,19 +284,7 @@ boxplot(y$D2R, main= "D2R", sub=paste("Outlier rows: ",boxplot.stats(y$D2R)$out)
 boxplot(y$ROR, main="ROR", sub=paste("Outliers rows: ", boxplot.stats(y$ROR)$out))
 cor(y$D2R,y$ROR)
 
-y <- subset(mP, is.na(mP$D3R)==FALSE)
-y <- select (y, Drug_Name, ROR, D3R)
-ggplot(data = y, aes(x=y$D2R, y=y$ROR, main= "ROR ~ D2R")) +
-  geom_smooth(method ="lm") +
-  geom_point() +
-  labs(title = "D2R", subtitle = paste("intercept: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D2R)))[1],2),
-                                       "     slope: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D2R)))[2],2),
-                                       "     p-value: ",
-                                       round(coefficients(summary(lm(y$ROR~y$D2R)))[5],2))) +
-  xlab("D2R") +
-  ylab("ROR")
+
 par(mfrow=c(1,2))
 boxplot(y$D3R, main= "D3R", sub=paste("Outlier rows: ",boxplot.stats(y$D3R)$out))
 boxplot(y$ROR, main="ROR", sub=paste("Outliers rows: ", boxplot.stats(y$ROR)$out))
