@@ -1,0 +1,985 @@
+;Ligand name;Target name;targetSpecies;primaryTarget;type;action;pKi
+487;cetirizine;H1 receptor;Human;TRUE;Antagonist;Inverse agonist;8.5
+1107;17beta-estradiol;GPER;Human;FALSE;Agonist;Full agonist;8.2 - 8.5
+780;abarelix;GnRH1 receptor;Human;TRUE;Antagonist;Antagonist;9.1 - 9.5
+1056;acebutolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.4
+198;ACTH;MC1 receptor;Human;FALSE;Agonist;Agonist;8.6
+199;ACTH;MC3 receptor;Human;FALSE;Agonist;Agonist;7.1
+200;ACTH;MC4 receptor;Human;FALSE;Agonist;Agonist;6.2
+201;ACTH;MC5 receptor;Human;FALSE;Agonist;Agonist;5.0
+692;adenosine;A1 receptor;Human;TRUE;Agonist;Agonist;7.0
+694;adenosine;A2A receptor;Human;FALSE;Agonist;Agonist;6.5
+696;adenosine;A2B receptor;Human;FALSE;Agonist;Agonist;4.8
+698;adenosine;A3 receptor;Human;FALSE;Agonist;Agonist;6.5
+1112;adomeglivant;glucagon receptor;Human;FALSE;Antagonist;Antagonist;8.2
+367;adrenaline;alpha1A-adrenoceptor;Human;FALSE;Agonist;Full agonist;6.3 - 6.5
+374;adrenaline;alpha1B-adrenoceptor;Human;FALSE;Agonist;Full agonist;6.5
+379;adrenaline;alpha1D-adrenoceptor;Human;TRUE;Agonist;Full agonist;7.2
+388;adrenaline;alpha2A-adrenoceptor;Human;TRUE;Agonist;Full agonist;5.8 - 7.4
+395;adrenaline;alpha2B-adrenoceptor;Human;FALSE;Agonist;Agonist;5.2
+402;adrenaline;alpha2C-adrenoceptor;Human;FALSE;Agonist;Agonist;5.8
+410;adrenaline;beta1-adrenoceptor;Human;FALSE;Agonist;Agonist;5.4 - 6.0
+416;adrenaline;beta2-adrenoceptor;Human;FALSE;Agonist;Full agonist;6.0 - 6.2
+421;adrenaline;beta3-adrenoceptor;Human;FALSE;Agonist;Agonist;3.9
+493;afamelanotide;MC3 receptor;Human;FALSE;Agonist;Full agonist;8.9
+494;afamelanotide;MC4 receptor;Human;FALSE;Agonist;Full agonist;8.5 - 8.8
+24;agomelatine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;5.4
+33;agomelatine;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;6.6
+40;agomelatine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;6.2
+202;agomelatine;MT1 receptor;Human;TRUE;Agonist;Full agonist;10.0 - 10.4
+204;agomelatine;MT2 receptor;Human;TRUE;Agonist;Full agonist;9.9 - 10.5
+702;alfuzosin;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.1
+705;alfuzosin;alpha1B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.6
+708;alfuzosin;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.4
+190;alimemazine;H1 receptor;Bovine;FALSE;Antagonist;Antagonist;9.1
+420;alprenolol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.0
+1136;alvimopan;delta receptor;Human;FALSE;Antagonist;Antagonist;7.9
+1145;alvimopan;kappa receptor;Human;FALSE;Antagonist;Antagonist;7.0
+1159;alvimopan;mu receptor;Human;TRUE;Antagonist;Antagonist;9.3
+161;amisulpride;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.9 - 8.0
+162;amisulpride;D2 receptor;Human;FALSE;Antagonist;Antagonist;7.8
+170;amisulpride;D3 receptor;Rat;FALSE;Antagonist;Antagonist;7.4
+271;amitriptyline;5-HT2A receptor;Rat;FALSE;Antagonist;Antagonist;8.0
+272;amitriptyline;5-HT2A receptor;Rat;FALSE;Antagonist;Antagonist;8.4
+288;amitriptyline;5-HT2C receptor;Rat;FALSE;Antagonist;Antagonist;8.1
+295;amitriptyline;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;6.9 - 7.2
+308;amitriptyline;5-HT7 receptor;Mouse;FALSE;Antagonist;Antagonist;6.4
+310;amitriptyline;5-HT7 receptor;Rat;FALSE;Antagonist;Antagonist;6.9 - 7.0
+479;amitriptyline;H1 receptor;Human;TRUE;Antagonist;Antagonist;9.3
+320;amitriptyline;M1 receptor;Human;TRUE;Antagonist;Antagonist;7.8
+328;amitriptyline;M2 receptor;Human;TRUE;Antagonist;Antagonist;7.9
+335;amitriptyline;M3 receptor;Human;TRUE;Antagonist;Antagonist;7.9
+341;amitriptyline;M4 receptor;Human;TRUE;Antagonist;Antagonist;8.1
+346;amitriptyline;M5 receptor;Human;TRUE;Antagonist;Antagonist;7.8
+913;amoxapine;5-HT2A receptor;Rat;FALSE;Antagonist;Antagonist;9.0
+936;amoxapine;5-HT2C receptor;Rat;FALSE;Antagonist;Antagonist;8.7
+951;amoxapine;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;7.3
+973;amoxapine;5-HT7 receptor;Rat;FALSE;Antagonist;Antagonist;7.4
+553;apomorphine;5-HT1A receptor;Human;FALSE;Agonist;Partial agonist;6.9
+589;apomorphine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;6.9
+601;apomorphine;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;6.9
+609;apomorphine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;7.0
+711;apomorphine;alpha2A-adrenoceptor;Human;FALSE;Agonist;Partial agonist;6.9
+715;apomorphine;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.2
+720;apomorphine;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+733;apomorphine;D1 receptor;Human;FALSE;Agonist;Full agonist;5.3 - 6.2
+739;apomorphine;D2 receptor;Human;TRUE;Agonist;Partial agonist;5.7 - 7.5
+753;apomorphine;D3 receptor;Human;TRUE;Agonist;Partial agonist;6.1 - 7.6
+764;apomorphine;D4 receptor;Human;TRUE;Agonist;Partial agonist;8.4
+773;apomorphine;D5 receptor;Human;FALSE;Agonist;Partial agonist;6.4 - 7.8
+387;apraclonidine;alpha2A-adrenoceptor;Human;TRUE;Agonist;Agonist;8.5
+403;apraclonidine;alpha2C-adrenoceptor;Human;TRUE;Agonist;Agonist;7.5
+539;aprepitant;NK1 receptor;Human;TRUE;Antagonist;Antagonist;10.1
+723;arformoterol;beta1-adrenoceptor;Human;FALSE;Agonist;Agonist;6.5
+727;arformoterol;beta2-adrenoceptor;Human;TRUE;Agonist;Agonist;8.6
+851;aripiprazole;5-HT1A receptor;Human;FALSE;Agonist;Partial agonist;8.2
+862;aripiprazole;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;6.1
+871;aripiprazole;5-HT1D receptor;Human;FALSE;Agonist;Full agonist;7.2
+897;aripiprazole;5-HT2A receptor;Human;FALSE;Agonist;Partial agonist;7.5 - 8.1
+930;aripiprazole;5-HT2C receptor;Human;FALSE;Agonist;Partial agonist;7.6
+954;aripiprazole;5-HT6 receptor;Rat;FALSE;Antagonist;Antagonist;6.8
+964;aripiprazole;5-HT7 receptor;Rat;FALSE;Agonist;Partial agonist;7.8
+1081;aripiprazole;D2 receptor;Human;TRUE;Agonist;Partial agonist;9.1
+1104;aripiprazole;D4 receptor;Rat;FALSE;Antagonist;Antagonist;7.3
+1114;aripiprazole;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.5
+232;asenapine;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;8.0 - 8.3
+241;asenapine;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;8.1
+249;asenapine;5-HT1D receptor;Human;FALSE;Agonist;Full agonist;8.4
+256;asenapine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;8.0
+265;asenapine;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;10.2
+438;asenapine;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.9
+476;asenapine;H1 receptor;Human;FALSE;Antagonist;Antagonist;9.8
+185;astemizole;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.5
+126;atenolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.7 - 7.6
+132;atenolol;beta2-adrenoceptor;Human;FALSE;Antagonist;Antagonist;5.6 - 6.0
+549;atosiban;OT receptor;Human;FALSE;Antagonist;Antagonist;6.0 - 7.6
+541;atosiban;V1A receptor;Human;FALSE;Antagonist;Antagonist;8.3 - 8.5
+544;atosiban;V1B receptor;Human;FALSE;Antagonist;Antagonist;6.2 - 6.6
+545;atosiban;V2 receptor;Human;FALSE;Antagonist;Antagonist;5.5 - 6.0
+980;atropine;M1 receptor;Human;TRUE;Antagonist;Antagonist;8.5 - 9.6
+986;atropine;M2 receptor;Human;TRUE;Antagonist;Antagonist;7.8 - 9.2
+993;atropine;M3 receptor;Human;TRUE;Antagonist;Antagonist;8.9 - 9.8
+998;atropine;M4 receptor;Human;FALSE;Antagonist;Antagonist;8.7 - 9.5
+1002;atropine;M5 receptor;Human;FALSE;Antagonist;Antagonist;9.3 - 9.7
+186;azelastine;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.9
+473;baclofen;GABAB receptor;Human;TRUE;Agonist;Full agonist;4.3 - 6.2
+1091;benperidol;D2 receptor;Human;FALSE;Antagonist;Antagonist;10.6
+1103;benperidol;D4 receptor;Human;FALSE;Antagonist;Antagonist;10.2
+661;benzatropine;M1 receptor;Rat;FALSE;Antagonist;Antagonist;9.0
+671;benzatropine;M2 receptor;Rat;FALSE;Antagonist;Antagonist;8.6
+435;benzquinamide;D2 receptor;Human;TRUE;Agonist;Agonist;5.4
+1052;betaxolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.8
+1060;betaxolol;beta2-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.2
+652;bethanechol;M1 receptor;Human;FALSE;Agonist;Full agonist;4.0
+664;bethanechol;M2 receptor;Human;TRUE;Agonist;Full agonist;4.0
+673;bethanechol;M3 receptor;Human;TRUE;Agonist;Full agonist;4.2
+683;bethanechol;M4 receptor;Human;FALSE;Agonist;Full agonist;4.0
+269;blonanserin;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;9.1
+446;blonanserin;D2 receptor;Human;TRUE;Antagonist;Antagonist;9.9
+1106;bosentan;ETB receptor;Human;TRUE;Antagonist;Antagonist;7.1
+741;brexpiprazole;D2 receptor;Human;FALSE;Agonist;Partial agonist;9.5
+389;brimonidine;alpha2A-adrenoceptor;Human;TRUE;Agonist;Full agonist;6.7 - 8.7
+397;brimonidine;alpha2B-adrenoceptor;Human;TRUE;Agonist;Partial agonist;6.0 - 8.3
+405;brimonidine;alpha2C-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.7 - 7.6
+554;bromocriptine;5-HT1A receptor;Human;FALSE;Agonist;Partial agonist;7.9
+565;bromocriptine;5-HT1B receptor;Human;FALSE;Agonist;Partial agonist;6.5
+572;bromocriptine;5-HT1D receptor;Human;FALSE;Agonist;Partial agonist;8.0
+587;bromocriptine;5-HT2A receptor;Human;FALSE;Agonist;Partial agonist;7.0
+602;bromocriptine;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;7.3
+607;bromocriptine;5-HT2C receptor;Human;FALSE;Agonist;Partial agonist;6.1
+621;bromocriptine;5-HT6 receptor;Human;FALSE;Agonist;Full agonist;7.5
+634;bromocriptine;5-HT7 receptor;Rat;FALSE;Agonist;Full agonist;7.3 - 8.0
+712;bromocriptine;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.0
+716;bromocriptine;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.5
+721;bromocriptine;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.6
+734;bromocriptine;D1 receptor;Human;FALSE;Agonist;Partial agonist;6.2
+738;bromocriptine;D2 receptor;Human;TRUE;Agonist;Full agonist;7.3 - 8.3
+754;bromocriptine;D3 receptor;Human;TRUE;Agonist;Partial agonist;7.1 - 8.2
+766;bromocriptine;D4 receptor;Human;TRUE;Antagonist;Antagonist;6.4
+772;bromocriptine;D5 receptor;Human;FALSE;Agonist;Full agonist;6.3
+413;bupranolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;7.3 - 9.0
+419;bupranolol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.3 - 9.1
+425;bupranolol;beta3-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.8 - 7.3
+1144;buprenorphine;kappa receptor;Human;TRUE;Antagonist;Antagonist;9.1 - 10.2
+1156;buprenorphine;mu receptor;Human;TRUE;Agonist;Partial agonist;8.8
+779;buserelin;GnRH1 receptor;Human;FALSE;Agonist;Full agonist;9.4 - 10.0
+555;buspirone;5-HT1A receptor;Human;TRUE;Agonist;Partial agonist;7.7 - 8.0
+636;buspirone;5-HT7 receptor;Rat;FALSE;Agonist;Partial agonist;6.4
+641;buspirone;5-HT7 receptor;Mouse;FALSE;Antagonist;Antagonist;6.4
+500;butorphanol;kappa receptor;Human;TRUE;Agonist;Partial agonist;9.9
+503;butorphanol;mu receptor;Human;TRUE;Agonist;Partial agonist;9.9
+233;cabergoline;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;7.7
+242;cabergoline;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;6.3
+253;cabergoline;5-HT1D receptor;Human;FALSE;Agonist;Partial agonist;8.1
+263;cabergoline;5-HT2A receptor;Human;FALSE;Agonist;Full agonist;8.2
+278;cabergoline;5-HT2B receptor;Human;FALSE;Agonist;Full agonist;8.9
+283;cabergoline;5-HT2C receptor;Human;FALSE;Agonist;Full agonist;6.2
+368;cabergoline;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.5
+391;cabergoline;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.9
+398;cabergoline;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.1
+406;cabergoline;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.7
+428;cabergoline;D1 receptor;Human;FALSE;Agonist;Full agonist;6.7
+437;cabergoline;D2 receptor;Human;TRUE;Agonist;Partial agonist;9.0 - 9.2
+449;cabergoline;D3 receptor;Human;FALSE;Agonist;Partial agonist;9.1
+458;cabergoline;D4 receptor;Human;FALSE;Agonist;Partial agonist;7.3
+464;cabergoline;D5 receptor;Human;FALSE;Agonist;Full agonist;7.7
+350;caffeine;A1 receptor;Human;TRUE;Antagonist;Antagonist;4.3 - 5.0
+355;caffeine;A2A receptor;Human;TRUE;Antagonist;Antagonist;4.6 - 5.6
+360;caffeine;A2B receptor;Human;TRUE;Antagonist;Antagonist;4.5 - 5.0
+364;caffeine;A3 receptor;Human;TRUE;Antagonist;Antagonist;4.9
+1071;calcitonin (salmon);AMY1 receptor;Rat;FALSE;Agonist;Full agonist;9.0
+1072;calcitonin (salmon);AMY3 receptor;Rat;FALSE;Agonist;Full agonist;8.2
+1063;carazolol;beta2-adrenoceptor;Human;FALSE;Antagonist;Antagonist;9.9
+1065;carazolol;beta3-adrenoceptor;Human;FALSE;Agonist;Full agonist;8.7
+653;carbachol;M1 receptor;Human;FALSE;Agonist;Full agonist;3.2 - 5.3
+665;carbachol;M2 receptor;Human;FALSE;Agonist;Full agonist;4.2 - 5.7
+674;carbachol;M3 receptor;Human;TRUE;Agonist;Full agonist;4.0 - 4.4
+684;carbachol;M4 receptor;Human;FALSE;Agonist;Full agonist;4.3 - 4.9
+688;carbachol;M5 receptor;Human;FALSE;Agonist;Full agonist;4.9
+1082;cariprazine;D2 receptor;Human;FALSE;Agonist;Partial agonist;8.2
+1095;cariprazine;D3 receptor;Human;FALSE;Agonist;Partial agonist;10.1
+1053;carvedilol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.5
+1061;carvedilol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.4 - 9.9
+488;cetirizine;H1 receptor;Human;TRUE;Antagonist;Inverse agonist;8.2
+181;cetrorelix;GnRH1 receptor;Human;TRUE;Antagonist;Antagonist;9.3 - 10.0
+651;cevimeline;M1 receptor;Human;FALSE;Agonist;Agonist;5.3
+662;cevimeline;M2 receptor;Human;FALSE;Agonist;Agonist;6.1
+672;cevimeline;M3 receptor;Human;FALSE;Agonist;Agonist;5.6
+681;cevimeline;M4 receptor;Human;FALSE;Agonist;Agonist;6.0
+1108;chenodeoxycholic acid;FPR1;Human;FALSE;Antagonist;Antagonist;4.0
+222;chlordiazepoxide;TRH1 receptor;Mouse;FALSE;Antagonist;Antagonist;4.7
+223;chlordiazepoxide;TRH1 receptor;Rat;FALSE;Antagonist;Antagonist;4.8
+787;chlorpheniramine;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.1
+238;chlorpromazine;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;6.2
+274;chlorpromazine;5-HT2A receptor;Human;TRUE;Antagonist;Inverse agonist;8.1
+285;chlorpromazine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;7.6 - 8.2
+298;chlorpromazine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;7.7 - 7.8
+313;chlorpromazine;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;7.6
+392;chlorpromazine;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;5.9 - 6.6
+399;chlorpromazine;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.2 - 8.3
+407;chlorpromazine;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.9 - 7.4
+431;chlorpromazine;D1 receptor;Human;FALSE;Antagonist;Antagonist;7.1
+440;chlorpromazine;D2 receptor;Human;FALSE;Antagonist;Antagonist;7.0 - 7.6
+452;chlorpromazine;D3 receptor;Human;FALSE;Antagonist;Antagonist;7.2 - 7.5
+461;chlorpromazine;D4 receptor;Human;FALSE;Antagonist;Antagonist;7.8
+467;chlorpromazine;D5 receptor;Human;FALSE;Antagonist;Antagonist;6.9
+478;chlorpromazine;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.2
+789;cimetidine;H2 receptor;Human;TRUE;Antagonist;Antagonist;6.8
+1131;cinacalcet;mGlu5 receptor;Rat;FALSE;Allosteric modulator;Positive;4.3
+944;cisapride;5-HT4 receptor;Human;TRUE;Agonist;Partial agonist;6.4 - 7.4
+963;cisapride;5-HT7 receptor;Mouse;FALSE;Agonist;Full agonist;5.8
+1125;clemastine;H1 receptor;Human;TRUE;Antagonist;Antagonist;10.3
+677;clidinium;M3 receptor;Human;TRUE;Antagonist;Antagonist;9.6
+106;clonidine;alpha1D-adrenoceptor;Rat;FALSE;Agonist;Full agonist;6.9
+113;clonidine;alpha2A-adrenoceptor;Human;TRUE;Agonist;Partial agonist;7.2 - 9.2
+118;clonidine;alpha2B-adrenoceptor;Human;TRUE;Agonist;Partial agonist;6.7 - 9.5
+123;clonidine;alpha2C-adrenoceptor;Human;FALSE;Agonist;Partial agonist;6.0 - 7.8
+234;clozapine;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;6.8 - 6.9
+243;clozapine;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;6.2
+250;clozapine;5-HT1D receptor;Human;FALSE;Agonist;Full agonist;6.4
+257;clozapine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;6.4
+260;clozapine;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;6.9
+273;clozapine;5-HT2A receptor;Human;TRUE;Antagonist;Inverse agonist;7.6 - 9.0
+280;clozapine;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;8.0 - 8.8
+289;clozapine;5-HT2C receptor;Human;FALSE;Antagonist;Inverse agonist;7.4 - 8.7
+291;clozapine;5-HT5A receptor;Human;FALSE;Antagonist;Antagonist;6.0 - 6.5
+297;clozapine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;7.8 - 8.1
+312;clozapine;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;7.2 - 7.8
+369;clozapine;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.1
+375;clozapine;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.2
+382;clozapine;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.7
+430;clozapine;D1 receptor;Human;FALSE;Antagonist;Antagonist;6.9
+439;clozapine;D2 receptor;Human;TRUE;Antagonist;Antagonist;5.8 - 6.9
+451;clozapine;D3 receptor;Human;FALSE;Antagonist;Antagonist;5.2 - 6.3
+460;clozapine;D4 receptor;Human;FALSE;Antagonist;Antagonist;7.5
+466;clozapine;D5 receptor;Human;FALSE;Antagonist;Antagonist;6.6
+477;clozapine;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.8 - 9.6
+489;clozapine;H3 receptor;Rat;FALSE;Antagonist;Antagonist;5.8
+490;clozapine;H4 receptor;Human;FALSE;Antagonist;Antagonist;6.2 - 6.7
+1152;codeine;mu receptor;Human;TRUE;Agonist;Full agonist;6.9
+1193;conivaptan;V1A receptor;Human;TRUE;Antagonist;Antagonist;8.2 - 8.4
+1194;conivaptan;V2 receptor;Human;TRUE;Antagonist;Antagonist;9.4
+380;corbadrine;alpha1D-adrenoceptor;Human;FALSE;Agonist;Full agonist;5.6
+1126;cyclizine;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.4
+952;cyproheptadine;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;6.8
+967;cyproheptadine;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;6.9
+1014;cyproheptadine;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+1022;cyproheptadine;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.6
+1031;cyproheptadine;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.9
+1121;cyproheptadine;H1 receptor;Human;TRUE;Antagonist;Antagonist;10.2
+385;dapiprazole;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.4
+981;darifenacin;M1 receptor;Human;FALSE;Antagonist;Antagonist;7.5 - 8.3
+991;darifenacin;M2 receptor;Human;FALSE;Antagonist;Inverse agonist;7.0 - 7.6
+994;darifenacin;M3 receptor;Human;TRUE;Antagonist;Antagonist;8.6 - 9.1
+999;darifenacin;M4 receptor;Human;FALSE;Antagonist;Antagonist;7.3 - 8.1
+1003;darifenacin;M5 receptor;Human;FALSE;Antagonist;Antagonist;7.9 - 8.6
+1113;degarelix;GnRH1 receptor;Human;TRUE;Antagonist;Antagonist;8.8
+1074;delta<sup>9</sup>-tetrahydrocannabinol;CB1 receptor;Human;TRUE;Agonist;Partial agonist;7.3 - 7.4
+1076;delta<sup>9</sup>-tetrahydrocannabinol;CB2 receptor;Human;FALSE;Agonist;Partial agonist;7.1 - 7.5
+776;deoxycholic acid;FPR1;Human;FALSE;Antagonist;Antagonist;4.0
+187;desloratadine;H1 receptor;Human;TRUE;Antagonist;Antagonist;9.0
+845;desmopressin;OT receptor;Human;FALSE;Agonist;Full agonist;6.7 - 7.6
+835;desmopressin;V1A receptor;Human;FALSE;Agonist;Full agonist;7.0 - 7.7
+839;desmopressin;V1B receptor;Human;FALSE;Agonist;Full agonist;7.7 - 8.2
+843;desmopressin;V2 receptor;Human;FALSE;Agonist;Full agonist;7.2 - 8.6
+330;dexetimide;M2 receptor;Human;TRUE;Antagonist;Antagonist;8.9
+114;dexmedetomidine;alpha2A-adrenoceptor;Human;TRUE;Agonist;Partial agonist;7.6 - 9.6
+116;dexmedetomidine;alpha2B-adrenoceptor;Human;TRUE;Agonist;Full agonist;7.5 - 9.7
+121;dexmedetomidine;alpha2C-adrenoceptor;Human;TRUE;Agonist;Full agonist;7.0 - 9.3
+833;diazepam;TRH1 receptor;Rat;FALSE;Antagonist;Antagonist;5.2
+983;dicyclomine;M1 receptor;Human;TRUE;Antagonist;Antagonist;9.1
+988;dicyclomine;M2 receptor;Human;FALSE;Antagonist;Antagonist;6.6
+996;dicyclomine;M3 receptor;Human;TRUE;Antagonist;Antagonist;9.0
+564;dihydroergotamine;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;8.0 - 9.2
+571;dihydroergotamine;5-HT1D receptor;Human;TRUE;Agonist;Full agonist;9.2 - 9.9
+579;dihydroergotamine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;5.6
+584;dihydroergotamine;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;6.6 - 7.1
+629;dihydroergotamine;5-HT6 receptor;Rat;FALSE;Antagonist;Antagonist;7.9 - 8.3
+640;dihydroergotamine;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;8.0
+1122;diphenhydramine;H1 receptor;Human;TRUE;Antagonist;Antagonist;7.9
+125;dobutamine;beta1-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.5
+1088;domperidone;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.9 - 8.4
+1098;domperidone;D3 receptor;Human;TRUE;Antagonist;Antagonist;7.1 - 7.6
+150;dopamine;D1 receptor;Human;TRUE;Agonist;Full agonist;4.3 - 5.6
+154;dopamine;D2 receptor;Human;TRUE;Agonist;Full agonist;4.7 - 7.2
+166;dopamine;D3 receptor;Human;TRUE;Agonist;Full agonist;6.4 - 7.3
+172;dopamine;D4 receptor;Human;TRUE;Agonist;Full agonist;7.6
+176;dopamine;D5 receptor;Human;TRUE;Agonist;Full agonist;6.6
+485;dosulepin;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.4
+324;dosulepin;M1 receptor;Human;FALSE;Antagonist;Antagonist;7.7
+333;dosulepin;M2 receptor;Human;FALSE;Antagonist;Antagonist;7.0
+340;dosulepin;M3 receptor;Human;FALSE;Antagonist;Antagonist;7.4
+345;dosulepin;M4 receptor;Human;FALSE;Antagonist;Antagonist;7.2
+349;dosulepin;M5 receptor;Human;FALSE;Antagonist;Antagonist;7.0
+100;doxazosin;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.3
+103;doxazosin;alpha1B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.1
+110;doxazosin;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.1
+483;doxepin;H1 receptor;Human;FALSE;Antagonist;Antagonist;9.5 - 10.0
+25;duloxetine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;6.3
+41;duloxetine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;6.0
+54;duloxetine;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;6.4
+182;elagolix;GnRH1 receptor;Human;TRUE;Antagonist;Antagonist;9.1
+848;eletriptan;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;7.4
+863;eletriptan;5-HT1B receptor;Human;TRUE;Agonist;Full agonist;8.0
+872;eletriptan;5-HT1D receptor;Human;TRUE;Agonist;Full agonist;8.9
+878;eletriptan;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;7.2
+886;eletriptan;5-HT1F receptor;Human;TRUE;Agonist;Full agonist;8.0
+1138;eluxadoline;delta receptor;Rat;FALSE;Antagonist;Antagonist;8.9
+1147;eluxadoline;mu receptor;Human;FALSE;Agonist;Agonist;8.8
+728;ephedrine;beta2-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.6
+1073;erenumab;CGRP receptor;Human;TRUE;Antibody;Antagonist;10.7
+882;ergometrine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;7.3
+895;ergometrine;5-HT2A receptor;Rat;FALSE;Agonist;Full agonist;8.5
+7;ergotamine;5-HT1D receptor;Human;TRUE;Agonist;Agonist;9.1
+13;ergotamine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;6.2 - 6.3
+16;ergotamine;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;6.8
+19;ergotamine;5-HT2A receptor;Human;FALSE;Agonist;Partial agonist;9.0
+30;ergotamine;5-HT2B receptor;Human;FALSE;Agonist;Partial agonist;8.5 - 8.9
+35;ergotamine;5-HT2C receptor;Human;FALSE;Agonist;Partial agonist;8.7
+46;ergotamine;5-HT5A receptor;Human;FALSE;Antagonist;Antagonist;8.0 - 8.7
+51;ergotamine;5-HT6 receptor;Human;FALSE;Agonist;Full agonist;8.0 - 8.6
+61;ergotamine;5-HT7 receptor;Mouse;FALSE;Antagonist;Antagonist;7.3
+724;esmolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.9
+985;ethopropazine;M1 receptor;Rat;FALSE;Antagonist;Antagonist;8.5
+990;ethopropazine;M2 receptor;Rat;FALSE;Antagonist;Antagonist;8.1
+1111;exendin-4;GLP-1 receptor;Human;TRUE;Agonist;Full agonist;8.7 - 9.0
+1077;fenoldopam;D1 receptor;Human;TRUE;Agonist;Full agonist;6.5 - 7.9
+1102;fenoldopam;D4 receptor;Human;FALSE;Agonist;Full agonist;6.5
+414;fenoterol;beta2-adrenoceptor;Human;TRUE;Agonist;Agonist;6.9
+1133;fentanyl;delta receptor;Human;FALSE;Agonist;Full agonist;6.8
+1140;fentanyl;kappa receptor;Human;FALSE;Agonist;Partial agonist;7.1
+1150;fentanyl;mu receptor;Human;TRUE;Agonist;Full agonist;9.2
+786;fexofenadine;H1 receptor;Human;TRUE;Antagonist;Antagonist;7.6
+847;flibanserin;5-HT1A receptor;Human;TRUE;Agonist;Agonist;9.0
+910;flibanserin;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.3
+914;fluoxetine;5-HT2A receptor;Rat;FALSE;Antagonist;Antagonist;6.5
+922;fluoxetine;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;5.3
+937;fluoxetine;5-HT2C receptor;Rat;FALSE;Antagonist;Antagonist;7.3
+958;fluoxetine;5-HT6 receptor;Rat;FALSE;Antagonist;Antagonist;5.8
+434;flupentixol;D1 receptor;Human;TRUE;Antagonist;Antagonist;7.0 - 8.4
+444;flupentixol;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.8
+454;flupentixol;D3 receptor;Human;FALSE;Antagonist;Antagonist;9.0
+470;flupentixol;D5 receptor;Human;FALSE;Antagonist;Antagonist;8.1
+267;fluphenazine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;7.5
+299;fluphenazine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;7.3 - 7.4
+314;fluphenazine;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;7.9
+433;fluphenazine;D1 receptor;Human;FALSE;Antagonist;Antagonist;7.7
+441;fluphenazine;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.8
+469;fluphenazine;D5 receptor;Human;FALSE;Antagonist;Antagonist;7.9
+480;fluphenazine;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.7
+557;fluspirilene;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;7.2
+574;fluspirilene;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;6.0
+580;fluspirilene;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;5.6
+590;fluspirilene;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;8.0
+781;fluspirilene;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.9
+231;frovatriptan;5-HT1A receptor;Human;FALSE;Agonist;Agonist;7.2
+240;frovatriptan;5-HT1B receptor;Human;TRUE;Agonist;Agonist;8.0
+248;frovatriptan;5-HT1D receptor;Human;TRUE;Agonist;Agonist;8.4
+471;fulvestrant;GPER;Human;FALSE;Agonist;Full agonist;7.0
+326;gallamine;M2 receptor;Human;FALSE;Allosteric modulator;Negative;5.8 - 7.6
+180;glucagon;GLP-1 receptor;Human;FALSE;Agonist;Full agonist;6.9 - 7.0
+1035;guanfacine;alpha2A-adrenoceptor;Human;TRUE;Agonist;Partial agonist;7.1 - 7.3
+1040;guanfacine;alpha2B-adrenoceptor;Human;TRUE;Agonist;Full agonist;5.8 - 6.5
+1045;guanfacine;alpha2C-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.4 - 6.2
+558;haloperidol;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;5.7 - 5.8
+575;haloperidol;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;6.6
+591;haloperidol;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;6.7 - 7.3
+604;haloperidol;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;5.8 - 6.4
+638;haloperidol;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;6.3 - 6.6
+736;haloperidol;D1 receptor;Human;FALSE;Antagonist;Antagonist;7.6 - 8.2
+744;haloperidol;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.4 - 8.8
+757;haloperidol;D3 receptor;Human;TRUE;Antagonist;Antagonist;7.5 - 8.6
+767;haloperidol;D4 receptor;Human;TRUE;Antagonist;Antagonist;8.7 - 8.8
+775;haloperidol;D5 receptor;Human;FALSE;Antagonist;Antagonist;6.3
+782;haloperidol;H1 receptor;Human;FALSE;Antagonist;Antagonist;5.7 - 6.1
+208;hydrocodone;kappa receptor;Human;FALSE;Agonist;Agonist;6.6
+211;hydrocodone;mu receptor;Human;TRUE;Agonist;Agonist;8.7
+496;hydromorphone;delta receptor;Human;FALSE;Agonist;Agonist;7.4
+498;hydromorphone;kappa receptor;Human;FALSE;Agonist;Agonist;8.6
+502;hydromorphone;mu receptor;Human;TRUE;Agonist;Agonist;9.6
+484;hydroxyzine;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.7
+145;icatibant;B1 receptor;Human;FALSE;Antagonist;Antagonist;6.4 - 7.0
+147;icatibant;B2 receptor;Human;TRUE;Antagonist;Antagonist;10.2
+559;iloperidone;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;7.0
+626;iloperidone;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;7.2
+639;iloperidone;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;7.0
+806;iloprost;DP1 receptor;Human;FALSE;Agonist;Full agonist;6.0 - 6.6
+807;iloprost;EP1 receptor;Human;FALSE;Agonist;Full agonist;5.6 - 8.0
+810;iloprost;EP2 receptor;Human;FALSE;Agonist;Full agonist;5.7
+813;iloprost;EP3 receptor;Human;FALSE;Agonist;Full agonist;6.7 - 7.3
+816;iloprost;EP4 receptor;Human;FALSE;Agonist;Full agonist;4.6 - 6.7
+819;iloprost;FP receptor;Human;FALSE;Agonist;Full agonist;6.2
+821;iloprost;IP receptor;Human;TRUE;Agonist;Full agonist;7.5 - 8.0
+823;iloprost;TP receptor;Human;FALSE;Agonist;Full agonist;5.2
+72;imipramine;M2 receptor;Human;FALSE;Antagonist;Antagonist;6.9
+411;indacaterol;beta1-adrenoceptor;Human;FALSE;Agonist;Agonist;6.7
+415;indacaterol;beta2-adrenoceptor;Human;TRUE;Agonist;Agonist;7.8
+216;indomethacin;DP2 receptor;Human;FALSE;Agonist;Full agonist;6.1 - 7.7
+371;indoramin;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.4
+377;indoramin;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+384;indoramin;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.7
+66;ipratropium;M1 receptor;Human;FALSE;Antagonist;Antagonist;9.3
+71;ipratropium;M2 receptor;Human;FALSE;Antagonist;Antagonist;8.8
+77;ipratropium;M3 receptor;Human;TRUE;Antagonist;Antagonist;9.3 - 9.8
+81;ipratropium;M4 receptor;Human;FALSE;Antagonist;Antagonist;9.2
+85;ipratropium;M5 receptor;Human;FALSE;Antagonist;Antagonist;8.8
+412;isoprenaline;beta1-adrenoceptor;Human;TRUE;Agonist;Full agonist;6.6 - 7.0
+417;isoprenaline;beta2-adrenoceptor;Human;TRUE;Agonist;Full agonist;6.4
+422;isoprenaline;beta3-adrenoceptor;Human;FALSE;Agonist;Full agonist;5.1 - 6.2
+352;istradefylline;A1 receptor;Human;FALSE;Antagonist;Antagonist;6.1
+357;istradefylline;A2A receptor;Human;FALSE;Antagonist;Antagonist;7.0 - 7.9
+361;istradefylline;A2B receptor;Human;FALSE;Antagonist;Antagonist;5.0
+365;istradefylline;A3 receptor;Human;FALSE;Antagonist;Antagonist;5.3
+239;ketanserin;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;5.0
+247;ketanserin;5-HT1B receptor;Mouse;FALSE;Antagonist;Antagonist;8.3
+255;ketanserin;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;7.4 - 7.5
+266;ketanserin;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;8.1 - 9.7
+281;ketanserin;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;6.1 - 6.7
+286;ketanserin;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;6.8 - 7.5
+292;ketanserin;5-HT5A receptor;Human;FALSE;Antagonist;Antagonist;4.7
+306;ketanserin;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;5.9 - 6.5
+370;ketanserin;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.2
+376;ketanserin;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.2
+383;ketanserin;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.8
+432;ketanserin;D1 receptor;Human;FALSE;Antagonist;Antagonist;6.7
+468;ketanserin;D5 receptor;Human;FALSE;Antagonist;Antagonist;5.6
+188;ketotifen;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.6
+709;labetalol;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.6
+725;labetalol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.2
+729;labetalol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.0
+532;lanreotide;SST2 receptor;Human;TRUE;Agonist;Full agonist;8.7 - 9.6
+535;lanreotide;SST3 receptor;Human;FALSE;Agonist;Full agonist;7.2 - 8.0
+537;lanreotide;SST5 receptor;Human;TRUE;Agonist;Full agonist;7.4 - 9.3
+820;latanoprost (free acid form);FP receptor;Human;TRUE;Agonist;Full agonist;8.6
+527;latanoprost (isopropyl ester);FP receptor;Human;TRUE;Agonist;Full agonist;6.3
+818;latanoprostene bunod;FP receptor;Human;FALSE;Agonist;Agonist;8.6
+778;leuprolide;GnRH1 receptor;Human;TRUE;Agonist;Full agonist;8.5 - 9.1
+504;levallorphan;mu receptor;Human;TRUE;Antagonist;Antagonist;8.8 - 9.3
+726;levobetaxolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.1
+730;levobetaxolol;beta2-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.5
+128;levobunolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.4
+136;levobunolol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.3
+140;levobunolol;beta3-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.8
+795;levocabastine;NTS2 receptor;Human;FALSE;Agonist;Full agonist;6.8
+1059;levosalbutamol;beta2-adrenoceptor;Human;FALSE;Agonist;Partial agonist;5.3
+551;lisuride;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;9.7 - 9.8
+566;lisuride;5-HT1B receptor;Human;FALSE;Agonist;Partial agonist;7.7
+573;lisuride;5-HT1D receptor;Human;FALSE;Agonist;Partial agonist;9.0
+588;lisuride;5-HT2A receptor;Human;FALSE;Agonist;Partial agonist;8.6
+603;lisuride;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;8.9
+608;lisuride;5-HT2C receptor;Human;FALSE;Agonist;Partial agonist;7.9 - 8.3
+622;lisuride;5-HT6 receptor;Human;FALSE;Agonist;Partial agonist;8.0 - 8.1
+635;lisuride;5-HT7 receptor;Rat;FALSE;Agonist;Full agonist;8.2 - 9.3
+701;lisuride;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.3
+713;lisuride;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;10.3
+717;lisuride;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;9.9
+722;lisuride;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;9.9
+735;lisuride;D1 receptor;Human;FALSE;Agonist;Partial agonist;7.2
+740;lisuride;D2 receptor;Human;FALSE;Agonist;Partial agonist;9.2 - 9.5
+755;lisuride;D3 receptor;Human;FALSE;Agonist;Partial agonist;9.6
+765;lisuride;D4 receptor;Human;FALSE;Agonist;Partial agonist;8.3
+774;lisuride;D5 receptor;Human;FALSE;Agonist;Partial agonist;8.5
+1110;lixisenatide;GLP-1 receptor;Human;TRUE;Agonist;Agonist;8.9
+710;lofexidine;alpha2A-adrenoceptor;Human;FALSE;Agonist;Agonist;8.4
+714;lofexidine;alpha2B-adrenoceptor;Human;FALSE;Agonist;Agonist;7.2
+719;lofexidine;alpha2C-adrenoceptor;Human;FALSE;Agonist;Agonist;7.2
+212;loperamide;mu receptor;Human;TRUE;Agonist;Agonist;9.3
+1127;loratadine;H1 receptor;Human;TRUE;Antagonist;Antagonist;7.4
+1019;lorazepam;alpha1B-adrenoceptor;Rat;FALSE;Allosteric modulator;Positive;3.8
+586;lorcaserin;5-HT2A receptor;Human;FALSE;Agonist;Full agonist;6.8
+600;lorcaserin;5-HT2B receptor;Human;FALSE;Agonist;Full agonist;6.8
+606;lorcaserin;5-HT2C receptor;Human;FALSE;Agonist;Full agonist;7.8
+275;loxapine;5-HT2A receptor;Human;TRUE;Antagonist;Inverse agonist;8.1
+290;loxapine;5-HT2C receptor;Human;TRUE;Antagonist;Inverse agonist;7.8 - 8.0
+300;loxapine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;7.4 - 7.6
+311;loxapine;5-HT7 receptor;Rat;FALSE;Antagonist;Antagonist;6.8 - 7.4
+442;loxapine;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.9 - 8.3
+453;loxapine;D3 receptor;Human;TRUE;Antagonist;Antagonist;7.7
+462;loxapine;D4 receptor;Human;TRUE;Antagonist;Antagonist;8.1
+481;loxapine;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.2
+854;lurasidone;5-HT1A receptor;Rat;FALSE;Agonist;Partial agonist;8.2
+915;lurasidone;5-HT2A receptor;Rat;FALSE;Antagonist;Antagonist;8.7
+969;lurasidone;5-HT7 receptor;Human;TRUE;Antagonist;Antagonist;9.3
+1039;lurasidone;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+1049;lurasidone;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.0
+1094;lurasidone;D2 receptor;Rat;FALSE;Antagonist;Antagonist;8.8
+351;mefloquine;A1 receptor;Human;FALSE;Antagonist;Antagonist;6.2
+356;mefloquine;A2A receptor;Human;FALSE;Antagonist;Antagonist;7.0
+924;melatonin;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;5.2
+1129;melatonin;MT1 receptor;Human;TRUE;Agonist;Full agonist;9.1 - 9.7
+1130;melatonin;MT2 receptor;Human;TRUE;Agonist;Full agonist;9.4 - 9.8
+191;mepyramine;H1 receptor;Human;TRUE;Antagonist;Inverse agonist;8.7 - 9.0
+860;mesoridazine;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;7.0
+907;mesoridazine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;7.3
+933;mesoridazine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;6.4
+1079;mesoridazine;D1 receptor;Human;FALSE;Antagonist;Antagonist;7.0
+1089;mesoridazine;D2 receptor;Human;FALSE;Antagonist;Antagonist;8.7
+1099;mesoridazine;D3 receptor;Human;FALSE;Antagonist;Antagonist;7.6
+663;methacholine;M2 receptor;Rat;FALSE;Agonist;Agonist;7.2
+682;methacholine;M4 receptor;Rat;FALSE;Agonist;Agonist;5.8
+700;methoxamine;alpha1A-adrenoceptor;Human;TRUE;Agonist;Full agonist;5.0 - 5.2
+703;methoxamine;alpha1B-adrenoceptor;Human;FALSE;Agonist;Full agonist;4.0
+706;methoxamine;alpha1D-adrenoceptor;Human;FALSE;Agonist;Full agonist;4.9
+885;methylergonovine;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;7.0 - 7.2
+891;methylergonovine;5-HT1F receptor;Human;FALSE;Antagonist;Antagonist;7.5
+894;methylergonovine;5-HT2A receptor;Human;FALSE;Agonist;Full agonist;9.4
+918;methylergonovine;5-HT2B receptor;Human;FALSE;Agonist;Partial agonist;9.3
+928;methylergonovine;5-HT2C receptor;Human;FALSE;Agonist;Full agonist;8.3
+798;methylnaltrexone;delta receptor;Human;FALSE;Antagonist;Antagonist;6.1
+802;methylnaltrexone;kappa receptor;Human;FALSE;Antagonist;Antagonist;8.2
+805;methylnaltrexone;mu receptor;Human;TRUE;Antagonist;Antagonist;8.7
+6;methysergide;5-HT1B receptor;Human;FALSE;Antagonist;Antagonist;6.6 - 7.6
+11;methysergide;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;8.4 - 8.9
+14;methysergide;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;6.5 - 6.8
+17;methysergide;5-HT1F receptor;Human;FALSE;Antagonist;Antagonist;8.2
+23;methysergide;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;8.4
+29;methysergide;5-HT2B receptor;Human;TRUE;Agonist;Partial agonist;8.0 - 9.4
+39;methysergide;5-HT2C receptor;Human;TRUE;Antagonist;Antagonist;8.6 - 9.1
+45;methysergide;5-HT5A receptor;Human;FALSE;Antagonist;Antagonist;7.0
+53;methysergide;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;6.5 - 6.8
+59;methysergide;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;7.1 - 7.8
+44;metoclopramide;5-HT4 receptor;Mouse;TRUE;Agonist;Full agonist;6.0
+163;metoclopramide;D2 receptor;Mouse;TRUE;Antagonist;Antagonist;7.5
+127;metoprolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;7.0 - 7.6
+133;metoprolol;beta2-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.3
+870;mianserin;5-HT1B receptor;Mouse;FALSE;Antagonist;Antagonist;8.3
+904;mianserin;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.7 - 9.6
+921;mianserin;5-HT2B receptor;Human;TRUE;Antagonist;Antagonist;7.9 - 8.8
+940;mianserin;5-HT2C receptor;Human;TRUE;Antagonist;Inverse agonist;8.3 - 9.2
+950;mianserin;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;6.9 - 7.3
+966;mianserin;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;7.3 - 7.6
+1013;mianserin;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.6
+1021;mianserin;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+1030;mianserin;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.5
+704;midazolam;alpha1B-adrenoceptor;Rat;FALSE;Allosteric modulator;Positive;3.7
+832;midazolam;TRH1 receptor;Rat;FALSE;Antagonist;Antagonist;5.5
+908;mirtazapine;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.2
+934;mirtazapine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;7.4
+1038;mirtazapine;alpha2A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;7.7
+1048;mirtazapine;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.7
+1168;misoprostol (methyl ester);EP2 receptor;Human;FALSE;Agonist;Full agonist;5.0
+1172;misoprostol (methyl ester);EP3 receptor;Human;TRUE;Agonist;Full agonist;6.5
+1178;misoprostol (methyl ester);EP4 receptor;Human;FALSE;Agonist;Full agonist;5.3
+1128;mizolastine;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.6
+905;molindone;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;6.5
+1120;molindone;H1 receptor;Human;FALSE;Antagonist;Antagonist;5.7
+791;montelukast;CysLT1 receptor;Human;TRUE;Antagonist;Antagonist;8.6
+1134;morphine;delta receptor;Human;FALSE;Agonist;Full agonist;6.9
+1141;morphine;kappa receptor;Human;FALSE;Agonist;Partial agonist;7.3
+1151;morphine;mu receptor;Human;TRUE;Agonist;Full agonist;9.0
+941;mosapride;5-HT4 receptor;Human;FALSE;Agonist;Full agonist;6.2 - 6.9
+979;N-methyl scopolamine;M1 receptor;Human;TRUE;Antagonist;Antagonist;9.9
+992;N-methyl scopolamine;M3 receptor;Human;TRUE;Antagonist;Antagonist;10.4
+731;nabilone;CB1 receptor;Human;FALSE;Agonist;Agonist;8.4
+732;nabilone;CB2 receptor;Human;FALSE;Agonist;Agonist;8.2
+1054;nadolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.9
+1062;nadolol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;7.0 - 8.6
+1070;nadolol;beta3-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.3
+495;nalbuphine;delta receptor;Human;TRUE;Agonist;Agonist;6.2
+499;nalbuphine;kappa receptor;Human;TRUE;Agonist;Full agonist;7.4 - 7.5
+501;nalbuphine;mu receptor;Human;TRUE;Agonist;Agonist;8.8
+497;naldemedine;delta receptor;Human;FALSE;Antagonist;Antagonist;9.0
+505;naldemedine;mu receptor;Human;TRUE;Antagonist;Antagonist;8.9
+796;nalmefene;delta receptor;Human;FALSE;Agonist;Partial agonist;8.1
+800;nalmefene;kappa receptor;Human;TRUE;Antagonist;Antagonist;9.5
+803;nalmefene;mu receptor;Human;TRUE;Antagonist;Antagonist;9.5
+207;nalorphine;delta receptor;Human;FALSE;Agonist;Partial agonist;7.4
+210;nalorphine;kappa receptor;Human;FALSE;Agonist;Partial agonist;7.9 - 9.1
+215;nalorphine;mu receptor;Human;TRUE;Antagonist;Antagonist;8.9
+1135;naloxone;delta receptor;Human;TRUE;Antagonist;Antagonist;7.2
+1143;naloxone;kappa receptor;Human;TRUE;Antagonist;Antagonist;7.6 - 8.6
+1158;naloxone;mu receptor;Human;FALSE;Antagonist;Antagonist;8.9
+797;naltrexone;delta receptor;Human;TRUE;Antagonist;Antagonist;8.0
+801;naltrexone;kappa receptor;Human;TRUE;Antagonist;Antagonist;8.4 - 9.4
+804;naltrexone;mu receptor;Human;TRUE;Antagonist;Antagonist;9.1 - 9.7
+235;naratriptan;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;7.1 - 7.6
+245;naratriptan;5-HT1B receptor;Human;TRUE;Agonist;Partial agonist;8.1
+251;naratriptan;5-HT1D receptor;Human;TRUE;Agonist;Full agonist;8.4 - 9.0
+258;naratriptan;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;7.7
+261;naratriptan;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;8.2
+27;nefazodone;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;8.2
+1192;netupitant;NK1 receptor;Human;FALSE;Antagonist;Antagonist;9.0
+95;nicardipine;A3 receptor;Human;FALSE;Antagonist;Antagonist;5.5
+1011;noradrenaline;alpha1A-adrenoceptor;Human;FALSE;Agonist;Full agonist;5.8 - 6.4
+1018;noradrenaline;alpha1B-adrenoceptor;Human;FALSE;Agonist;Full agonist;6.2
+1025;noradrenaline;alpha1D-adrenoceptor;Human;FALSE;Agonist;Full agonist;7.4
+1034;noradrenaline;alpha2A-adrenoceptor;Human;FALSE;Agonist;Full agonist;5.6 - 7.4
+1041;noradrenaline;alpha2B-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.4 - 6.0
+1044;noradrenaline;alpha2C-adrenoceptor;Human;TRUE;Agonist;Full agonist;5.7 - 6.8
+1050;noradrenaline;beta1-adrenoceptor;Human;FALSE;Agonist;Agonist;5.5 - 6.0
+1057;noradrenaline;beta2-adrenoceptor;Human;FALSE;Agonist;Agonist;4.6 - 4.8
+1064;noradrenaline;beta3-adrenoceptor;Human;FALSE;Agonist;Full agonist;4.7 - 6.3
+824;octreotide;SST2 receptor;Human;FALSE;Agonist;Full agonist;8.7 - 9.9
+827;octreotide;SST3 receptor;Human;FALSE;Agonist;Full agonist;7.4 - 8.6
+829;octreotide;SST5 receptor;Human;FALSE;Agonist;Full agonist;7.2 - 9.5
+1;olanzapine;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;5.6 - 5.8
+3;olanzapine;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;6.3
+8;olanzapine;5-HT1D receptor;Human;FALSE;Agonist;Full agonist;6.2
+12;olanzapine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;5.7
+15;olanzapine;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;6.5
+22;olanzapine;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;8.6 - 8.9
+43;olanzapine;5-HT2C receptor;Human;TRUE;Antagonist;Inverse agonist;8.1 - 8.4
+56;olanzapine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;8.0
+58;olanzapine;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;6.5
+158;olanzapine;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.7
+183;olanzapine;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.7 - 9.2
+67;oxybutynin;M1 receptor;Human;TRUE;Antagonist;Antagonist;8.6
+73;oxybutynin;M2 receptor;Human;FALSE;Antagonist;Antagonist;7.7 - 8.1
+74;oxybutynin;M2 receptor;Human;FALSE;Antagonist;Inverse agonist;7.9
+78;oxybutynin;M3 receptor;Human;TRUE;Antagonist;Antagonist;8.8 - 8.9
+82;oxybutynin;M4 receptor;Human;FALSE;Antagonist;Antagonist;8.7
+86;oxybutynin;M5 receptor;Human;FALSE;Antagonist;Antagonist;7.9
+4;oxymetazoline;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;9.5
+10;oxymetazoline;5-HT1D receptor;Human;FALSE;Agonist;Partial agonist;9.4
+34;oxymetazoline;5-HT2C receptor;Human;FALSE;Agonist;Full agonist;6.3 - 6.8
+97;oxymetazoline;alpha1A-adrenoceptor;Human;TRUE;Agonist;Full agonist;8.0 - 8.2
+102;oxymetazoline;alpha1B-adrenoceptor;Human;FALSE;Agonist;Full agonist;6.5
+107;oxymetazoline;alpha1D-adrenoceptor;Human;FALSE;Agonist;Partial agonist;6.4
+112;oxymetazoline;alpha2A-adrenoceptor;Human;TRUE;Agonist;Partial agonist;8.0 - 8.6
+117;oxymetazoline;alpha2B-adrenoceptor;Human;FALSE;Agonist;Partial agonist;5.5 - 6.2
+122;oxymetazoline;alpha2C-adrenoceptor;Human;FALSE;Agonist;Partial agonist;6.7
+228;oxytocin;OT receptor;Human;TRUE;Agonist;Full agonist;8.2 - 9.6
+224;oxytocin;V1A receptor;Human;FALSE;Agonist;Full agonist;6.9 - 8.3
+226;oxytocin;V1B receptor;Human;FALSE;Agonist;Full agonist;5.7 - 7.0
+227;oxytocin;V2 receptor;Human;FALSE;Agonist;Full agonist;5.4 - 6.8
+206;pentazocine;delta receptor;Human;FALSE;Agonist;Full agonist;7.3
+209;pentazocine;kappa receptor;Human;FALSE;Agonist;Partial agonist;7.8 - 8.6
+214;pentazocine;mu receptor;Human;FALSE;Agonist;Partial agonist;8.4
+1008;pentoxifylline;A2B receptor;Human;FALSE;Antagonist;Antagonist;5.3
+237;pergolide;5-HT1A receptor;Human;FALSE;Agonist;Partial agonist;8.7
+244;pergolide;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;6.6
+254;pergolide;5-HT1D receptor;Human;FALSE;Agonist;Partial agonist;7.9
+264;pergolide;5-HT2A receptor;Human;FALSE;Agonist;Full agonist;8.1
+279;pergolide;5-HT2B receptor;Human;FALSE;Agonist;Full agonist;8.2
+284;pergolide;5-HT2C receptor;Human;FALSE;Agonist;Partial agonist;6.5
+294;pergolide;5-HT6 receptor;Rat;FALSE;Agonist;Full agonist;7.5
+305;pergolide;5-HT7 receptor;Rat;FALSE;Agonist;Full agonist;8.3 - 9.0
+390;pergolide;alpha2A-adrenoceptor;Human;FALSE;Agonist;Partial agonist;7.3
+396;pergolide;alpha2B-adrenoceptor;Human;FALSE;Agonist;Partial agonist;7.5
+404;pergolide;alpha2C-adrenoceptor;Human;FALSE;Agonist;Partial agonist;7.2
+429;pergolide;D1 receptor;Human;FALSE;Agonist;Full agonist;5.9 - 6.5
+436;pergolide;D2 receptor;Human;FALSE;Agonist;Full agonist;7.5 - 7.6
+450;pergolide;D3 receptor;Human;FALSE;Agonist;Partial agonist;8.3
+459;pergolide;D4 receptor;Human;FALSE;Agonist;Partial agonist;7.2
+465;pergolide;D5 receptor;Human;FALSE;Agonist;Full agonist;6.0 - 7.5
+1080;periciazine;D1 receptor;Human;FALSE;Antagonist;Antagonist;8.0
+598;perospirone;5-HT2A receptor;Rat;FALSE;Antagonist;Antagonist;4.7
+750;perospirone;D2 receptor;Human;TRUE;Antagonist;Antagonist;9.2
+762;perospirone;D3 receptor;Human;TRUE;Antagonist;Antagonist;9.6
+771;perospirone;D4 receptor;Human;TRUE;Antagonist;Antagonist;10.1
+594;perphenazine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;8.2
+610;perphenazine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;6.9
+631;perphenazine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;7.1
+648;perphenazine;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;7.2
+747;perphenazine;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.9 - 9.6
+785;perphenazine;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.1
+1161;PGE1;DP1 receptor;Human;FALSE;Agonist;Full agonist;7.3
+1163;PGE1;EP1 receptor;Human;TRUE;Agonist;Full agonist;6.8
+1167;PGE1;EP2 receptor;Human;FALSE;Agonist;Full agonist;8.0
+1174;PGE1;EP3 receptor;Mouse;FALSE;Agonist;Full agonist;9.0
+1175;PGE1;EP3 receptor;Rat;FALSE;Agonist;Full agonist;9.0
+1177;PGE1;EP4 receptor;Human;FALSE;Agonist;Full agonist;8.8
+1181;PGE1;IP receptor;Human;FALSE;Agonist;Full agonist;6.5 - 6.8
+511;PGE2;DP1 receptor;Human;FALSE;Agonist;Full agonist;6.5 - 7.0
+512;PGE2;DP2 receptor;Human;FALSE;Agonist;Full agonist;5.3
+514;PGE2;EP1 receptor;Human;FALSE;Agonist;Full agonist;7.3 - 8.0
+517;PGE2;EP2 receptor;Human;TRUE;Agonist;Full agonist;7.5 - 8.3
+520;PGE2;EP3 receptor;Human;FALSE;Agonist;Full agonist;9.5
+523;PGE2;EP4 receptor;Human;FALSE;Agonist;Full agonist;8.1 - 9.1
+526;PGE2;FP receptor;Human;FALSE;Agonist;Full agonist;6.4 - 6.9
+531;PGE2;TP receptor;Human;FALSE;Agonist;Full agonist;4.5
+218;PGI2;EP1 receptor;Human;TRUE;Agonist;Full agonist;4.8
+219;PGI2;EP4 receptor;Human;FALSE;Agonist;Full agonist;5.1
+220;PGI2;IP receptor;Human;FALSE;Agonist;Agonist;7.8
+120;phenoxybenzamine;alpha2B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.5
+1016;phentolamine;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.6
+1024;phentolamine;alpha1B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;7.5
+1033;phentolamine;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Inverse agonist;8.2
+1037;phentolamine;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.4
+1043;phentolamine;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.2
+1047;phentolamine;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.6 - 7.9
+1010;phenylephrine;alpha1A-adrenoceptor;Human;TRUE;Agonist;Full agonist;5.2 - 5.4
+1026;phenylephrine;alpha1D-adrenoceptor;Rat;FALSE;Agonist;Full agonist;5.9
+64;pilocarpine;M1 receptor;Human;FALSE;Agonist;Partial agonist;5.1
+70;pilocarpine;M2 receptor;Human;FALSE;Agonist;Partial agonist;4.9
+76;pilocarpine;M3 receptor;Human;TRUE;Agonist;Partial agonist;5.1
+80;pilocarpine;M4 receptor;Human;FALSE;Agonist;Partial agonist;5.2
+84;pilocarpine;M5 receptor;Human;FALSE;Agonist;Partial agonist;5.0
+599;pimavanserin;5-HT2A receptor;Human;TRUE;Antagonist;Inverse agonist;9.3
+855;pimozide;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;6.8
+901;pimozide;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.1 - 7.7
+955;pimozide;5-HT6 receptor;Rat;FALSE;Antagonist;Antagonist;7.2
+971;pimozide;5-HT7 receptor;Rat;FALSE;Antagonist;Antagonist;9.3
+1086;pimozide;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.0 - 8.8
+1096;pimozide;D3 receptor;Human;FALSE;Antagonist;Antagonist;7.0 - 8.6
+1117;pimozide;H1 receptor;Human;FALSE;Antagonist;Antagonist;6.2
+856;pindolol;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;8.1
+893;pindolol;5-HT2A receptor;Human;FALSE;Agonist;Full agonist;5.0
+902;pindolol;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;5.0
+917;pindolol;5-HT2B receptor;Human;FALSE;Agonist;Full agonist;5.7
+919;pindolol;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;5.7
+1051;pindolol;beta1-adrenoceptor;Human;TRUE;Agonist;Partial agonist;9.3
+1058;pindolol;beta2-adrenoceptor;Human;TRUE;Agonist;Partial agonist;9.4
+1090;pipotiazine;D2 receptor;Human;TRUE;Antagonist;Antagonist;9.7
+656;pirenzepine;M1 receptor;Human;TRUE;Antagonist;Antagonist;7.8 - 8.3
+667;pirenzepine;M2 receptor;Human;FALSE;Antagonist;Antagonist;6.0 - 6.7
+676;pirenzepine;M3 receptor;Human;FALSE;Antagonist;Antagonist;6.5 - 6.8
+685;pirenzepine;M4 receptor;Human;FALSE;Antagonist;Antagonist;7.0 - 7.6
+689;pirenzepine;M5 receptor;Human;FALSE;Antagonist;Antagonist;6.8 - 7.1
+189;pitolisant;H1 receptor;Human;FALSE;Antagonist;Antagonist;5.8
+193;pitolisant;H2 receptor;Human;FALSE;Antagonist;Antagonist;5.0
+195;pitolisant;H3 receptor;Human;TRUE;Antagonist;Antagonist;8.1 - 8.6
+196;pitolisant;H4 receptor;Human;FALSE;Antagonist;Antagonist;4.0
+560;pizotifen;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;7.4
+426;plerixafor;CXCR4;Human;FALSE;Antagonist;Antagonist;6.7
+427;plerixafor;CXCR4;Human;TRUE;Antagonist;Antagonist;7.0
+1055;practolol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.1 - 6.8
+1109;pralmorelin;ghrelin receptor;Rat;FALSE;Agonist;Full agonist;9.3
+155;pramipexole;D2 receptor;Human;TRUE;Agonist;Full agonist;5.1 - 7.4
+167;pramipexole;D3 receptor;Human;TRUE;Agonist;Full agonist;8.4 - 8.7
+792;pranlukast;CysLT1 receptor;Human;TRUE;Antagonist;Antagonist;7.1 - 8.8
+372;prazosin;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Inverse agonist;9.0 - 9.9
+378;prazosin;alpha1B-adrenoceptor;Human;TRUE;Antagonist;Inverse agonist;9.6 - 9.9
+386;prazosin;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Inverse agonist;9.5 - 10.2
+393;prazosin;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;5.3 - 6.5
+400;prazosin;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.4 - 7.5
+408;prazosin;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;6.7 - 8.0
+737;prochlorperazine;D1 receptor;Human;FALSE;Antagonist;Antagonist;7.1
+749;prochlorperazine;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.4
+761;prochlorperazine;D3 receptor;Human;TRUE;Antagonist;Antagonist;8.4
+770;prochlorperazine;D4 receptor;Human;FALSE;Antagonist;Antagonist;6.1
+445;promazine;D2 receptor;Human;TRUE;Antagonist;Antagonist;6.5
+455;promazine;D3 receptor;Human;TRUE;Antagonist;Antagonist;6.8
+788;promethazine;H1 receptor;Human;TRUE;Antagonist;Antagonist;9.6
+129;propafenone;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.7
+137;propafenone;beta2-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+982;propantheline;M1 receptor;Human;TRUE;Antagonist;Antagonist;9.7
+987;propantheline;M2 receptor;Human;TRUE;Antagonist;Antagonist;9.5
+995;propantheline;M3 receptor;Human;TRUE;Antagonist;Antagonist;10.0
+1000;propantheline;M4 receptor;Human;FALSE;Antagonist;Antagonist;10.2
+134;propranolol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.1 - 9.5
+139;propranolol;beta3-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.3 - 7.2
+615;prucalopride;5-HT4 receptor;Human;FALSE;Agonist;Partial agonist;7.0 - 8.6
+849;quetiapine;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;6.5 - 6.6
+873;quetiapine;5-HT1D receptor;Human;FALSE;Agonist;Full agonist;5.7
+879;quetiapine;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;5.9
+887;quetiapine;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;5.6
+892;quetiapine;5-HT2A receptor;Human;FALSE;Agonist;Full agonist;7.0
+899;quetiapine;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;6.4 - 7.0
+1084;quetiapine;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.2
+1115;quetiapine;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.0 - 8.7
+179;raloxifene;GPER;Human;FALSE;Agonist;Full agonist;7.0
+793;ramelteon;MT1 receptor;Human;TRUE;Agonist;Full agonist;10.9
+794;ramelteon;MT2 receptor;Human;TRUE;Agonist;Full agonist;10.0
+192;ranitidine;H2 receptor;Human;TRUE;Antagonist;Antagonist;7.1
+1005;regadenoson;A1 receptor;Human;FALSE;Agonist;Agonist;5.0
+1006;regadenoson;A2A receptor;Human;TRUE;Agonist;Agonist;6.5
+1007;regadenoson;A2B receptor;Human;FALSE;Agonist;Agonist;5.0
+1009;regadenoson;A3 receptor;Human;FALSE;Agonist;Agonist;5.0
+659;revefenacin;M1 receptor;Human;FALSE;Antagonist;Antagonist;9.4
+669;revefenacin;M2 receptor;Human;FALSE;Antagonist;Antagonist;9.5
+679;revefenacin;M3 receptor;Human;FALSE;Antagonist;Antagonist;9.8
+686;revefenacin;M4 receptor;Human;FALSE;Antagonist;Antagonist;9.3
+690;revefenacin;M5 receptor;Human;FALSE;Antagonist;Antagonist;8.2
+1075;rimonabant;CB1 receptor;Human;FALSE;Antagonist;Antagonist;7.9 - 8.7
+857;risperidone;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;6.4 - 6.5
+867;risperidone;5-HT1B receptor;Human;TRUE;Antagonist;Antagonist;6.6 - 7.3
+876;risperidone;5-HT1D receptor;Human;TRUE;Antagonist;Antagonist;7.8 - 8.0
+883;risperidone;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;5.9
+889;risperidone;5-HT1F receptor;Human;FALSE;Antagonist;Antagonist;5.9
+916;risperidone;5-HT2A receptor;Human;TRUE;Antagonist;Inverse agonist;9.3 - 10.0
+939;risperidone;5-HT2C receptor;Human;FALSE;Antagonist;Inverse agonist;7.5 - 7.6
+949;risperidone;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;5.6
+976;risperidone;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;8.3 - 8.7
+1012;risperidone;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.4
+1020;risperidone;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.0
+1029;risperidone;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.4
+1087;risperidone;D2 receptor;Human;TRUE;Antagonist;Antagonist;9.4
+1097;risperidone;D3 receptor;Human;FALSE;Antagonist;Antagonist;7.0
+1118;risperidone;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.6 - 7.8
+850;rizatriptan;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;6.4
+865;rizatriptan;5-HT1B receptor;Human;TRUE;Agonist;Partial agonist;6.9
+874;rizatriptan;5-HT1D receptor;Human;TRUE;Agonist;Full agonist;7.9
+880;rizatriptan;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;6.8
+888;rizatriptan;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;6.4 - 6.8
+540;rolapitant;NK1 receptor;Human;FALSE;Antagonist;Antagonist;9.2
+153;ropinirole;D2 receptor;Human;TRUE;Agonist;Agonist;8.1
+165;ropinirole;D3 receptor;Human;TRUE;Agonist;Agonist;7.7
+151;rotigotine;D1 receptor;Human;FALSE;Agonist;Full agonist;5.6
+152;rotigotine;D2 receptor;Human;TRUE;Agonist;Agonist;10.2
+164;rotigotine;D3 receptor;Human;FALSE;Agonist;Agonist;8.4
+171;rotigotine;D4 receptor;Human;FALSE;Agonist;Agonist;7.3
+177;rotigotine;D5 receptor;Human;FALSE;Agonist;Full agonist;6.0
+486;rupatadine;H1 receptor;Guinea pig;FALSE;Antagonist;Antagonist;7.0
+510;rupatadine;PAF receptor;Human;FALSE;Antagonist;Antagonist;5.4
+418;salbutamol;beta2-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.8 - 6.1
+906;sarpogrelate;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;8.5
+923;sarpogrelate;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;6.6
+932;sarpogrelate;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;7.4
+321;scopolamine;M1 receptor;Human;TRUE;Antagonist;Antagonist;9.0
+329;scopolamine;M2 receptor;Human;FALSE;Antagonist;Antagonist;8.7
+336;scopolamine;M3 receptor;Human;FALSE;Antagonist;Antagonist;9.4
+342;scopolamine;M4 receptor;Human;FALSE;Antagonist;Antagonist;9.5
+529;selexipag;IP receptor;Human;FALSE;Agonist;Agonist;6.6
+561;sertindole;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;6.4 - 6.6
+568;sertindole;5-HT1B receptor;Human;FALSE;Antagonist;Antagonist;7.0
+576;sertindole;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;7.2
+581;sertindole;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;6.4
+585;sertindole;5-HT1F receptor;Human;FALSE;Antagonist;Antagonist;6.4
+592;sertindole;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;9.2 - 9.4
+613;sertindole;5-HT2C receptor;Human;TRUE;Antagonist;Inverse agonist;9.0 - 9.2
+745;sertindole;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.0 - 8.9
+758;sertindole;D3 receptor;Human;TRUE;Antagonist;Antagonist;8.0 - 8.8
+768;sertindole;D4 receptor;Human;TRUE;Antagonist;Antagonist;7.8 - 9.1
+783;sertindole;H1 receptor;Human;FALSE;Antagonist;Antagonist;6.9
+1015;silodosin;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;10.4
+1023;silodosin;alpha1B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;7.7
+1032;silodosin;alpha1D-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.7
+323;solifenacin;M1 receptor;Human;FALSE;Antagonist;Antagonist;7.6
+332;solifenacin;M2 receptor;Human;FALSE;Antagonist;Antagonist;6.9 - 7.1
+339;solifenacin;M3 receptor;Human;FALSE;Antagonist;Antagonist;7.7 - 8.0
+344;solifenacin;M4 receptor;Human;FALSE;Antagonist;Antagonist;6.8
+348;solifenacin;M5 receptor;Human;FALSE;Antagonist;Antagonist;7.2
+472;sonidegib;SMO;Human;TRUE;Antagonist;Antagonist;8.2
+130;sotalol;beta1-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.1
+138;sotalol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.5
+1153;sufentanil;mu receptor;Human;TRUE;Agonist;Full agonist;9.9
+160;sulpiride;D2 receptor;Human;TRUE;Antagonist;Antagonist;6.3 - 8.0
+748;sulpiride;D2 receptor;Human;TRUE;Antagonist;Antagonist;7.2 - 7.9
+169;sulpiride;D3 receptor;Human;TRUE;Antagonist;Antagonist;6.7 - 7.7
+760;sulpiride;D3 receptor;Human;FALSE;Antagonist;Antagonist;6.8 - 7.8
+175;sulpiride;D4 receptor;Human;FALSE;Antagonist;Antagonist;5.7 - 7.7
+552;sumatriptan;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;6.0
+567;sumatriptan;5-HT1B receptor;Human;TRUE;Agonist;Partial agonist;6.5 - 8.1
+570;sumatriptan;5-HT1D receptor;Human;TRUE;Agonist;Full agonist;8.0 - 8.7
+578;sumatriptan;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;5.6 - 5.8
+583;sumatriptan;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;7.2 - 7.9
+619;sumatriptan;5-HT5A receptor;Human;FALSE;Agonist;Full agonist;5.3
+625;sumatriptan;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;5.6
+637;sumatriptan;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;5.7 - 6.0
+508;suramin;P2Y1 receptor;Human;FALSE;Antagonist;Antagonist;5.3
+506;suvorexant;OX1 receptor;Human;TRUE;Antagonist;Antagonist;8.7 - 9.3
+507;suvorexant;OX2 receptor;Human;TRUE;Antagonist;Antagonist;8.9 - 9.5
+178;tamoxifen;GPER;Human;FALSE;Agonist;Full agonist;6.0
+99;tamsulosin;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;10.0 - 10.7
+105;tamsulosin;alpha1B-adrenoceptor;Human;TRUE;Antagonist;Inverse agonist;9.5 - 9.7
+109;tamsulosin;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.8 - 10.2
+213;tapentadol;mu receptor;Human;TRUE;Agonist;Agonist;6.8
+203;tasimelteon;MT1 receptor;Human;TRUE;Agonist;Full agonist;9.5
+205;tasimelteon;MT2 receptor;Human;TRUE;Agonist;Full agonist;10.2
+925;tegaserod;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;8.4
+943;tegaserod;5-HT4 receptor;Human;FALSE;Agonist;Partial agonist;7.6 - 8.4
+101;terazosin;alpha1A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.7
+104;terazosin;alpha1B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.6
+111;terazosin;alpha1D-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.1
+131;terbutaline;beta2-adrenoceptor;Human;TRUE;Agonist;Partial agonist;5.6
+1124;terfenadine;H1 receptor;Human;TRUE;Antagonist;Antagonist;7.4
+2;terguride;5-HT1A receptor;Human;FALSE;Agonist;Partial agonist;8.5
+5;terguride;5-HT1B receptor;Human;FALSE;Agonist;Partial agonist;6.6
+9;terguride;5-HT1D receptor;Human;FALSE;Agonist;Partial agonist;7.8
+18;terguride;5-HT2A receptor;Human;FALSE;Agonist;Partial agonist;8.3
+32;terguride;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;8.2
+38;terguride;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;7.3
+98;terguride;alpha1A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.5
+115;terguride;alpha2A-adrenoceptor;Human;FALSE;Antagonist;Antagonist;9.5
+119;terguride;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;9.4
+124;terguride;alpha2C-adrenoceptor;Human;FALSE;Antagonist;Antagonist;9.1
+157;terguride;D2 receptor;Human;FALSE;Agonist;Partial agonist;9.1
+159;terguride;D2 receptor;Human;FALSE;Antagonist;Antagonist;8.9
+168;terguride;D3 receptor;Human;FALSE;Agonist;Partial agonist;9.0
+174;terguride;D4 receptor;Human;FALSE;Antagonist;Antagonist;8.1
+88;theophylline;A1 receptor;Human;FALSE;Antagonist;Antagonist;4.9 - 5.2
+90;theophylline;A2A receptor;Human;TRUE;Antagonist;Antagonist;5.2 - 5.8
+92;theophylline;A2B receptor;Human;TRUE;Antagonist;Antagonist;4.1 - 5.0
+94;theophylline;A3 receptor;Human;FALSE;Antagonist;Antagonist;4.1 - 4.7
+858;thioridazine;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;7.1
+903;thioridazine;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.4 - 8.0
+931;thioridazine;5-HT2C receptor;Human;TRUE;Antagonist;Antagonist;7.2 - 7.3
+960;thioridazine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;7.2
+977;thioridazine;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;7.1
+1078;thioridazine;D1 receptor;Human;FALSE;Antagonist;Antagonist;7.0
+1105;thioridazine;D5 receptor;Human;FALSE;Antagonist;Antagonist;5.6
+1119;thioridazine;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.7
+26;thiothixene;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.3
+184;thiothixene;H1 receptor;Human;FALSE;Antagonist;Antagonist;8.4
+509;ticagrelor;P2Y12 receptor;Human;TRUE;Antagonist;Antagonist;7.8 - 8.7
+135;timolol;beta2-adrenoceptor;Human;TRUE;Antagonist;Antagonist;9.7
+657;tiotropium;M1 receptor;Human;FALSE;Antagonist;Antagonist;9.6
+668;tiotropium;M2 receptor;Human;FALSE;Antagonist;Antagonist;9.9
+678;tiotropium;M3 receptor;Human;TRUE;Antagonist;Antagonist;9.5 - 11.1
+394;tolazoline;alpha2A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;6.7
+401;tolazoline;alpha2B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;5.5
+409;tolazoline;alpha2C-adrenoceptor;Human;TRUE;Antagonist;Antagonist;5.4
+68;tolterodine;M1 receptor;Human;FALSE;Antagonist;Antagonist;8.5 - 8.7
+75;tolterodine;M2 receptor;Human;FALSE;Antagonist;Inverse agonist;8.4 - 8.6
+79;tolterodine;M3 receptor;Human;FALSE;Antagonist;Antagonist;8.4 - 8.5
+83;tolterodine;M4 receptor;Human;FALSE;Antagonist;Antagonist;8.3 - 8.4
+87;tolterodine;M5 receptor;Human;FALSE;Antagonist;Antagonist;8.5 - 8.8
+542;tolvaptan;V1A receptor;Human;FALSE;Antagonist;Antagonist;7.9
+546;tolvaptan;V2 receptor;Human;TRUE;Antagonist;Antagonist;9.4
+547;tolvaptan;V2 receptor;Human;FALSE;Antagonist;Antagonist;9.4
+1132;tramadol;delta receptor;Human;FALSE;Agonist;Agonist;8.0
+1139;tramadol;kappa receptor;Human;FALSE;Agonist;Agonist;7.8
+1148;tramadol;mu receptor;Human;FALSE;Agonist;Agonist;5.8
+595;trazodone;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;7.4
+605;trazodone;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;7.1
+611;trazodone;5-HT2C receptor;Human;TRUE;Antagonist;Antagonist;6.6
+1162;treprostinil;DP1 receptor;Human;FALSE;Agonist;Full agonist;8.4
+1164;treprostinil;EP1 receptor;Human;FALSE;Agonist;Full agonist;6.7
+1169;treprostinil;EP2 receptor;Human;FALSE;Agonist;Full agonist;8.4
+1173;treprostinil;EP3 receptor;Human;FALSE;Agonist;Full agonist;5.6
+1176;treprostinil;EP4 receptor;Human;FALSE;Agonist;Agonist;6.1
+1182;treprostinil;IP receptor;Human;TRUE;Agonist;Full agonist;7.5
+221;TRH;TRH1 receptor;Rat;TRUE;Agonist;Full agonist;7.4
+230;TRH;TRH2 receptor;Rat;FALSE;Agonist;Full agonist;7.4
+268;trifluoperazine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;7.9
+287;trifluoperazine;5-HT2C receptor;Human;FALSE;Antagonist;Antagonist;6.4
+443;trifluoperazine;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.9 - 9.0
+463;trifluoperazine;D4 receptor;Human;FALSE;Antagonist;Antagonist;7.4
+482;trifluoperazine;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.2
+658;trihexyphenidyl;M1 receptor;Human;TRUE;Antagonist;Antagonist;8.9
+1123;triprolidine;H1 receptor;Human;TRUE;Antagonist;Antagonist;8.5 - 9.0
+474;triptorelin;GnRH1 receptor;Human;FALSE;Agonist;Full agonist;9.3 - 9.5
+337;tropicamide;M3 receptor;Human;TRUE;Antagonist;Antagonist;7.5
+616;tropisetron;5-HT4 receptor;Human;FALSE;Antagonist;Antagonist;6.3 - 7.1
+322;umeclidinium;M1 receptor;Human;FALSE;Antagonist;Antagonist;9.8
+331;umeclidinium;M2 receptor;Human;FALSE;Antagonist;Antagonist;9.8
+338;umeclidinium;M3 receptor;Human;FALSE;Antagonist;Antagonist;10.2
+343;umeclidinium;M4 receptor;Human;FALSE;Antagonist;Antagonist;10.3
+347;umeclidinium;M5 receptor;Human;FALSE;Antagonist;Antagonist;9.9
+1185;vapreotide;SST2 receptor;Human;TRUE;Agonist;Full agonist;8.3 - 10.1
+1188;vapreotide;SST3 receptor;Human;TRUE;Agonist;Full agonist;7.4 - 7.9
+1190;vapreotide;SST5 receptor;Human;TRUE;Agonist;Full agonist;7.3 - 9.2
+846;vasopressin;OT receptor;Human;FALSE;Agonist;Partial agonist;7.3 - 9.3
+834;vasopressin;V1A receptor;Human;TRUE;Agonist;Full agonist;8.5 - 9.3
+838;vasopressin;V1B receptor;Human;TRUE;Agonist;Full agonist;9.0 - 9.5
+842;vasopressin;V2 receptor;Human;TRUE;Agonist;Full agonist;7.9 - 9.1
+556;vilazodone;5-HT1A receptor;Human;TRUE;Agonist;Partial agonist;9.7
+777;vismodegib;SMO;Human;TRUE;Antagonist;Antagonist;7.8
+1184;vorapaxar;PAR1;Human;TRUE;Antagonist;Antagonist;8.1
+853;vortioxetine;5-HT1A receptor;Human;TRUE;Agonist;Partial agonist;7.8
+866;vortioxetine;5-HT1B receptor;Human;TRUE;Agonist;Partial agonist;7.5
+909;vortioxetine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;6.7
+947;vortioxetine;5-HT5A receptor;Human;FALSE;Antagonist;Antagonist;6.7
+953;vortioxetine;5-HT6 receptor;Human;FALSE;Antagonist;Antagonist;6.5
+968;vortioxetine;5-HT7 receptor;Human;TRUE;Antagonist;Antagonist;6.3
+1028;xylometazoline;alpha1D-adrenoceptor;Rat;FALSE;Agonist;Full agonist;6.0
+859;yohimbine;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;7.3
+868;yohimbine;5-HT1B receptor;Human;FALSE;Antagonist;Antagonist;6.8 - 7.6
+877;yohimbine;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;7.2 - 7.7
+884;yohimbine;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;5.9
+890;yohimbine;5-HT1F receptor;Human;FALSE;Antagonist;Antagonist;7.0
+920;yohimbine;5-HT2B receptor;Human;FALSE;Antagonist;Antagonist;7.4 - 7.9
+946;yohimbine;5-HT5A receptor;Human;FALSE;Antagonist;Antagonist;5.3
+965;yohimbine;5-HT7 receptor;Human;FALSE;Antagonist;Antagonist;5.6
+1036;yohimbine;alpha2A-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.4 - 9.2
+1042;yohimbine;alpha2B-adrenoceptor;Human;TRUE;Antagonist;Antagonist;7.9 - 8.9
+1046;yohimbine;alpha2C-adrenoceptor;Human;TRUE;Antagonist;Antagonist;8.5 - 9.5
+197;zafirlukast;CysLT1 receptor;Human;TRUE;Antagonist;Antagonist;8.9
+852;ziprasidone;5-HT1A receptor;Human;FALSE;Agonist;Partial agonist;7.9 - 8.9
+864;ziprasidone;5-HT1B receptor;Human;FALSE;Agonist;Full agonist;8.3
+875;ziprasidone;5-HT1D receptor;Human;FALSE;Agonist;Full agonist;9.0
+881;ziprasidone;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;6.4
+900;ziprasidone;5-HT2A receptor;Human;TRUE;Antagonist;Antagonist;8.8 - 9.5
+938;ziprasidone;5-HT2C receptor;Human;TRUE;Antagonist;Inverse agonist;7.9 - 9.0
+975;ziprasidone;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;8.4
+1085;ziprasidone;D2 receptor;Human;TRUE;Antagonist;Antagonist;8.6
+1116;ziprasidone;H1 receptor;Human;FALSE;Antagonist;Antagonist;7.4 - 7.8
+236;zolmitriptan;5-HT1A receptor;Human;FALSE;Agonist;Full agonist;6.6
+246;zolmitriptan;5-HT1B receptor;Human;TRUE;Agonist;Partial agonist;7.7
+252;zolmitriptan;5-HT1D receptor;Human;TRUE;Agonist;Full agonist;8.9
+259;zolmitriptan;5-ht1e receptor;Human;FALSE;Agonist;Full agonist;7.7
+262;zolmitriptan;5-HT1F receptor;Human;FALSE;Agonist;Full agonist;7.4 - 7.5
+562;zotepine;5-HT1A receptor;Human;FALSE;Antagonist;Antagonist;6.5
+569;zotepine;5-HT1B receptor;Human;FALSE;Antagonist;Antagonist;7.2
+577;zotepine;5-HT1D receptor;Human;FALSE;Antagonist;Antagonist;9.3
+582;zotepine;5-ht1e receptor;Human;FALSE;Antagonist;Antagonist;6.5
+593;zotepine;5-HT2A receptor;Human;FALSE;Antagonist;Antagonist;8.6
+614;zotepine;5-HT2C receptor;Human;FALSE;Antagonist;Inverse agonist;8.6
+630;zotepine;5-HT6 receptor;Human;FALSE;Antagonist;Inverse agonist;8.3
+647;zotepine;5-HT7 receptor;Human;FALSE;Antagonist;Inverse agonist;8.4
+718;zotepine;alpha2B-adrenoceptor;Human;FALSE;Antagonist;Antagonist;8.2
+746;zotepine;D2 receptor;Human;FALSE;Antagonist;Antagonist;8.0
+759;zotepine;D3 receptor;Human;FALSE;Antagonist;Antagonist;8.2
+769;zotepine;D4 receptor;Human;FALSE;Antagonist;Antagonist;7.4
+784;zotepine;H1 receptor;Human;FALSE;Antagonist;Antagonist;9.2
