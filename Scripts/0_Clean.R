@@ -113,3 +113,21 @@ save(HCP_df, file = "RDA/HCP_df.RDA")
 PZ_df <- ICSR_df %>%
   filter(`Reporter Type` == "Consumer")
 save(PZ_df, file = "RDA/PZ_df.RDA")
+
+# Pharmacodynamics Database ---------------------------------------------------
+CHEMBL_Mechanisms <- read_delim("Chembl/CHEMBL_Mechanisms.csv", 
+                                ";", escape_double = FALSE, trim_ws = TRUE)
+Chembl_pKi <- read_delim("Chembl/Chembl_pKi.csv", 
+                         ";", escape_double = FALSE, trim_ws = TRUE)
+Chembl_pKi <- Chembl_pKi %>%
+  select(Molecule, pKi,Target)
+CHEMBL_Mechanisms <- CHEMBL_Mechanisms %>%
+  select(Molecule = ID, `Molecule Name`, Target, Mechanism)
+Chembl <- left_join(Chembl_pKi,CHEMBL_Mechanisms, by = c("Molecule","Target"))
+Chembl <- Chembl %>%
+  filter(is.na(`Molecule Name`)==FALSE) %>%
+  filter(is.na(Mechanism)==FALSE)
+Chembl$`Molecule Name` <- tolower(Chembl$`Molecule Name`)
+Chembl$Mechanism <- tolower(Chembl$Mechanism)
+write_csv2(Chembl, "CHEMBL.csv")
+
