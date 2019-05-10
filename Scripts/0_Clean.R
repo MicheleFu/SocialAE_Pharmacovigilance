@@ -115,6 +115,7 @@ PZ_df <- ICSR_df %>%
 save(PZ_df, file = "RDA/PZ_df.RDA")
 
 # Pharmacodynamics Database ---------------------------------------------------
+# CHEMBL
 CHEMBL_Mechanisms <- read_delim("Chembl/CHEMBL_Mechanisms.csv", 
                                 ";", escape_double = FALSE, trim_ws = TRUE)
 Chembl_pKi <- read_delim("Chembl/Chembl_pKi.csv", 
@@ -130,4 +131,6 @@ Chembl <- Chembl %>%
 Chembl$`Molecule Name` <- tolower(Chembl$`Molecule Name`)
 Chembl$Mechanism <- tolower(Chembl$Mechanism)
 write_csv2(Chembl, "CHEMBL.csv")
+
+# DrugBank
 
