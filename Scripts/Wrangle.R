@@ -1,5 +1,5 @@
 # Introduction ----------------------------------------------------------------
-# This code execute a DA using ROR + CI 95%.
+# This code execute a DA using ROR with CI 95%.
 # It prints a heatmap with the results.
 # Fusaroli Michele, 2019, SDR of Social ADR.
 
@@ -89,3 +89,81 @@ Wrangle <- function(df, D) {
 
 ROR_df <- Wrangle(ICSR_df,D_list)
 save(ROR_df, file = "Rda/ROR_df.Rda")
+
+# Heatmap ---------------------------------------------------------------------
+Create_Matrix <- function(df, index) {
+  m <- matrix(ncol = length(AE_list), nrow = length(D_list))
+  rownames(m) <- D_list
+  colnames(m) <- AE_list
+  for (e in AE_list) {
+    x <- subset(df, AE == e)
+    for (d in D_list){
+      print(d)
+      if (!is.na(x$ROR_m[x$Drug_Code == d])) {
+        if(x$ROR_m[x$Drug_Code == d] > 1) {
+          m[d,e] = x[[index]][x$Drug_Code == d]
+        }
+      }
+    }
+  }
+  onlyNAcolumns_idx <- m %>%
+    is.na() %>%
+    apply(MARGIN = 2, FUN = all)
+  m <- m[,!onlyNAcolumns_idx]
+  m <- m[rowSums(is.na(m)) != ncol(m), ]
+  m <- m %>%
+    as.data.frame()
+  m <- setNames(cbind(rownames(m), m, row.names = NULL), c("Code",colnames(m)))
+  m <- m %>%
+    left_join(ATC, by = "Code") %>%
+    select(Code, "Substance", everything()) %>%
+    unite(Drug, c(Code, "Substance"), sep = ": ")
+  return(m)
+}
+
+Print_Heatmap <- function(df) {
+  Heatmatrix <- Create_Matrix(df,"ROR")
+  Code_member <- substr(Heatmatrix$Drug, start = 1, stop = 4)
+  Heatmatrix <- Heatmatrix %>%
+    remove_rownames() %>%
+    column_to_rownames(var = "Drug") %>%
+    as.matrix()
+  IC_matrix <- Create_Matrix(df, "IC")
+  IC_matrix <- IC_matrix %>%
+    remove_rownames() %>%
+    column_to_rownames(var = "Drug") %>%
+    as.matrix()
+  IC_matrix[is.na(IC_matrix)] <- ""
+  Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
+  Heatmatrix[Heatmatrix[,] > 100] <- 100
+  l <- paste("Hm_",deparse(substitute((df))),".png", sep = "")
+  png(l, height = 15000, width = 8000)
+  superheat(Heatmatrix,
+            heat.pal = c("white", "red", "#b35806","#542788"),
+            heat.pal.values = c(0, 0.1, 0.5, 1),
+            heat.col.scheme = "red",
+            heat.lim = c(1,100),
+            bottom.label.text.angle = 90,
+            bottom.label.text.size = 10,
+            bottom.label.size = 0.1,
+            force.left.label = TRUE,
+            left.label.text.size = 4,
+            left.label.size = 0.4,
+            force.grid.hline = TRUE,
+            grid.hline.col = "gray",
+            grid.vline.col = "gray",
+            heat.na.col= "white",
+            X.text = IC_matrix,
+            X.text.size = 3,
+            left.label.text.alignment = "right",
+            pretty.order.rows = FALSE,
+            membership.rows = Code_member,
+            left.label = "variable",
+            row.title = "Substance",
+            row.title.size = 6,
+            column.title = "Adverse Event",
+            column.title.size = 6)
+  dev.off()
+}
+
+Print_Heatmap(ROR_df)
