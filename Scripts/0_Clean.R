@@ -133,4 +133,3 @@ Chembl$Mechanism <- tolower(Chembl$Mechanism)
 write_csv2(Chembl, "CHEMBL.csv")
 
 # DrugBank
-
