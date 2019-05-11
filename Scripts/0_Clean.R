@@ -116,20 +116,42 @@ save(PZ_df, file = "RDA/PZ_df.RDA")
 
 # Pharmacodynamics Database ---------------------------------------------------
 # CHEMBL
-CHEMBL_Mechanisms <- read_delim("Chembl/CHEMBL_Mechanisms.csv", 
+CHEMBL_Mechanisms <- read_delim("Ki Databases/Chembl/Mechanisms.csv", 
                                 ";", escape_double = FALSE, trim_ws = TRUE)
-Chembl_pKi <- read_delim("Chembl/Chembl_pKi.csv", 
+Chembl_pKi <- read_delim("Ki Databases/Chembl/pKi.csv", 
                          ";", escape_double = FALSE, trim_ws = TRUE)
 Chembl_pKi <- Chembl_pKi %>%
-  select(Molecule, pKi,Target)
+  select(Molecule, pCHEMBL = `pChEMBL Value`,Target = `Target Pref. Name`)
 CHEMBL_Mechanisms <- CHEMBL_Mechanisms %>%
-  select(Molecule = ID, `Molecule Name`, Target, Mechanism)
+  select(Molecule = `Molecule ChEMBL ID`, `Molecule Name`, Target =`Target Name`, Mechanism = `Mechanism Type`)
 Chembl <- left_join(Chembl_pKi,CHEMBL_Mechanisms, by = c("Molecule","Target"))
 Chembl <- Chembl %>%
   filter(is.na(`Molecule Name`)==FALSE) %>%
   filter(is.na(Mechanism)==FALSE)
 Chembl$`Molecule Name` <- tolower(Chembl$`Molecule Name`)
 Chembl$Mechanism <- tolower(Chembl$Mechanism)
-write_csv2(Chembl, "CHEMBL.csv")
+write_csv2(Chembl, "Ki Databases/Cleaned/CHEMBL.csv")
 
-# DrugBank
+# PDSP
+PDSP <- KiDatabase <- read_delim("Ki Databases/PDSP/KiDatabase.csv", 
+                                 ",", escape_double = FALSE, trim_ws = TRUE)
+PDSP <- PDSP %>%
+  select(Target = Name, Molecule = `Ligand Name`, species, Ki = `ki Val`) %>%
+  filter(species == "HUMAN") %>%
+  select(-species)
+PDSP$Molecule <- tolower(PDSP$Molecule)
+PDSP <- PDSP %>%
+  mutate(pCHEMBL = -log10(Ki/1000000000))
+write_csv2(PDSP, "Ki Databases/Cleaned/PDSP.csv")
+
+#Guidetopharmacology
+GtP <- read_csv("Ki Databases/Guidetopharmacology/interactions.csv")
+GtP <- GtP %>%
+  select(Target = target, species = `target_species`, Molecule =ligand,
+         action, affinity_high, affinity_median, affinity_low) %>%
+  filter(species == "Human") %>%
+  select(-species) %>% 
+  unite(affinity_high, affinity_median, affinity_low, col=pCHEMBL, sep = ";") %>%
+  separate_rows(pCHEMBL)
+write_csv2(GtP, "Ki Databases/Cleaned/GtP.csv")
+
