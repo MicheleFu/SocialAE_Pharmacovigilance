@@ -167,3 +167,17 @@ Print_Heatmap <- function(df) {
 }
 
 Print_Heatmap(ROR_df)
+
+# HCP-PZ ROR ------------------------------------------------------------------
+HCP_ROR_df <- Wrangle(HCP_df,D_list) %>%
+  mutate(Reporter_Type = "HCP")
+PZ_ROR_df <- Wrangle(PZ_df,D_list) %>%
+  mutate(Reporter_Type = "PZ")
+HCP_PZ_ROR_df <- rbind(HCP_ROR_df,PZ_ROR_df) %>%
+  arrange(Drug_Code, AE)
+save(HCP_PZ_ROR_df, file = "Rda/HCP_PZ_ROR_df.Rda")
+
+HCP <- filter(HCP_PZ_ROR_df, HCP_PZ_ROR_df$Reporter_Type == "HCP")
+Print_Heatmap(HCP)
+PZ <- filter(HCP_PZ_ROR_df, HCP_PZ_ROR_df$Reporter_Type == "PZ")
+Print_Heatmap(PZ)
