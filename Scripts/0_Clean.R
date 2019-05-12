@@ -171,4 +171,12 @@ GtP <- GtP %>%
 write_csv2(GtP, "Ki Databases/Cleaned/GtP.csv")
 
 # Merge databases in pKi
-
+pKi <- pKi %>%
+  mutate(pCHEMBL =pCHEMBL/100)
+pKi <- pKi %>%
+  filter(Action != "none")
+write_csv2(pKi, "pKi.csv")
+pKi <- pKi %>%
+  group_by(Molecule, Target) %>%
+  summarize(ATC = first(ATC), Action = first(Action), pCHEMBL = exp(mean(log(pCHEMBL))))
+write_csv2(pKi, "pKi_mean.csv")
