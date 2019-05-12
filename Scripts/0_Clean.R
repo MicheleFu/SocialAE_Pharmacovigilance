@@ -123,13 +123,19 @@ Chembl_pKi <- read_delim("Ki Databases/Chembl/pKi.csv",
 Chembl_pKi <- Chembl_pKi %>%
   select(Molecule, pCHEMBL = `pChEMBL Value`,Target = `Target Pref. Name`)
 CHEMBL_Mechanisms <- CHEMBL_Mechanisms %>%
-  select(Molecule = `Molecule ChEMBL ID`, `Molecule Name`, Target =`Target Name`, Mechanism = `Mechanism Type`)
+  select(Molecule = `Molecule ChEMBL ID`, `Molecule Name`,
+         `ATC Classifications`, Target =`Target Name`, Mechanism = `Mechanism Type`) %>%
+  mutate(`ATC Classifications` = sub(".*level5': '", "",`ATC Classifications`)) %>%
+  mutate(`ATC Classifications` = sub("',.*", "",`ATC Classifications`))
 Chembl <- left_join(Chembl_pKi,CHEMBL_Mechanisms, by = c("Molecule","Target"))
 Chembl <- Chembl %>%
   filter(is.na(`Molecule Name`)==FALSE) %>%
   filter(is.na(Mechanism)==FALSE)
 Chembl$`Molecule Name` <- tolower(Chembl$`Molecule Name`)
 Chembl$Mechanism <- tolower(Chembl$Mechanism)
+Chembl <- Chembl %>%
+  select(Molecule = `Molecule Name`, ATC = `ATC Classifications`, Target, Action = Mechanism, pCHEMBL)
+Chembl$Target <- tolower(Chembl$Target)
 write_csv2(Chembl, "Ki Databases/Cleaned/CHEMBL.csv")
 
 # PDSP
@@ -142,16 +148,27 @@ PDSP <- PDSP %>%
 PDSP$Molecule <- tolower(PDSP$Molecule)
 PDSP <- PDSP %>%
   mutate(pCHEMBL = -log10(Ki/1000000000))
+PDSP$Target <- tolower(PDSP$Target)
 write_csv2(PDSP, "Ki Databases/Cleaned/PDSP.csv")
 
 #Guidetopharmacology
 GtP <- read_csv("Ki Databases/Guidetopharmacology/interactions.csv")
 GtP <- GtP %>%
   select(Target = target, species = `target_species`, Molecule =ligand,
-         action, affinity_high, affinity_median, affinity_low) %>%
+         Action = action, affinity_high, affinity_median, affinity_low) %>%
   filter(species == "Human") %>%
   select(-species) %>% 
   unite(affinity_high, affinity_median, affinity_low, col=pCHEMBL, sep = ";") %>%
   separate_rows(pCHEMBL)
+GtP$Molecule <- tolower(GtP$Molecule)
+GtP$Target <- tolower(GtP$Target)
+GtP$Action <- tolower(GtP$Action)
+GtP$ATC <- NA
+GtP <- GtP %>%
+  select(Molecule, ATC, Target, Action, pCHEMBL)
+GtP <- GtP %>%
+  filter(pCHEMBL != "NA")
 write_csv2(GtP, "Ki Databases/Cleaned/GtP.csv")
+
+# Merge databases in pKi
 
