@@ -138,19 +138,6 @@ Chembl <- Chembl %>%
 Chembl$Target <- tolower(Chembl$Target)
 write_csv2(Chembl, "Ki Databases/Cleaned/CHEMBL.csv")
 
-# PDSP
-PDSP <- KiDatabase <- read_delim("Ki Databases/PDSP/KiDatabase.csv", 
-                                 ",", escape_double = FALSE, trim_ws = TRUE)
-PDSP <- PDSP %>%
-  select(Target = Name, Molecule = `Ligand Name`, species, Ki = `ki Val`) %>%
-  filter(species == "HUMAN") %>%
-  select(-species)
-PDSP$Molecule <- tolower(PDSP$Molecule)
-PDSP <- PDSP %>%
-  mutate(pCHEMBL = -log10(Ki/1000000000))
-PDSP$Target <- tolower(PDSP$Target)
-write_csv2(PDSP, "Ki Databases/Cleaned/PDSP.csv")
-
 #Guidetopharmacology
 GtP <- read_csv("Ki Databases/Guidetopharmacology/interactions.csv")
 GtP <- GtP %>%
