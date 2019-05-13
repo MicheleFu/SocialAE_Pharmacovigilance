@@ -63,8 +63,6 @@ Wrangle <- function(df, D) {
         IC <- NA
         s <- NA
         if (F_EA>=3) {
-          nF_nEA <- t["nF","nEA"]
-          nF_EA <- t["nF","EA"]
           ROR <- F_EA * nF_nEA / nF_EA / F_nEA
           s <- sqrt(1/F_EA + 1/F_nEA + 1/nF_EA + 1/nF_nEA)
           ROR_m <- exp(log(ROR) - 1.96*s)
