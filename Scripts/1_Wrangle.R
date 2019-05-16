@@ -185,11 +185,12 @@ Print_Heatmap(PZ)
 pKi <- read_delim("pKi_mean.csv", ";", escape_double = FALSE, trim_ws = TRUE) %>%
   mutate(pCHEMBL = pCHEMBL/1000000)
 Targets_list <- as.list(unique(pKi$`Target`))
+Action_list <- as.list(c("agonist", "antagonist", "partial agonist"))
 ROR_df <- ROR_df %>%
   mutate(Drug_Family = substr(ROR_df$Drug_Code, start = 1, stop = 4))
 LRM_df <- as.data.frame(matrix(nrow=0, ncol=7))
 colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value")
-pdf("LRM.pdf")
+pdf("LRM_2plots.pdf")
 for (e in AE_list){
   x <- subset(ROR_df, ROR_df$AE == e)
   x <- subset(x, is.na(x$ROR) == FALSE)
@@ -199,7 +200,7 @@ for (e in AE_list){
       rename(Drug_Name = `Molecule`)
     z1 <- left_join(x,y, by ="Drug_Name")
     z1 <- subset(z1, is.na(z1$pCHEMBL) == FALSE)
-    for (m in c("agonist", "antagonist", "partial agonist")){
+    for (m in Action_list){
       z <- subset(z1, z1$Action == m)
       if (dim(z)[1] >= 4){
         Intercept <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[1],2)
@@ -207,20 +208,30 @@ for (e in AE_list){
         SE <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[4],2)
         p_value <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[8],6)
         LRM_df[nrow(LRM_df)+1,] <- c(e, t, m, Intercept, Slope, SE, p_value)
-        if (p_value <= 0.1){
-          print(ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
-                  geom_smooth(method ="lm") +
-                  geom_point(mapping =  aes(color = z$Drug_Family)) +
-                  labs(title = paste(e," ~ ", t, "[",m,"]"), subtitle = paste("Intercept: ",
-                                                                              Intercept,
-                                                                              "     Slope: ",
-                                                                              Slope,
-                                                                              "     SE: ",
-                                                                              SE,
-                                                                              "     p-value: ",
-                                                                              p_value)) +
-                  xlab(t) +
-                  ylab("ROR"))
+        if (p_value <= 1){
+          plot1 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
+            geom_smooth(method ="lm") +
+            geom_point(aes(color = z$Drug_Family)) +
+            xlab("pCHEMBL") +
+            ylab("ROR")
+          title <- ggdraw() + draw_label(paste(e," ~ ", t, "[",m,"]"), fontface = "bold")
+          results <- ggdraw() + draw_label(paste("Intercept: ", Intercept,
+                           "     Slope: ", Slope,
+                           "     SE: ", SE,
+                           "     p-value: ", p_value))
+          plot2 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
+            geom_smooth(aes(color = Drug_Family), method ="lm") +
+            geom_point(aes(color = Drug_Family)) +
+            xlab("pCHEMBL") +
+            ylab(NULL)
+          legenda <- get_legend(plot2)
+          p <- plot_grid(plot_grid(plot1 + theme(legend.position = "none"),
+                                   plot2 + theme(legend.position = "none"),
+                                   labels = "AUTO",
+                                   rel_widths = c(1,1), align = "h"),
+                          legenda,
+                          rel_widths = c(2,.3))
+          print(plot_grid(title, p, results, ncol=1, rel_heights=c(0.1, 1, 0.1)))
         }
       }
     }
@@ -228,12 +239,12 @@ for (e in AE_list){
 }
 dev.off()
 
-#LRM_df <- LRM_df %>%
-#  arrange(p_value) %>%
-#  mutate(Rank = rank(p_value))
-#LRM_df <- LRM_df %>%
-#  mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
-#  mutate(Sign20 = (p_value <= BH20))
+LRM_df <- LRM_df %>%
+  arrange(p_value) %>%
+  mutate(Rank = rank(p_value))
+LRM_df <- LRM_df %>%
+  mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
+  mutate(Sign20 = (p_value <= BH20))
 write_csv2(LRM_df, "LRM_csv/LRM.csv")
 
 pKi <- read_delim("pKi_mean.csv", ";", escape_double = FALSE, trim_ws = TRUE) %>%
