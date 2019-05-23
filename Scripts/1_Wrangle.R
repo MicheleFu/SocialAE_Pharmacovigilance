@@ -5,6 +5,7 @@
 
 # Libraries Needed ------------------------------------------------------------
 library(tidyverse)
+library(cowplot)
 library(superheat)
 library(RColorBrewer)
 
@@ -190,7 +191,7 @@ ROR_df <- ROR_df %>%
   mutate(Drug_Family = substr(ROR_df$Drug_Code, start = 1, stop = 4))
 LRM_df <- as.data.frame(matrix(nrow=0, ncol=7))
 colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value")
-pdf("LRM_2plots.pdf")
+pdf("LRM_2plots_brain.pdf")
 for (e in AE_list){
   x <- subset(ROR_df, ROR_df$AE == e)
   x <- subset(x, is.na(x$ROR) == FALSE)
@@ -245,7 +246,7 @@ LRM_df <- LRM_df %>%
 LRM_df <- LRM_df %>%
   mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
   mutate(Sign20 = (p_value <= BH20))
-write_csv2(LRM_df, "LRM_csv/LRM.csv")
+write_csv2(LRM_df, "LRM_csv/LRM_Brain.csv")
 
 pKi <- read_delim("pKi_mean.csv", ";", escape_double = FALSE, trim_ws = TRUE) %>%
   mutate(pCHEMBL = pCHEMBL/1000000)
