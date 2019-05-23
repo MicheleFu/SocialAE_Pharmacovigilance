@@ -18,3 +18,6 @@ Method:
 * With the data from ROR_df.Rda a matrix was printed, with drugs as rows (gathered in drug families by ATC code) and events as column, and with the specific ROR in every cell. Every cell was then coloured using a gradient from white (ROR = 0 or not available), to red (ROR = 10), to brown(ROR = 50), to violet (ROR = 100 or above). The heatmap thus built has been saved as *HM_(ROR_df).png*
 * The passages above were conducted also for HCP and Consumer (PZ) reports separated.
 * For each combination of event, target and action a linear regression model was produced, if possible, for the entire database, and only lrm with p-value less then 0.1 were reported (*LRM.pdf*). The same process was conducted on some of the individual drug families (antiParkinson [LRMA_N04.pdf], antiPsychotic [LRMA_N05A.pdf]). Slope, intercept and p-value were reported inside the *LRM_csv* folder. The *LRM_2plots.pdf* shows side by side the linear model with all the drugs and the linear models of individual drug families with at least two points in the plot.
+*LRM_2plots_brain.pdf* and *LRM_brain_csv* are built from data coming also from the PDSP database, but many contradictions in the action were found. Contradictions will have to be dealt with.
+
+
