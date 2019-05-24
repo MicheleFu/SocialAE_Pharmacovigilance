@@ -185,6 +185,8 @@ Print_Heatmap(PZ)
 
 pKi <- read_delim("pKi_mean.csv", ";", escape_double = FALSE, trim_ws = TRUE) %>%
   mutate(pCHEMBL = pCHEMBL/1000000)
+pBrain <- read_delim("Brain_pKi.csv", 
+                     ";", escape_double = FALSE, trim_ws = TRUE)
 Targets_list <- as.list(unique(pKi$`Target`))
 Action_list <- as.list(c("agonist", "antagonist", "partial agonist"))
 ROR_df <- ROR_df %>%

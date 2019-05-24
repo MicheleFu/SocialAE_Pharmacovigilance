@@ -5,8 +5,9 @@ Repository for MD thesis on the use of PharmacoVigilance-Pharmacodynamic approac
 The repository contains:
 - Data preprocessing script
 - Data analysis script
+- Results as HeatMaps showing RORs, pdf with linear regression models and LRM_csv with all the data from LRM and eventually the Benjamini-Hochberg correction.
 
-N.B. the actual data is not shared to avoid redistribution rights issues.
+N.B. the actual data processed is not shared to avoid redistribution rights issues.
 
 Materials and preprocessing:
 * *FAERS ID/*: 1 xlsx with all the observations for each Adverse Event considered (42 events [AE_list.Rda]). All the observations were merged, and duplicates were removed (175590 raw ICSR), and then the resulting ICSR_df.Rda was filtered for higher quality data (only ICSR with known reporter type and sex: 151612 ICSR [56898 HCP + 94714 Consumer])
