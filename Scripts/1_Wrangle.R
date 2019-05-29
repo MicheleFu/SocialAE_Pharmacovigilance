@@ -183,7 +183,7 @@ Print_Heatmap(PZ)
 
 # LRM -------------------------------------------------------------------------
 
-PhD <- read_delim("Universe.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+PhD <- read_delim("PhD.csv", ";", escape_double = FALSE, trim_ws = TRUE)
 PhD$pCHEMBL <- PhD$pCHEMBL/1000000
 LRM <- function(df, PhD_df){
   Targets_list <- as.list(unique(PhD_df$`Target`))
@@ -246,7 +246,7 @@ LRM <- function(df, PhD_df){
   LRM_df <- LRM_df %>%
     mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
     mutate(Sign20 = (p_value <= BH20))
-  write_csv2(LRM_df, "LRM_csv/LRM.csv")
+  write_csv2(LRM_df, "LRM.csv")
 }
 
 LRM(ROR_df, PhD)
