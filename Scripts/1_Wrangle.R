@@ -183,128 +183,71 @@ Print_Heatmap(PZ)
 
 # LRM -------------------------------------------------------------------------
 
-pKi <- read_delim("pKi_mean.csv", ";", escape_double = FALSE, trim_ws = TRUE) %>%
-  mutate(pCHEMBL = pCHEMBL/1000000)
-pBrain <- read_delim("Brain_pKi.csv", 
-                     ";", escape_double = FALSE, trim_ws = TRUE)
-Targets_list <- as.list(unique(pKi$`Target`))
-Action_list <- as.list(c("agonist", "antagonist", "partial agonist"))
-ROR_df <- ROR_df %>%
-  mutate(Drug_Family = substr(ROR_df$Drug_Code, start = 1, stop = 4))
-LRM_df <- as.data.frame(matrix(nrow=0, ncol=7))
-colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value")
-pdf("LRM_2plots_brain.pdf")
-for (e in AE_list){
-  x <- subset(ROR_df, ROR_df$AE == e)
-  x <- subset(x, is.na(x$ROR) == FALSE)
-  x <- subset(x, is.infinite(x$ROR) == FALSE)
-  for (t in Targets_list) {
-    y <- subset(pKi, `Target` == t) %>%
-      rename(Drug_Name = `Molecule`)
-    z1 <- left_join(x,y, by ="Drug_Name")
-    z1 <- subset(z1, is.na(z1$pCHEMBL) == FALSE)
-    for (m in Action_list){
-      z <- subset(z1, z1$Action == m)
-      if (dim(z)[1] >= 4){
-        Intercept <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[1],2)
-        Slope <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[2],2)
-        SE <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[4],2)
-        p_value <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[8],6)
-        LRM_df[nrow(LRM_df)+1,] <- c(e, t, m, Intercept, Slope, SE, p_value)
-        if (p_value <= 1){
-          plot1 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
-            geom_smooth(method ="lm") +
-            geom_point(aes(color = z$Drug_Family)) +
-            xlab("pCHEMBL") +
-            ylab("ROR")
-          title <- ggdraw() + draw_label(paste(e," ~ ", t, "[",m,"]"), fontface = "bold")
-          results <- ggdraw() + draw_label(paste("Intercept: ", Intercept,
-                           "     Slope: ", Slope,
-                           "     SE: ", SE,
-                           "     p-value: ", p_value))
-          plot2 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
-            geom_smooth(aes(color = Drug_Family), method ="lm") +
-            geom_point(aes(color = Drug_Family)) +
-            xlab("pCHEMBL") +
-            ylab(NULL)
-          legenda <- get_legend(plot2)
-          p <- plot_grid(plot_grid(plot1 + theme(legend.position = "none"),
-                                   plot2 + theme(legend.position = "none"),
-                                   labels = "AUTO",
-                                   rel_widths = c(1,1), align = "h"),
-                          legenda,
-                          rel_widths = c(2,.3))
-          print(plot_grid(title, p, results, ncol=1, rel_heights=c(0.1, 1, 0.1)))
+PhD <- read_delim("Universe.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+PhD$pCHEMBL <- PhD$pCHEMBL/1000000
+LRM <- function(df, PhD_df){
+  Targets_list <- as.list(unique(PhD_df$`Target`))
+  Action_list <- as.list(unique(PhD_df$Action))
+  df <- df %>%
+    mutate(Drug_Family = substr(df$Drug_Code, start = 1, stop = 4))
+  LRM_df <- as.data.frame(matrix(nrow=0, ncol=7))
+  colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value")
+  pdf("LRM.pdf")
+  for (e in AE_list){
+    x <- subset(df, df$AE == e)
+    x <- subset(x, is.na(x$ROR) == FALSE)
+    x <- subset(x, is.infinite(x$ROR) == FALSE)
+    for (t in Targets_list) {
+      y <- subset(PhD_df, `Target` == t) %>%
+        rename(Drug_Name = Substance)
+      z1 <- left_join(x,y, by ="Drug_Name")
+      z1 <- subset(z1, is.na(z1$pCHEMBL) == FALSE)
+      for (m in Action_list){
+        z <- subset(z1, z1$Action == m)
+        if (dim(z)[1] >= 4){
+          Intercept <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[1],2)
+          Slope <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[2],2)
+          SE <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[4],2)
+          p_value <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[8],6)
+          LRM_df[nrow(LRM_df)+1,] <- c(e, t, m, Intercept, Slope, SE, p_value)
+          if (p_value <= 1){
+            plot1 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
+              geom_smooth(method ="lm") +
+              geom_point(aes(color = z$Drug_Family)) +
+              xlab("pCHEMBL") +
+              ylab("ROR")
+            title <- ggdraw() + draw_label(paste(e," ~ ", t, "[",m,"]"), fontface = "bold")
+            results <- ggdraw() + draw_label(paste("Intercept: ", Intercept,
+                                                   "     Slope: ", Slope,
+                                                   "     SE: ", SE,
+                                                   "     p-value: ", p_value))
+            plot2 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
+              geom_smooth(aes(color = Drug_Family), method ="lm") +
+              geom_point(aes(color = Drug_Family)) +
+              xlab("pCHEMBL") +
+              ylab(NULL)
+            legenda <- get_legend(plot2)
+            p <- plot_grid(plot_grid(plot1 + theme(legend.position = "none"),
+                                     plot2 + theme(legend.position = "none"),
+                                     labels = "AUTO",
+                                     rel_widths = c(1,1), align = "h"),
+                           legenda,
+                           rel_widths = c(2,.3))
+            print(plot_grid(title, p, results, ncol=1, rel_heights=c(0.1, 1, 0.1)))
+          }
         }
       }
     }
   }
-}
-dev.off()
-
-LRM_df <- LRM_df %>%
-  arrange(p_value) %>%
-  mutate(Rank = rank(p_value))
-LRM_df <- LRM_df %>%
-  mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
-  mutate(Sign20 = (p_value <= BH20))
-write_csv2(LRM_df, "LRM_csv/LRM_Brain.csv")
-
-pKi <- read_delim("pKi_mean.csv", ";", escape_double = FALSE, trim_ws = TRUE) %>%
-  mutate(pCHEMBL = pCHEMBL/1000000)
-Targets_list <- as.list(unique(pKi$`Target`))
-Action_list <- as.list(c("agonist", "antagonist", "partial agonist"))
-ROR_df <- ROR_df %>%
-  mutate(Drug_Family = substr(ROR_df$Drug_Code, start = 1, stop = 4))
-
-LRM <- function(DrugFam){
-LRM_df <- as.data.frame(matrix(nrow=0, ncol=7))
-colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value")
-df <- subset(ROR_df, Drug_Family == DrugFam)
-l <- paste("LRMA_",DrugFam,".pdf")
-pdf(l)
-for (e in AE_list){
-  x <- subset(df, df$AE == e)
-  x <- subset(x, is.na(x$ROR) == FALSE)
-  x <- subset(x, is.infinite(x$ROR) == FALSE)
-  for (t in Targets_list) {
-    y <- subset(pKi, `Target` == t) %>%
-      rename(Drug_Name = `Molecule`)
-    z1 <- left_join(x,y, by ="Drug_Name")
-    z1 <- subset(z1, is.na(z1$pCHEMBL) == FALSE)
-    for (m in c("agonist", "antagonist", "partial agonist")){
-      z <- subset(z1, z1$Action == m)
-      if (dim(z)[1] >= 3){
-        Intercept <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[1],2)
-        Slope <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[2],2)
-        SE <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[4],2)
-        p_value <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[8],6)
-        LRM_df[nrow(LRM_df)+1,] <- c(e, t, m, Intercept, Slope, SE, p_value)
-        print(ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
-                  geom_smooth(method ="lm") +
-                  geom_point(mapping =  aes(color = z$Drug_Family)) +
-                  labs(title = paste(e," ~ ", t, "[",m,"]"), subtitle = paste("Intercept: ",
-                                                                              Intercept,
-                                                                              "     Slope: ",
-                                                                              Slope,
-                                                                              "     SE: ",
-                                                                              SE,
-                                                                              "     p-value: ",
-                                                                              p_value)) +
-                  xlab(t) +
-                  ylab("ROR"))
-      }
-    }
-  }
-}
-dev.off()
-return(LRM_df)
+  dev.off()
+  LRM_df <- LRM_df %>%
+    arrange(p_value) %>%
+    mutate(Rank = rank(p_value))
+  LRM_df <- LRM_df %>%
+    mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
+    mutate(Sign20 = (p_value <= BH20))
+  write_csv2(LRM_df, "LRM_csv/LRM.csv")
 }
 
-LRM_Parkinson <- LRM("N04")
-write_csv2(LRM_Parkinson, "LRM_csv/LRM_Parkinson.csv")
-LRM_Schizophrenia <- LRM("N05A")
-write_csv2(LRM_Schizophrenia, "LRM_csv/LRM_Schizophrenia.csv")
-
-
+LRM(ROR_df, PhD)
 
