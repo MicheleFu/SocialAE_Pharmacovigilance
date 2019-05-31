@@ -181,6 +181,25 @@ Print_Heatmap(HCP)
 PZ <- filter(HCP_PZ_ROR_df, HCP_PZ_ROR_df$Reporter_Type == "PZ")
 Print_Heatmap(PZ)
 
+# Boxplots --------------------------------------------------------------------
+
+pdf("Boxplots.pdf")
+for (i in AE_list){
+  x <- ROR_df %>%
+    filter(AE == i) %>%
+    filter(ROR_m > 1) %>%
+    mutate(r = rank(ROR)) %>%
+    filter(r <= 20) %>% 
+    mutate(Drug_Family = substr(Drug_Code, start = 1, stop = 4))
+  print(ggplot(data=x) +
+          geom_boxplot(mapping=aes(x=reorder(Drug_Name, -ROR), middle = ROR, lower = ROR_m, ymin=ROR_m, upper = ROR_M, ymax=ROR_M, color = Drug_Family), stat = "identity") +
+          labs(title    = i) +
+            xlab("Drug") +
+            geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 3, colour = "red", fill="white") +
+            coord_flip())
+  }
+dev.off()
+
 # LRM -------------------------------------------------------------------------
 
 PhD <- read_delim("PhD.csv", ";", escape_double = FALSE, trim_ws = TRUE)
