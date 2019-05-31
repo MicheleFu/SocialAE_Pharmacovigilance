@@ -192,10 +192,10 @@ for (i in AE_list){
     filter(r <= 20) %>% 
     mutate(Drug_Family = substr(Drug_Code, start = 1, stop = 4))
   print(ggplot(data=x) +
-          geom_boxplot(mapping=aes(x=reorder(Drug_Name, -ROR), middle = ROR, lower = ROR_m, ymin=ROR_m, upper = ROR_M, ymax=ROR_M, color = Drug_Family), stat = "identity") +
+          geom_boxplot(mapping=aes(x=reorder(Drug_Name, -ROR), middle = ROR, lower = ROR_m, ymin=ROR_m, upper = ROR_M, ymax=ROR_M, fill = Drug_Family), stat = "identity") +
           labs(title    = i) +
             xlab("Drug") +
-            geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 3, colour = "red", fill="white") +
+            geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 1, colour = "red", fill="white") +
             coord_flip())
   }
 dev.off()
