@@ -19,7 +19,7 @@ alvimopan;Kappa opioid receptor;Antagonist; 7,000000
 alvimopan;Mu opioid receptor;Antagonist; 9,330000
 amisulpride;Dopamine D2 receptor;Antagonist; 8,211480
 amitriptyline;Histamine H1 receptor;Antagonist; 9,079859
-amitriptyline;Muscarinic M1 receptor;Antagonist; 7,873536
+amitriptyline;Muscarinic M1 receptor;Antagonist; 7,873535
 amitriptyline;Muscarinic M2 receptor;Antagonist; 7,929059
 amitriptyline;Muscarinic M3 receptor;Antagonist; 7,727181
 amitriptyline;Muscarinic M4 receptor;Antagonist; 8,141334
@@ -42,7 +42,7 @@ apomorphine;Serotonin 5-HT2 receptor;Antagonist; 6,843910
 apraclonidine;Adrenergic Alpha2 receptor;Agonist; 7,994998
 arformoterol;Adrenergic Beta1 receptor;Agonist; 6,500000
 arformoterol;Adrenergic Beta2 receptor;Agonist; 8,590000
-aripiprazole;Dopamine D2 receptor;Partial Agonist; 8,856693
+aripiprazole;Dopamine D2 receptor;Partial Agonist; 8,856694
 aripiprazole;Histamine H1 receptor;Antagonist; 7,485407
 aripiprazole;Serotonin 5-HT1 receptor;Partial Agonist; 7,264363
 aripiprazole;Serotonin 5-HT2 receptor;Partial Agonist; 7,914422
@@ -67,7 +67,7 @@ atropine;Muscarinic M2 receptor;Antagonist; 8,471127
 atropine;Muscarinic M3 receptor;Antagonist; 9,339165
 atropine;Muscarinic M4 receptor;Antagonist; 9,091205
 atropine;Muscarinic M5 receptor;Antagonist; 9,497895
-azapirone family;Dopamine D2 receptor;Antagonist; 9,220924
+azapirone family;Dopamine D2 receptor;Antagonist; 9,220925
 azapirone family;Dopamine D3 receptor;Antagonist; 9,550000
 azapirone family;Dopamine D4 receptor;Antagonist;10,047878
 azelastine;Histamine H1 receptor;Antagonist; 8,900000
@@ -92,7 +92,7 @@ biperiden;Muscarinic M4 receptor;Antagonist; 8,620000
 biperiden;Muscarinic M5 receptor;Antagonist; 8,200000
 blonanserin;Dopamine D2 receptor;Antagonist; 9,850000
 blonanserin;Serotonin 5-HT2 receptor;Antagonist; 9,090000
-brexpiprazole;Dopamine D2 receptor;Partial Agonist; 9,521439
+brexpiprazole;Dopamine D2 receptor;Partial Agonist; 9,521440
 brimonidine;Adrenergic Alpha2 receptor;Partial Agonist; 7,078132
 bromocriptine;Adrenergic Alpha2 receptor;Antagonist; 7,675275
 bromocriptine;Dopamine D1 receptor;Partial Agonist; 6,177521
@@ -104,14 +104,14 @@ bromocriptine;Serotonin 5-HT1 receptor;Partial Agonist; 7,595389
 bromocriptine;Serotonin 5-HT2 receptor;Partial Agonist; 6,801098
 bromocriptine;Serotonin 5-HT6 receptor;Agonist; 7,490737
 budesonide;Glucocorticoid receptor;Agonist; 8,393397
-budesonide;Progesterone receptor;Agonist; 7,347278
+budesonide;Progesterone receptor;Agonist; 7,347279
 buprenorphine;Kappa opioid receptor;Antagonist; 9,330722
 buprenorphine;Mu opioid receptor;Partial Agonist; 9,023918
 bupropion;Dopamine transporter;Antagonist; 6,083898
-bupropion;Norepinephrine transporter;Antagonist; 5,568885
+bupropion;Norepinephrine transporter;Antagonist; 5,568886
 buspirone;Serotonin 5-HT1 receptor;Partial Agonist; 7,087433
 butorphanol;Kappa opioid receptor;Partial Agonist; 9,787909
-butorphanol;Mu opioid receptor;Partial Agonist; 9,920409
+butorphanol;Mu opioid receptor;Partial Agonist; 9,920410
 cabergoline;Adrenergic Alpha1 receptor;Antagonist; 6,754054
 cabergoline;Adrenergic Alpha2 receptor;Antagonist; 7,560958
 cabergoline;Dopamine D1 receptor;Agonist; 6,684983
@@ -123,7 +123,7 @@ cabergoline;Serotonin 5-HT1 receptor;Partial Agonist; 7,322227
 cabergoline;Serotonin 5-HT2 receptor;Agonist; 7,674707
 cannabinoids;Cannabinoid CB1 receptor;Partial Agonist; 6,244998
 carbachol;Muscarinic M1 receptor;Agonist; 5,641015
-carbachol;Muscarinic M2 receptor;Agonist; 5,837329
+carbachol;Muscarinic M2 receptor;Agonist; 5,837328
 carbachol;Muscarinic M3 receptor;Agonist; 5,101863
 carbachol;Muscarinic M4 receptor;Agonist; 5,614852
 carbachol;Muscarinic M5 receptor;Agonist; 6,402812
@@ -177,7 +177,7 @@ clozapine;Serotonin 5-HT7 receptor;Inverse Agonist; 7,515449
 cocaine;Serotonin 5-HT3 receptor;Antagonist; 5,226645
 codeine;Mu opioid receptor;Agonist; 6,487671
 colchicine;Glycine receptor;Antagonist; 3,834058
-conivaptan;Vasopressin V1 receptor;Antagonist; 8,299398
+conivaptan;Vasopressin V1 receptor;Antagonist; 8,299397
 conivaptan;Vasopressin V2 receptor;Antagonist; 9,440000
 corbadrine;Adrenergic Alpha1 receptor;Agonist; 5,600000
 cortisone;Glucocorticoid receptor;Agonist; 5,577410
@@ -276,7 +276,7 @@ ethinylestradiol;Estrogen Alpha receptor;Agonist; 8,654983
 ethinylestradiol;Estrogen Beta receptor;Agonist; 8,090000
 fenoldopam;Dopamine D1 receptor;Agonist; 7,361711
 fenoldopam;Dopamine D4 receptor;Agonist; 6,500000
-fenoterol;Adrenergic Beta2 receptor;Agonist; 6,510650
+fenoterol;Adrenergic Beta2 receptor;Agonist; 6,510651
 fentanyl;Delta opioid receptor;Agonist; 6,800000
 fentanyl;Kappa opioid receptor;Partial Agonist; 7,100000
 fentanyl;Mu opioid receptor;Agonist; 9,200000
@@ -288,7 +288,7 @@ flumazenil;GABA A receptor;Partial Agonist; 8,582693
 flunisolide;Glucocorticoid receptor;Agonist; 8,501718
 flunitrazepam;GABA A receptor;Agonist; 7,820867
 fluocinolone acetonide;Glucocorticoid receptor;Agonist; 8,615101
-fluocinonide;Glucocorticoid receptor;Agonist; 8,391817
+fluocinonide;Glucocorticoid receptor;Agonist; 8,391816
 fluorometholone;Glucocorticoid receptor;Agonist; 8,685175
 fluostigmine;Acetylcholinesterase;Antagonist; 5,610848
 fluoxetine;Serotonin 5-HT2 receptor;Antagonist; 6,080746
@@ -313,7 +313,7 @@ fluticasone;Glucocorticoid receptor;Agonist; 9,420579
 fluticasone;Progesterone receptor;Agonist; 7,680000
 fluvoxamine;Serotonin transporter;Antagonist; 8,418930
 formoterol;Adrenergic Beta2 receptor;Agonist; 7,685384
-frovatriptan;Serotonin 5-HT1 receptor;Agonist; 7,842059
+frovatriptan;Serotonin 5-HT1 receptor;Agonist; 7,842058
 fulvestrant;Estrogen Alpha receptor;Antagonist; 8,980000
 fulvestrant;Estrogen Beta receptor;Antagonist; 8,860000
 galantamine;Acetylcholinesterase;Antagonist; 5,965819
@@ -355,10 +355,10 @@ indacaterol;Adrenergic Beta1 receptor;Agonist; 7,415274
 indacaterol;Adrenergic Beta2 receptor;Agonist; 7,964820
 ipratropium bromide;Muscarinic M1 receptor;Antagonist; 9,304901
 ipratropium bromide;Muscarinic M2 receptor;Antagonist; 8,811946
-ipratropium bromide;Muscarinic M3 receptor;Antagonist; 9,461197
+ipratropium bromide;Muscarinic M3 receptor;Antagonist; 9,461198
 ipratropium bromide;Muscarinic M4 receptor;Antagonist; 9,190223
 ipratropium bromide;Muscarinic M5 receptor;Antagonist; 8,784762
-ivermectin;Glycine receptor;Irreversible Agonist; 6,400000
+ivermectin;Glycine receptor;Irreversible agonist; 6,400000
 ivermectin;Nicotinic receptor;Agonist; 5,100000
 jwh-018;Cannabinoid CB1 receptor;Agonist; 8,000000
 jwh-018;Cannabinoid CB2 receptor;Agonist; 8,500000
@@ -369,11 +369,11 @@ ketanserin;Serotonin 5-HT1 receptor;Antagonist; 5,672393
 ketanserin;Serotonin 5-HT2 receptor;Antagonist; 7,411240
 ketanserin;Serotonin 5-HT5 receptor;Antagonist; 4,699485
 ketanserin;Serotonin 5-HT7 receptor;Antagonist; 6,118230
-ketotifen;Histamine H1 receptor;Antagonist; 7,647167
+ketotifen;Histamine H1 receptor;Antagonist; 7,647168
 labetalol;Adrenergic Alpha1 receptor;Antagonist; 6,600000
 labetalol;Adrenergic Beta1 receptor;Antagonist; 8,200000
 labetalol;Adrenergic Beta2 receptor;Antagonist; 7,960000
-lanreotide;Somatostatin 2 receptor;Agonist; 9,192645
+lanreotide;Somatostatin 2 receptor;Agonist; 9,192646
 lanreotide;Somatostatin 3 receptor;Agonist; 7,514415
 lanreotide;Somatostatin 5 receptor;Agonist; 8,593648
 levobunolol;Adrenergic Beta1 receptor;Antagonist; 8,400000
@@ -384,6 +384,16 @@ levomilnacipran;Norepinephrine transporter;Antagonist; 7,400000
 levomilnacipran;Serotonin transporter;Antagonist; 6,496665
 levorphanol;Mu opioid receptor;Agonist; 9,783315
 levosalbutamol;Adrenergic Beta2 receptor;Partial Agonist; 5,250000
+lisuride;Adrenergic Alpha1 receptor;Antagonist; 8,212903
+lisuride;Adrenergic Alpha2 receptor;Antagonist;10,044179
+lisuride;Dopamine D1 receptor;Partial Agonist; 7,194998
+lisuride;Dopamine D2 receptor;Partial Agonist; 9,320399
+lisuride;Dopamine D3 receptor;Partial Agonist; 9,326058
+lisuride;Dopamine D4 receptor;Partial Agonist; 8,283133
+lisuride;Dopamine D5 receptor;Partial Agonist; 8,474963
+lisuride;Serotonin 5-HT1 receptor;Partial Agonist; 8,862702
+lisuride;Serotonin 5-HT2 receptor;Partial Agonist; 8,552196
+lisuride;Serotonin 5-HT6 receptor;Partial Agonist; 8,049845
 lofepramine;Norepinephrine transporter;Antagonist; 8,268803
 lofepramine;Serotonin transporter;Antagonist; 7,187377
 loperamide;Mu opioid receptor;Agonist; 9,280000
@@ -408,7 +418,7 @@ medroxyprogesterone;Progesterone receptor;Agonist; 9,185390
 melatonin;Melatonin receptor;Agonist; 9,418095
 melatonin;Serotonin 5-HT2 receptor;Antagonist; 5,066938
 mepyramine;Histamine H1 receptor;Inverse Agonist; 8,373682
-mesoridazine;Dopamine D1 receptor;Antagonist; 7,162863
+mesoridazine;Dopamine D1 receptor;Antagonist; 7,162862
 mesoridazine;Dopamine D2 receptor;Antagonist; 8,028737
 mesoridazine;Dopamine D3 receptor;Antagonist; 8,098741
 mesoridazine;Serotonin 5-HT1 receptor;Antagonist; 6,519323
@@ -448,7 +458,7 @@ mirabegron;Adrenergic Beta1 receptor;Agonist; 5,000000
 mirabegron;Adrenergic Beta2 receptor;Agonist; 5,000000
 mirabegron;Adrenergic Beta3 receptor;Agonist; 7,650000
 mirtazapine;Adrenergic Alpha2 receptor;Antagonist; 7,375723
-mirtazapine;Serotonin 5-HT2 receptor;Antagonist; 7,543671
+mirtazapine;Serotonin 5-HT2 receptor;Antagonist; 7,543670
 moclobemide;Monoamine oxidase A;Antagonist; 8,300000
 moclobemide;Monoamine oxidase B;Antagonist; 5,970000
 modafinil;Dopamine transporter;Antagonist; 5,505019
@@ -511,7 +521,7 @@ oxymetazoline;Adrenergic Alpha1 receptor;Partial Agonist; 7,074827
 oxymetazoline;Adrenergic Alpha2 receptor;Partial Agonist; 7,318835
 oxymetazoline;Serotonin 5-HT1 receptor;Partial Agonist; 8,328911
 oxymetazoline;Serotonin 5-HT2 receptor;Agonist; 6,684253
-oxytocin;Oxytocin receptor;Agonist; 9,013055
+oxytocin;Oxytocin receptor;Agonist; 9,013056
 oxytocin;Vasopressin V1 receptor;Agonist; 6,703947
 oxytocin;Vasopressin V2 receptor;Agonist; 5,975762
 palonosetron;Serotonin 5-HT3 receptor;Antagonist;10,490000
@@ -523,7 +533,7 @@ pasireotide;Somatostatin 5 receptor;Agonist; 9,800000
 pergolide;Adrenergic Alpha2 receptor;Partial Agonist; 7,325547
 pergolide;Dopamine D1 receptor;Agonist; 6,176518
 pergolide;Dopamine D2 receptor;Agonist; 7,581813
-pergolide;Dopamine D3 receptor;Partial Agonist; 8,397725
+pergolide;Dopamine D3 receptor;Partial Agonist; 8,397726
 pergolide;Dopamine D4 receptor;Partial Agonist; 7,230712
 pergolide;Dopamine D5 receptor;Agonist; 6,714082
 pergolide;Serotonin 5-HT1 receptor;Partial Agonist; 7,673539
@@ -585,13 +595,13 @@ prazosin;Adrenergic Alpha2 receptor;Antagonist; 6,839117
 prednisolone;Glucocorticoid receptor;Agonist; 8,068465
 prednisone;Glucocorticoid receptor;Agonist; 6,164558
 procaterol;Adrenergic Beta2 receptor;Agonist; 8,430000
-prochlorperazine;Dopamine D1 receptor;Antagonist; 6,850255
+prochlorperazine;Dopamine D1 receptor;Antagonist; 6,850256
 prochlorperazine;Dopamine D2 receptor;Antagonist; 8,715491
 prochlorperazine;Dopamine D3 receptor;Antagonist; 8,544452
 prochlorperazine;Dopamine D4 receptor;Antagonist; 7,200783
 progesterone;Progesterone receptor;Agonist; 8,604029
 promazine;Dopamine D2 receptor;Antagonist; 6,656391
-promazine;Dopamine D3 receptor;Antagonist; 6,799301
+promazine;Dopamine D3 receptor;Antagonist; 6,799302
 promethazine;Histamine H1 receptor;Antagonist; 8,142456
 propafenone;Adrenergic Beta1 receptor;Antagonist; 6,700000
 propafenone;Adrenergic Beta2 receptor;Antagonist; 7,440000
@@ -608,7 +618,7 @@ quetiapine;Serotonin 5-HT1 receptor;Agonist; 6,081161
 quetiapine;Serotonin 5-HT2 receptor;Partial Agonist; 6,443089
 raloxifene;Estrogen Alpha receptor;Partial Agonist; 9,145578
 raloxifene;Estrogen Beta receptor;Antagonist; 7,749517
-ramelteon;Melatonin receptor;Agonist;10,440307
+ramelteon;Melatonin receptor;Agonist;10,440306
 ramosetron;Serotonin 5-HT3 receptor;Antagonist;10,000000
 ranitidine;Histamine H2 receptor;Antagonist; 6,316777
 rasagiline;Monoamine oxidase B;Antagonist; 7,277858
@@ -652,7 +662,7 @@ sibutramine;Norepinephrine transporter;Antagonist; 5,250000
 sibutramine;Serotonin transporter;Antagonist; 5,960000
 silodosin;Adrenergic Alpha1 receptor;Antagonist; 8,865048
 solifenacin;Muscarinic M1 receptor;Antagonist; 7,397297
-solifenacin;Muscarinic M2 receptor;Antagonist; 6,736444
+solifenacin;Muscarinic M2 receptor;Antagonist; 6,736443
 solifenacin;Muscarinic M3 receptor;Antagonist; 7,511437
 solifenacin;Muscarinic M4 receptor;Antagonist; 6,800000
 solifenacin;Muscarinic M5 receptor;Antagonist; 7,200000
@@ -698,13 +708,13 @@ tiagabine;GABA transporter;Antagonist; 7,200000
 tibolone;Estrogen Alpha receptor;Agonist; 8,400000
 timolol;Adrenergic Beta2 receptor;Antagonist; 9,700000
 tiotixene;Histamine H1 receptor;Antagonist; 8,269055
-tiotixene;Serotonin 5-HT2 receptor;Antagonist; 6,643221
+tiotixene;Serotonin 5-HT2 receptor;Antagonist; 6,643222
 tiotropium bromide;Muscarinic M1 receptor;Antagonist; 9,600000
 tiotropium bromide;Muscarinic M2 receptor;Antagonist; 9,900000
 tiotropium bromide;Muscarinic M3 receptor;Antagonist;10,268885
 tolazoline;Adrenergic Alpha2 receptor;Antagonist; 5,840204
 tolcapone;Catechol O-methyltransferase;Antagonist; 9,554988
-tolterodine;Muscarinic M1 receptor;Antagonist; 8,599419
+tolterodine;Muscarinic M1 receptor;Antagonist; 8,599418
 tolterodine;Muscarinic M2 receptor;Inverse Agonist; 8,499412
 tolterodine;Muscarinic M3 receptor;Antagonist; 8,449852
 tolterodine;Muscarinic M4 receptor;Antagonist; 8,349850

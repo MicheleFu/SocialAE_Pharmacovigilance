@@ -62,9 +62,9 @@ for (f in fileList) {
 
 ICSR_df <- ICSR_df %>%
   distinct()
-ICSR_df <- ICSR_df %>%
-  filter(`Reporter Type` != "Not Specified") %>%
-  filter(`Sex` != "Not Specified")
+#ICSR_df <- ICSR_df %>%
+#  filter(`Reporter Type` != "Not Specified") %>%
+#  filter(`Sex` != "Not Specified")
 ICSR_df$`Suspect Product Active Ingredients` <- tolower(ICSR_df$`Suspect Product Active Ingredients`)
 ICSR_df$`Reactions` <- tolower(ICSR_df$`Reactions`)
 
@@ -95,18 +95,20 @@ save(ICSR_df, file = "RDA/ICSR_df.RDA")
 # D_list ----------------------------------------------------------------------
 # List of suspect product active ingredients reported in FAERS,
 # reported to an ATC code integrated.
-D_list <- list(ATC$`Code`) %>%
+ICSR_df <- ICSR_df %>% 
+  separate_rows(`Suspect Product Active Ingredients`, sep = ";") %>%
+  separate_rows(`Suspect Product Active Ingredients`, sep = "\\\\")
+ICSR_df$`Suspect Product Active Ingredients` <- trimws(ICSR_df$`Suspect Product Active Ingredients`)
+D_list <- list(unique(ICSR_df$`Suspect Product Active Ingredients`)) %>%
   flatten() %>%
   unlist %>% 
-  unique
-D_list <- as.data.frame(D_list)
-D_list <- list(D_list[!grepl("&", D_list$D_list),]) %>%
-  unique() %>% 
-  unlist() %>%
-  trimws()
+  unique %>%
+  sort()
 save(D_list, file = "Rda/D_list.Rda")
 
 # HCP_df and PZ_df-------------------------------------------------------------
+load("~/Desktop/SocialAE_Pharmacovigilance/Rda/ICSR_df.Rda")
+
 HCP_df <- ICSR_df %>%
   filter(`Reporter Type` == "Healthcare Professional")
 save(HCP_df, file = "RDA/HCP_df.RDA")
