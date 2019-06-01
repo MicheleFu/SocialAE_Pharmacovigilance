@@ -209,8 +209,8 @@ LRM <- function(df, PhD_df){
   Action_list <- as.list(unique(PhD_df$Action))
   df <- df %>%
     mutate(Drug_Family = substr(df$Drug_Code, start = 1, stop = 4))
-  LRM_df <- as.data.frame(matrix(nrow=0, ncol=7))
-  colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value")
+  LRM_df <- as.data.frame(matrix(nrow=0, ncol=8))
+  colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value", "Pearson")
   pdf("LRM.pdf")
   for (e in AE_list){
     x <- subset(df, df$AE == e)
@@ -228,7 +228,9 @@ LRM <- function(df, PhD_df){
           Slope <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[2],2)
           SE <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[4],2)
           p_value <- round(coefficients(summary(lm(z$ROR~z$pCHEMBL)))[8],6)
-          LRM_df[nrow(LRM_df)+1,] <- c(e, t, m, Intercept, Slope, SE, p_value)
+          P <- cor.test(z$ROR, z$pCHEMBL, method="pearson")
+          Pearson <- round(P$estimate,2)
+          LRM_df[nrow(LRM_df)+1,] <- c(e, t, m, Intercept, Slope, SE, p_value, Pearson)
           if (p_value <= 1){
             plot1 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
               geom_smooth(method ="lm") +
@@ -239,7 +241,8 @@ LRM <- function(df, PhD_df){
             results <- ggdraw() + draw_label(paste("Intercept: ", Intercept,
                                                    "     Slope: ", Slope,
                                                    "     SE: ", SE,
-                                                   "     p-value: ", p_value))
+                                                   "     p-value: ", p_value,
+                                                   "     Pearson: ", Pearson))
             plot2 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
               geom_smooth(aes(color = Drug_Family), method ="lm") +
               geom_point(aes(color = Drug_Family)) +
