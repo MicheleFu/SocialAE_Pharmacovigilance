@@ -16,7 +16,7 @@ load("Rda/HCP_df.Rda")
 load("Rda/PZ_df.Rda")
 load("Rda/D_list.Rda")
 
-ATC <- read_delim("ATC.csv", ";", escape_double = FALSE, 
+ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE, 
                   trim_ws = TRUE) %>%
   select(-"Search term") %>%
   unique()
@@ -135,7 +135,7 @@ Print_Heatmap <- function(df) {
   IC_matrix[is.na(IC_matrix)] <- ""
   Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
   Heatmatrix[Heatmatrix[,] > 100] <- 100
-  l <- paste("Hm_",deparse(substitute((df))),".png", sep = "")
+  l <- paste("Visualization/Hm_",deparse(substitute((df))),".png", sep = "")
   png(l, height = 15000, width = 8000)
   superheat(Heatmatrix,
             heat.pal = c("white", "red", "#b35806","#542788"),
@@ -183,7 +183,7 @@ Print_Heatmap(PZ)
 
 # Boxplots --------------------------------------------------------------------
 
-pdf("Boxplots.pdf")
+pdf("Visualization/Boxplots.pdf")
 for (i in AE_list){
   x <- ROR_df %>%
     filter(AE == i) %>%
@@ -202,7 +202,7 @@ dev.off()
 
 # LRM -------------------------------------------------------------------------
 
-PhD <- read_delim("PhD.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+PhD <- read_delim("Databases Used/PhD.csv", ";", escape_double = FALSE, trim_ws = TRUE)
 PhD$pCHEMBL <- PhD$pCHEMBL/1000000
 LRM <- function(df, PhD_df){
   Targets_list <- as.list(unique(PhD_df$`Target`))
@@ -211,7 +211,7 @@ LRM <- function(df, PhD_df){
     mutate(Drug_Family = substr(df$Drug_Code, start = 1, stop = 4))
   LRM_df <- as.data.frame(matrix(nrow=0, ncol=8))
   colnames(LRM_df) <- c("AE", "Target","Action", "Intercept", "Slope", "SE", "p_value", "Pearson")
-  pdf("LRM.pdf")
+  pdf("Visualization/LRM.pdf")
   for (e in AE_list){
     x <- subset(df, df$AE == e)
     x <- subset(x, is.na(x$ROR) == FALSE)
@@ -268,7 +268,7 @@ LRM <- function(df, PhD_df){
   LRM_df <- LRM_df %>%
     mutate(BH20 = (Rank/nrow(LRM_df))*0.20) %>%
     mutate(Sign20 = (p_value <= BH20))
-  write_csv2(LRM_df, "LRM.csv")
+  write_csv2(LRM_df, "Results/LRM.csv")
 }
 
 LRM(ROR_df, PhD)

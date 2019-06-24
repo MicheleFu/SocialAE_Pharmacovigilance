@@ -8,7 +8,7 @@ library(readxl)
 
 # Files needed ----------------------------------------------------------------
 # ATC code integrated
-ATC <- read_delim("ATC.csv", ";", escape_double = FALSE,
+ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE,
                   trim_ws = TRUE)
 
 # fileList --------------------------------------------------------------------
@@ -90,6 +90,42 @@ ICSR_df <- ICSR_df %>%
             `Patient Age`= first(`Patient Age`),
             `Patient Weight`= first(`Patient Weight`),
             `Concomitant Product Names` = first(`Concomitant Product Names`))
+ICSR_df$`Patient Age` <-  na_if(ICSR_df$`Patient Age`, "Not Specified")
+ICSR_df <- ICSR_df %>%
+  separate(`Patient Age`, into = c("Age (YR)","Age_Unit"), sep = " ", convert = TRUE)
+for (i in 1:nrow(ICSR_df)){
+  if (ICSR_df$Age_Unit[i] == "DEC" & is.na(ICSR_df$`Age (YR)`[i]) == FALSE){
+    ICSR_df$`Age (YR)`[i] <- round(ICSR_df$`Age (YR)`[i]*10,1)
+  }
+  else if (ICSR_df$Age_Unit[i] == "MTH" & is.na(ICSR_df$`Age (YR)`[i]) == FALSE){
+    ICSR_df$`Age (YR)`[i] <- round(ICSR_df$`Age (YR)`[i]/12,1)
+  }
+  else if (ICSR_df$Age_Unit[i] == "DAY" & is.na(ICSR_df$`Age (YR)`[i]) == FALSE){
+    ICSR_df$`Age (YR)`[i] <- round(ICSR_df$`Age (YR)`[i]/365,1)
+  }
+  else if (ICSR_df$Age_Unit[i] == "HR" & is.na(ICSR_df$`Age (YR)`[i]) == FALSE){
+    ICSR_df$`Age (YR)`[i] <- round(ICSR_df$`Age (YR)`[i]/8760,1)
+  }
+  else if (ICSR_df$Age_Unit[i] == "WEEK" & is.na(ICSR_df$`Age (YR)`[i]) == FALSE){
+    ICSR_df$`Age (YR)`[i] <- round((ICSR_df$`Age (YR)`[i]/365)*7,1)
+  }
+}
+ICSR_df$`Patient Weight` <-  na_if(ICSR_df$`Patient Weight`, "Not Specified")
+ICSR_df <- ICSR_df %>%
+  separate(`Patient Weight`, into = c("Weight (KG)","Weight_Unit"), sep = " ", convert = TRUE)
+ICSR_df$`Weight (KG)` <- parse_number(ICSR_df$`Weight (KG)`)
+for (i in 1:nrow(ICSR_df)){
+  print(i)
+  if (ICSR_df$Weight_Unit[i] == "LB" & is.na(ICSR_df$`Weight (KG)`[i]) == FALSE & is.na(ICSR_df$Weight_Unit[i]) == FALSE){
+    ICSR_df$`Weight (KG)`[i] <- round(ICSR_df$`Weight (KG)`[i]*0.4536,1)
+  }
+  else if (ICSR_df$Weight_Unit[i] == "GMS" & is.na(ICSR_df$`Weight (KG)`[i]) == FALSE & is.na(ICSR_df$Weight_Unit[i]) == FALSE){
+    ICSR_df$`Weight (KG)`[i] <- round(ICSR_df$`Weight (KG)`[i]/1000,1)
+  }
+}
+ICSR_df <- ICSR_df %>%
+  select(-Weight_Unit, -Age_Unit)
+ICSR_df$`Weight (KG)` <- round(ICSR_df$`Weight (KG)`,1)
 save(ICSR_df, file = "RDA/ICSR_df.RDA")
 
 # D_list ----------------------------------------------------------------------
@@ -115,3 +151,35 @@ save(HCP_df, file = "RDA/HCP_df.RDA")
 PZ_df <- ICSR_df %>%
   filter(`Reporter Type` == "Consumer")
 save(PZ_df, file = "RDA/PZ_df.RDA")
+NS_df <- ICSR_df %>%
+  filter(`Reporter Type` == "Not Specified")
+save(NS_df, file = "RDA/NS_df.RDA")
+
+#Population description -------------------------------------------------------
+Pop_char_df <- as.data.frame(matrix(ncol = 8, nrow = 1), stringsAsFactors = FALSE)
+colnames(Pop_char_df) <- c("df","Tot","F(%)","M(%)","HCP(%)","PZ(%)",
+                           "mean age","mean weight")
+Descr <- function(df){
+  Tot <- nrow(df)
+  F_num <-sum(df$Sex == "Female")
+  Fem <- paste(round((F_num/Tot)*100,2))
+  M_num <- sum(df$Sex == "Male")
+  Mal <- paste(round((M_num/Tot)*100,2))
+  HCP_num <- sum(df$`Reporter Type` == "Healthcare Professional")
+  HCP <- paste(round((HCP_num/Tot)*100,2))
+  PZ_num <- sum(df$`Reporter Type` == "Consumer")
+  PZ <- paste(round((PZ_num/Tot)*100,2))
+  Age <- round(mean(df$`Age (YR)`, na.rm = TRUE),0)
+  Weight <- round(mean(df$`Weight (KG)`, na.rm = TRUE),1)
+  dataf <- deparse(substitute(df))
+  new_row <- c(dataf,Tot,Fem,Mal,HCP,PZ,Age,Weight)
+  rbind(Pop_char_df, new_row)
+  }
+Pop_char_df <- Descr(ICSR_df)
+Pop_char_df <- Descr(HCP_df)
+Pop_char_df <- Descr(PZ_df)
+Pop_char_df <- Descr(NS_df)
+write_csv2(Pop_char_df,"Population characteristics/Population_characteristics.csv")
+
+
+
