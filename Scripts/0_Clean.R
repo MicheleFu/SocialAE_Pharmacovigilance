@@ -13,13 +13,13 @@ ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE,
 
 # fileList --------------------------------------------------------------------
 # List of xlsx with observations from FAERS public dashboard
-fileList <- list.files(path="FAERS ID",pattern="xlsx",full.names = T)
+fileList <- list.files(path="FAERS ID_AE",pattern="xlsx",full.names = T)
 
 # AE_list ---------------------------------------------------------------------
 # List of AE created from fileList
 AE_list <- list()
 for (f in fileList){
-  s <- gsub("FAERS ID/","",f)
+  s <- gsub("FAERS ID_AE/","",f)
   s <- gsub(".xlsx","",s)
   s <- gsub("_", " ",s)
   AE_list <- c(AE_list, s)

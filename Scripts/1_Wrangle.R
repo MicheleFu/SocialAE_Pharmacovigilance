@@ -182,7 +182,6 @@ PZ <- filter(HCP_PZ_ROR_df, HCP_PZ_ROR_df$Reporter_Type == "PZ")
 Print_Heatmap(PZ)
 
 # Boxplots --------------------------------------------------------------------
-
 pdf("Visualization/Boxplots.pdf")
 for (i in AE_list){
   x <- ROR_df %>%
