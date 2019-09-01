@@ -15,8 +15,8 @@ ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE,
 # List of xlsx with observations from FAERS public dashboard
 fileList <- list.files(path="FAERS ID_AE",pattern="xlsx",full.names = T)
 
-# AE_list ---------------------------------------------------------------------
-# List of AE created from fileList
+# AE_list.Rda ---------------------------------------------------------------------
+# List of Adverse Events created from fileList
 AE_list <- list()
 for (f in fileList){
   s <- gsub("FAERS ID_AE/","",f)
@@ -27,11 +27,11 @@ for (f in fileList){
 AE_list <- tolower(AE_list)
 save(AE_list, file = "Rda/AE_list.Rda")
 
-# df_ICSR----------------------------------------------------------------------
+# ICSR_df.Rda----------------------------------------------------------------------
 # Dataframe containing all the observations obtained from FAERS-pd,
-# removing duplicates and low quality data (no reporter or sex specified).
-# Then the Suspected Product Active Ingredients column is rewritten
-# with ATC code
+# removing duplicates.
+# Then the "Suspected Product Active Ingredients" column is rewritten
+# with standardized ATC code
 ICSR_df <- data.frame(matrix(ncol = 24, nrow = 0))
 colnames(ICSR_df) <- c("Case ID",
         "Suspect Product Names",
@@ -62,9 +62,6 @@ for (f in fileList) {
 
 ICSR_df <- ICSR_df %>%
   distinct()
-#ICSR_df <- ICSR_df %>%
-#  filter(`Reporter Type` != "Not Specified") %>%
-#  filter(`Sex` != "Not Specified")
 ICSR_df$`Suspect Product Active Ingredients` <- tolower(ICSR_df$`Suspect Product Active Ingredients`)
 ICSR_df$`Reactions` <- tolower(ICSR_df$`Reactions`)
 
@@ -74,22 +71,29 @@ ICSR_df <- ICSR_df %>%
 ICSR_df$`Suspect Product Active Ingredients` <- trimws(ICSR_df$`Suspect Product Active Ingredients`)
 for (i in seq(nrow(ATC))){
   print(i)
-  ICSR_df$`Suspect Product Active Ingredients`[ICSR_df$`Suspect Product Active Ingredients`== ATC$`Search term`[i]] = ATC$Code[i]
-}
+  ICSR_df$`Suspect Product Active Ingredients Code`[ICSR_df$`Suspect Product Active Ingredients`== ATC$`Search term`[i]] = ATC$Code[i]
+  ICSR_df$`Suspect Product Active Ingredients`[ICSR_df$`Suspect Product Active Ingredients`== ATC$`Search term`[i]] = ATC$Substance[i]
+  }
 ICSR_df <- ICSR_df %>%
   separate_rows(`Suspect Product Active Ingredients`, sep = " & ") %>%
   distinct() %>%
   group_by(`Case ID`) %>%
   summarise(`Suspect Product Active Ingredients` = paste(`Suspect Product Active Ingredients`, collapse = ";"),
-            `Reactions` = first(`Reactions`),
+            `Suspect Product Active Ingredients Code` = paste(`Suspect Product Active Ingredients Code`, collapse = ";"),
+            `Suspect Product Names` = first(`Suspect Product Names`),
             `Reason for Use` = first(`Reason for Use`),
+            `Reactions` = first(`Reactions`),
             `Reporter Type` = first(`Reporter Type`),
             `Serious` = first(`Serious`),
             `Outcomes` = first(`Outcomes`),
             `Sex` = first(`Sex`),
             `Patient Age`= first(`Patient Age`),
             `Patient Weight`= first(`Patient Weight`),
-            `Concomitant Product Names` = first(`Concomitant Product Names`))
+            `Concomitant Product Names` = first(`Concomitant Product Names`),
+            `Event Date` = first(`Event Date`),
+            `Initial FDA Event Date` = first(`Initial FDA Received Date`),
+            `Country where Event occurred` = first(`Country where Event occurred`),
+            `Literature Reference` = first(`Literature Reference`))
 ICSR_df$`Patient Age` <-  na_if(ICSR_df$`Patient Age`, "Not Specified")
 ICSR_df <- ICSR_df %>%
   separate(`Patient Age`, into = c("Age (YR)","Age_Unit"), sep = " ", convert = TRUE)
@@ -126,11 +130,21 @@ for (i in 1:nrow(ICSR_df)){
 ICSR_df <- ICSR_df %>%
   select(-Weight_Unit, -Age_Unit)
 ICSR_df$`Weight (KG)` <- round(ICSR_df$`Weight (KG)`,1)
+# when not specified the date of the event,
+# the first report to FDA was considered as the event date
+for (i in 1:nrow(ICSR_df)){
+  if (ICSR_df$`Event Date`[i] == "-"){
+    ICSR_df$`Event Date`[i] <- ICSR_df$`Initial FDA Event Date`[i]
+  }
+  x <- ICSR_df$`Event Date`[i]
+  ICSR_df$`Event Date`[i] <- substr(x, nchar(x)-2+1, nchar(x))
+  }
+ICSR_df <- ICSR_df %>%
+  select(-`Initial FDA Event Date`)
 save(ICSR_df, file = "RDA/ICSR_df.RDA")
 
 # D_list ----------------------------------------------------------------------
-# List of suspect product active ingredients reported in FAERS,
-# reported to an ATC code integrated.
+# List of suspect product active ingredients reported in FAERS
 ICSR_df <- ICSR_df %>% 
   separate_rows(`Suspect Product Active Ingredients`, sep = ";") %>%
   separate_rows(`Suspect Product Active Ingredients`, sep = "\\\\")
@@ -140,17 +154,19 @@ D_list <- list(unique(ICSR_df$`Suspect Product Active Ingredients`)) %>%
   unlist %>% 
   unique %>%
   sort()
+D_list <- D_list[D_list != "altro"]
 save(D_list, file = "Rda/D_list.Rda")
 
-# HCP_df and PZ_df-------------------------------------------------------------
-load("~/Desktop/SocialAE_Pharmacovigilance/Rda/ICSR_df.Rda")
+# HCP_df and C_df-------------------------------------------------------------
+# divide the dataframe by reporter type
+load("Rda/ICSR_df.Rda")
 
 HCP_df <- ICSR_df %>%
   filter(`Reporter Type` == "Healthcare Professional")
 save(HCP_df, file = "RDA/HCP_df.RDA")
-PZ_df <- ICSR_df %>%
+C_df <- ICSR_df %>%
   filter(`Reporter Type` == "Consumer")
-save(PZ_df, file = "RDA/PZ_df.RDA")
+save(PZ_df, file = "RDA/C_df.RDA")
 NS_df <- ICSR_df %>%
   filter(`Reporter Type` == "Not Specified")
 save(NS_df, file = "RDA/NS_df.RDA")
