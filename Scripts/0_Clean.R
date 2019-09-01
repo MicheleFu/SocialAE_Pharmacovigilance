@@ -173,9 +173,6 @@ save(NS_df, file = "RDA/NS_df.RDA")
 
 # Population description -------------------------------------------------------
 # descriptive analysis of the dataframe
-Pop_char_df <- as.data.frame(matrix(ncol = 8, nrow = 1), stringsAsFactors = FALSE)
-colnames(Pop_char_df) <- c("Reporter","Tot","F(%)","M(%)","HCP(%)","PZ(%)",
-                           "mean age","mean weight")
 Pop_char_df <- as.data.frame(matrix(ncol = 12, nrow = 1), stringsAsFactors = FALSE)
 colnames(Pop_char_df) <- c("Reporter","Tot","F(%)","M(%)","HCP(%)","C(%)",
                            "età media","età mediana", "età DS", "peso media","peso mediana", "peso DS")
