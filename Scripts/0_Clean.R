@@ -7,7 +7,7 @@ library(tidyverse)
 library(readxl)
 
 # Files needed ----------------------------------------------------------------
-# ATC code integrated
+# ATC code integrated and adapted
 ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE,
                   trim_ws = TRUE)
 
