@@ -171,10 +171,14 @@ NS_df <- ICSR_df %>%
   filter(`Reporter Type` == "Not Specified")
 save(NS_df, file = "RDA/NS_df.RDA")
 
-#Population description -------------------------------------------------------
+# Population description -------------------------------------------------------
+# descriptive analysis of the dataframe
 Pop_char_df <- as.data.frame(matrix(ncol = 8, nrow = 1), stringsAsFactors = FALSE)
-colnames(Pop_char_df) <- c("df","Tot","F(%)","M(%)","HCP(%)","PZ(%)",
+colnames(Pop_char_df) <- c("Reporter","Tot","F(%)","M(%)","HCP(%)","PZ(%)",
                            "mean age","mean weight")
+Pop_char_df <- as.data.frame(matrix(ncol = 12, nrow = 1), stringsAsFactors = FALSE)
+colnames(Pop_char_df) <- c("Reporter","Tot","F(%)","M(%)","HCP(%)","C(%)",
+                           "età media","età mediana", "età DS", "peso media","peso mediana", "peso DS")
 Descr <- function(df){
   Tot <- nrow(df)
   F_num <-sum(df$Sex == "Female")
@@ -186,18 +190,21 @@ Descr <- function(df){
   PZ_num <- sum(df$`Reporter Type` == "Consumer")
   PZ <- paste(round((PZ_num/Tot)*100,2))
   Age <- round(mean(df$`Age (YR)`, na.rm = TRUE),0)
+  Med_A <- round(median(df$`Age (YR)`, na.rm = TRUE),0)
+  Age_sd <- round(sd(df$`Age (YR)`, na.rm = TRUE),0)
   Weight <- round(mean(df$`Weight (KG)`, na.rm = TRUE),1)
+  Med_W <- round(median(df$`Weight (KG)`, na.rm = TRUE),1)
+  Weight_sd <- round(sd(df$`Weight (KG)`, na.rm = TRUE),1)
   dataf <- deparse(substitute(df))
-  new_row <- c(dataf,Tot,Fem,Mal,HCP,PZ,Age,Weight)
+  dataf <- gsub("_.*$","", dataf)
+  new_row <- c(dataf,Tot,Fem,Mal,HCP,PZ,Age, Med_A, Age_sd,Weight,Med_W, Weight_sd)
   rbind(Pop_char_df, new_row)
-  }
+}
 Pop_char_df <- Descr(ICSR_df)
 Pop_char_df <- Descr(HCP_df)
-Pop_char_df <- Descr(PZ_df)
+Pop_char_df <- Descr(C_df)
 Pop_char_df <- Descr(NS_df)
+Pop_char_df <- Pop_char_df[-1,]
 write_csv2(Pop_char_df,"Population characteristics/Population_characteristics.csv")
-
-
-
 
 
