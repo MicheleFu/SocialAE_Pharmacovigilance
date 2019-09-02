@@ -15,6 +15,7 @@ load("Rda/AE_list.Rda")
 load("Rda/HCP_df.Rda")
 load("Rda/C_df.Rda")
 load("Rda/D_list.Rda")
+load("Rda/D_Code_list.Rda")
 
 ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE, 
                   trim_ws = TRUE) %>%
@@ -84,8 +85,6 @@ Wrangle <- function(df, D) {
   }
   return(Wrangle_df)
 }
-D_Code_list <-  D_list
-D_Code_list
 
 Wrangle <- function(df, D) {
   #
@@ -153,13 +152,15 @@ ROR_df <- Wrangle(ICSR_df,D_list)
 save(ROR_df, file = "Rda/ROR_df.Rda")
 
 # Heatmap ---------------------------------------------------------------------
+D_Code_list <- D_Code_list %>%
+  sort()
 Create_Matrix <- function(df, index) {
-  m <- matrix(ncol = length(AE_list), nrow = length(D_list))
-  rownames(m) <- D_list
+  m <- matrix(ncol = length(AE_list), nrow = length(D_Code_list))
+  rownames(m) <- D_Code_list
   colnames(m) <- AE_list
   for (e in AE_list) {
     x <- subset(df, AE == e)
-    for (d in D_list){
+    for (d in D_Code_list){
       print(d)
       if (!is.na(x$ROR_m[x$Drug_Code == d])) {
         if(x$ROR_m[x$Drug_Code == d] > 1) {
@@ -198,7 +199,7 @@ Print_Heatmap <- function(df) {
   IC_matrix[is.na(IC_matrix)] <- ""
   Heatmatrix[Heatmatrix[,] == "Inf"] <- 100
   Heatmatrix[Heatmatrix[,] > 100] <- 100
-  l <- paste("Visualization/Hm_",deparse(substitute((df))),".png", sep = "")
+  l <- paste("Visualization/Heatmap_",deparse(substitute((df))),".png", sep = "")
   png(l, height = 15000, width = 8000)
   superheat(Heatmatrix,
             heat.pal = c("white", "red", "#b35806","#542788"),
@@ -233,16 +234,59 @@ Print_Heatmap(ROR_df)
 # HCP-PZ ROR ------------------------------------------------------------------
 HCP_ROR_df <- Wrangle(HCP_df,D_list) %>%
   mutate(Reporter_Type = "HCP")
-PZ_ROR_df <- Wrangle(PZ_df,D_list) %>%
-  mutate(Reporter_Type = "PZ")
-HCP_PZ_ROR_df <- rbind(HCP_ROR_df,PZ_ROR_df) %>%
+save(HCP_ROR_df,file="RDA/HCP_ROR_df")
+C_ROR_df <- Wrangle(C_df,D_list) %>%
+  mutate(Reporter_Type = "C")
+save(C_ROR_df,file="RDA/C_ROR_df")
+HCP_C_ROR_df <- rbind(HCP_ROR_df,C_ROR_df) %>%
   arrange(Drug_Code, AE)
-save(HCP_PZ_ROR_df, file = "Rda/HCP_PZ_ROR_df.Rda")
+save(HCP_C_ROR_df, file = "Rda/HCP_PZ_ROR_df.Rda")
 
-HCP <- filter(HCP_PZ_ROR_df, HCP_PZ_ROR_df$Reporter_Type == "HCP")
+HCP <- filter(HCP_C_ROR_df, HCP_C_ROR_df$Reporter_Type == "HCP")
 Print_Heatmap(HCP)
-PZ <- filter(HCP_PZ_ROR_df, HCP_PZ_ROR_df$Reporter_Type == "PZ")
-Print_Heatmap(PZ)
+C <- filter(HCP_C_ROR_df, HCP_C_ROR_df$Reporter_Type == "C")
+Print_Heatmap(C)Comparation_df <- data.frame(matrix(ncol = 16, nrow = 0))
+colnames(Comparation_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA_HCP",
+                              "F_nEA_HCP", "nF_EA_HCP","nF_nEA_HCP",
+                              "F_EA_C","F_nEA_C", "nF_EA_C", "nF_nEA_C",
+                              "Log(odds)_EA_HCP(nF)", "Log(odds)_EA_PZ/HCP(nF)",
+                              "Log(Odds)_F_HCP","Comparation_Index", "Pr")
+for (e in AE_list) {
+  print(e)
+  for (d in D_list) {
+    print(d)
+    x <- subset(HCP_C_ROR_df, Drug_Code == d & AE == e)
+    y <- matrix(ncol=4, nrow=4)
+    colnames(y)  <-  c("EA","nEA", "Reporter_Type", "Drug")
+    rownames(y) <- c("F_HCP", "nF_HCP", "F_C", "nF_C")
+    y[1,1] <- x$F_EA[x$Reporter_Type == "HCP"]
+    y[1,2] <- x$F_nEA[x$Reporter_Type == "HCP"]
+    y[1,3] <- "HCP"
+    y[1,4] <- "1"
+    y[2,1] <- x$nF_EA[x$Reporter_Type == "HCP"]
+    y[2,2] <- x$nF_nEA[x$Reporter_Type == "HCP"]
+    y[2,3] <- "HCP"
+    y[2,4] <- "0"
+    y[3,1] <- x$F_EA[x$Reporter_Type == "C"]
+    y[3,2] <- x$F_nEA[x$Reporter_Type == "C"]
+    y[3,3] <- "C"
+    y[3,4] <- "1"
+    y[4,1] <- x$nF_EA[x$Reporter_Type == "C"]
+    y[4,2] <- x$nF_nEA[x$Reporter_Type == "C"]
+    y[4,3] <- "C"
+    y[4,4] <- "0"
+    y <- as.data.frame(y)
+    m <- glm(cbind(EA,nEA) ~ 1 + Reporter_Type*Drug, family=binomial, data=y)
+    y <- as.matrix(y)
+    new_row <- list(d, ATC$Substance[ATC$Code == d], e, y[1,1],y[1,2], y[2,1],y[2,2],
+                    y[3,1],y[3,2], y[4,1], y[4,2], m[[1]][[1]], m[[1]][[2]],
+                    m[[1]][[3]], m[[1]][[4]], coef(summary(m))[4,4])
+    Comparation_df[nrow(Comparation_df)+1,] <-  new_row
+  }
+}
+save(Comparation_df, file="Rda/Comparation_df.Rda")
+
+
 
 # Boxplots --------------------------------------------------------------------
 pdf("Visualization/Boxplots.pdf")
@@ -256,10 +300,10 @@ for (i in AE_list){
   print(ggplot(data=x) +
           geom_boxplot(mapping=aes(x=reorder(Drug_Name, -ROR), middle = ROR, lower = ROR_m, ymin=ROR_m, upper = ROR_M, ymax=ROR_M, fill = Drug_Family), stat = "identity") +
           labs(title    = i) +
-            xlab("Drug") +
-            geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 1, colour = "red", fill="white") +
-            coord_flip())
-  }
+          xlab("Drug") +
+          geom_label(aes(x = reorder(`Drug_Name`, -ROR), ROR, label = ROR), size = 1, colour = "red", fill="white") +
+          coord_flip())
+}
 dev.off()
 
 # LRM -------------------------------------------------------------------------
@@ -334,4 +378,3 @@ LRM <- function(df, PhD_df){
 }
 
 LRM(ROR_df, PhD)
-

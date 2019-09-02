@@ -1,0 +1,594 @@
+AE;Target;Action;Intercept;Slope;SE;p_value;Pearson;Rank;BH20;Sign20
+disturbance in attention;Muscarinic M3 receptor;Antagonist;4.14;-0.37;0.09;0.001204;-0.77;  1;0,0003372681;FALSE
+aggression;Dopamine D4 receptor;Antagonist;-14.7;2.31;0.49;0.001533;0.86;  2;0,0006745363;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT2 receptor;Inverse Agonist;-6.91;0.86;0.14;0.001593;0.94;  3;0,0010118044;FALSE
+loss of personal independence in daily activities;Muscarinic M2 receptor;Antagonist;-7.05;0.99;0.26;0.004316;0.78;  4;0,0013490725;FALSE
+crime;Serotonin 5-HT2 receptor;Antagonist;-131.56;21.71;1.49;0.004671;1;  5;0,0016863406;FALSE
+disturbance in attention;Muscarinic M5 receptor;Antagonist;4.02;-0.38;0.11;0.005374;-0.77;  6;0,0020236088;FALSE
+aggression;Serotonin 5-HT6 receptor;Inverse Agonist;-14.2;2.15;0.52;0.006223;0.86;  7;0,0023608769;FALSE
+loss of personal independence in daily activities;Muscarinic M3 receptor;Antagonist;-7.15;0.96;0.29;0.007136;0.7;  8;0,0026981450;FALSE
+disturbance in attention;Muscarinic M1 receptor;Antagonist;3.94;-0.36;0.11;0.007519;-0.66;  9;0,0030354132;FALSE
+disability;Serotonin 5-HT6 receptor;Inverse Agonist;10.31;-1.25;0.22;0.010342;-0.96; 10;0,0033726813;FALSE
+sexual abuse;Norepinephrine transporter;Antagonist;5.89;-0.64;0.18;0.011982;-0.82; 11;0,0037099494;FALSE
+physical assault;Serotonin 5-HT1 receptor;Agonist;-1.52;0.59;0.07;0.012907;0.99; 12;0,0040472175;FALSE
+disturbance in attention;Melatonin receptor;Agonist;7.31;-0.55;0.07;0.01379;-0.99; 13;0,0043844857;FALSE
+speech disorder;Adrenergic Alpha2 receptor;Antagonist;21.36;-2.74;0.74;0.014381;-0.85; 14;0,0047217538;FALSE
+disturbance in attention;Muscarinic M4 receptor;Antagonist;3.47;-0.31;0.11;0.015768;-0.68; 15;0,0050590219;FALSE
+impaired work ability;Serotonin transporter;Antagonist;2.49;-0.21;0.08;0.016849;-0.5; 16;0,0053962901;FALSE
+loss of employment;Progesterone receptor;Agonist;-12.1;1.73;0.24;0.018297;0.98; 17;0,0057335582;FALSE
+loss of personal independence in daily activities;Dopamine D5 receptor;Antagonist;-6.11;0.96;0.21;0.020492;0.93; 18;0,0060708263;FALSE
+verbal abuse;Serotonin 5-HT2 receptor;Antagonist;-59.57;9.79;2.97;0.02167;0.83; 19;0,0064080944;FALSE
+speech disorder;Serotonin 5-HT6 receptor;Inverse Agonist;17.99;-2.06;0.67;0.022344;-0.78; 20;0,0067453626;FALSE
+school refusal;Norepinephrine transporter;Antagonist;-16.08;2.84;0.44;0.022689;0.98; 21;0,0070826307;FALSE
+disturbance in attention;Dopamine D4 receptor;Antagonist;-1.96;0.38;0.14;0.026307;0.66; 22;0,0074198988;FALSE
+hypersexuality;Adrenergic Alpha1 receptor;Antagonist;170.46;-20.55;3.4;0.026324;-0.97; 23;0,0077571669;FALSE
+loss of personal independence in daily activities;Muscarinic M1 receptor;Antagonist;-6.23;0.87;0.35;0.028241;0.58; 24;0,0080944351;FALSE
+disability;Dopamine D1 receptor;Antagonist;-47.47;6.93;2.06;0.028303;0.86; 25;0,0084317032;FALSE
+drug diversion;Serotonin transporter;Antagonist;4.93;-0.53;0.19;0.029059;-0.76; 26;0,0087689713;FALSE
+drug diversion;Serotonin 5-HT2 receptor;Antagonist;-13.83;2.27;0.69;0.029816;0.86; 27;0,0091062395;FALSE
+homicide;Delta opioid receptor;Agonist;13.24;-1.57;0.41;0.031021;-0.91; 28;0,0094435076;FALSE
+social anxiety disorder;Dopamine D2 receptor;Antagonist;15.76;-1.67;0.44;0.032482;-0.91; 29;0,0097807757;FALSE
+aggression;Muscarinic M3 receptor;Antagonist;11.26;-1.11;0.46;0.033862;-0.59; 30;0,0101180438;FALSE
+disturbance in attention;Muscarinic M2 receptor;Antagonist;3.04;-0.27;0.11;0.034762;-0.61; 31;0,0104553120;FALSE
+gambling;Serotonin 5-HT2 receptor;Partial Agonist;-239.06;37.72;7.28;0.035313;0.96; 32;0,0107925801;FALSE
+loss of employment;Serotonin transporter;Antagonist;12.82;-1.44;0.6;0.037918;-0.6; 33;0,0111298482;FALSE
+disability;Dopamine D5 receptor;Antagonist;-24.31;3.8;1.07;0.038161;0.9; 34;0,0114671164;FALSE
+speech disorder;Dopamine D2 receptor;Partial Agonist;3.02;-0.29;0.08;0.038705;-0.9; 35;0,0118043845;FALSE
+hypersexuality;Dopamine transporter;Antagonist;-0.41;0.13;0.03;0.039611;0.96; 36;0,0121416526;FALSE
+speech disorder;Serotonin 5-HT7 receptor;Inverse Agonist;15.17;-1.69;0.65;0.040158;-0.73; 37;0,0124789207;FALSE
+speech disorder;Norepinephrine transporter;Antagonist;-2.75;0.64;0.3;0.040306;0.39; 38;0,0128161889;FALSE
+impaired quality of life;Mu opioid receptor;Agonist;-0.3;0.07;0.02;0.04035;0.83; 39;0,0131534570;FALSE
+loss of personal independence in daily activities;Dopamine D1 receptor;Antagonist;-10.9;1.6;0.54;0.040451;0.83; 40;0,0134907251;FALSE
+disturbance in attention;Adrenergic Beta2 receptor;Agonist;1.88;-0.18;0.05;0.042599;-0.89; 41;0,0138279933;FALSE
+verbal abuse;Serotonin 5-HT7 receptor;Antagonist;0.11;0.39;0.09;0.043657;0.96; 42;0,0141652614;FALSE
+impaired work ability;Serotonin 5-HT2 receptor;Inverse Agonist;-6.11;0.76;0.17;0.045274;0.95; 43;0,0145025295;FALSE
+aggression;Dopamine D2 receptor;Antagonist;-6.06;1.05;0.49;0.048503;0.45; 44;0,0148397976;FALSE
+social avoidant behaviour;Muscarinic M1 receptor;Antagonist;-2.59;0.41;0.1;0.049634;0.95; 45;0,0151770658;FALSE
+speech disorder;Dopamine transporter;Antagonist;3.19;-0.42;0.19;0.049879;-0.58; 46;0,0155143339;FALSE
+loss of personal independence in daily activities;Progesterone receptor;Agonist;7.54;-0.76;0.3;0.049901;-0.75; 47;0,0158516020;FALSE
+verbal abuse;Serotonin 5-HT6 receptor;Inverse Agonist;226.52;-28.01;6.63;0.051739;-0.95; 48;0,0161888702;FALSE
+disturbance in attention;Dopamine transporter;Antagonist;-2.15;0.75;0.35;0.052428;0.55; 49;0,0165261383;FALSE
+impulse-control disorder;Dopamine D4 receptor;Antagonist;151.8;-18.45;6.05;0.055385;-0.87; 50;0,0168634064;FALSE
+speech disorder;Monoamine oxidase B;Antagonist;3.23;-0.37;0.09;0.058241;-0.94; 51;0,0172006745;FALSE
+impaired quality of life;Delta opioid receptor;Agonist;1.62;-0.18;0.05;0.059629;-0.94; 52;0,0175379427;FALSE
+speech disorder;Serotonin 5-HT2 receptor;Partial Agonist;-11.47;1.75;0.67;0.059869;0.79; 53;0,0178752108;FALSE
+loss of personal independence in daily activities;Muscarinic M5 receptor;Antagonist;-5.09;0.75;0.35;0.061785;0.61; 54;0,0182124789;FALSE
+impulsive behaviour;Adrenergic Alpha2 receptor;Antagonist;-29.6;4.39;1.51;0.062167;0.86; 55;0,0185497470;FALSE
+disturbance in attention;Serotonin 5-HT7 receptor;Inverse Agonist;-3.92;0.57;0.24;0.062988;0.73; 56;0,0188870152;FALSE
+impaired driving ability;Dopamine D3 receptor;Agonist;5.61;-0.62;0.16;0.064465;-0.94; 57;0,0192242833;FALSE
+language disorder;Dopamine D4 receptor;Antagonist;-128.36;16.7;4.5;0.065595;0.93; 58;0,0195615514;FALSE
+aggression;Serotonin 5-HT2 receptor;Inverse Agonist;-12.84;1.87;0.86;0.066603;0.63; 59;0,0198988196;FALSE
+aggression;Muscarinic M2 receptor;Antagonist;9.96;-1;0.49;0.071069;-0.56; 60;0,0202360877;FALSE
+impulsive behaviour;Norepinephrine transporter;Antagonist;-2.62;0.81;0.41;0.07269;0.54; 61;0,0205733558;FALSE
+impaired driving ability;Serotonin 5-HT2 receptor;Inverse Agonist;-6.19;0.77;0.29;0.072792;0.84; 62;0,0209106239;FALSE
+impulse-control disorder;Adrenergic Alpha1 receptor;Antagonist;170.13;-20.68;5.91;0.072903;-0.93; 63;0,0212478921;FALSE
+impaired driving ability;GABA A receptor;Agonist;29.88;-3.59;1.33;0.073616;-0.84; 64;0,0215851602;FALSE
+disturbance in attention;Adrenergic Alpha2 receptor;Partial Agonist;6.26;-0.81;0.24;0.075505;-0.92; 65;0,0219224283;FALSE
+unemployment;Serotonin transporter;Antagonist;10.61;-0.89;0.34;0.080172;-0.83; 66;0,0222596965;FALSE
+imprisonment;Norepinephrine transporter;Antagonist;4.81;-0.49;0.24;0.080187;-0.61; 67;0,0225969646;FALSE
+gambling disorder;Adrenergic Alpha1 receptor;Antagonist;110.53;-13.15;4.05;0.083181;-0.92; 68;0,0229342327;FALSE
+aggression;Melatonin receptor;Agonist;11.64;-1.03;0.32;0.083769;-0.92; 69;0,0232715008;FALSE
+speech disorder;GABA A receptor;Agonist;-8.04;1.23;0.54;0.084919;0.75; 70;0,0236087690;FALSE
+hypersexuality;Serotonin 5-HT1 receptor;Agonist;-4.92;1.02;0.32;0.088024;0.91; 71;0,0239460371;FALSE
+aggression;Dopamine transporter;Antagonist;-1.3;0.46;0.25;0.090497;0.49; 72;0,0242833052;FALSE
+speech disorder;Muscarinic M5 receptor;Antagonist;-2.38;0.5;0.27;0.090579;0.53; 73;0,0246205734;FALSE
+antisocial behaviour;GABA A receptor;Agonist;-2.72;0.5;0.16;0.091433;0.91; 74;0,0249578415;FALSE
+aggression;Muscarinic M5 receptor;Antagonist;11.66;-1.2;0.63;0.093258;-0.56; 75;0,0252951096;FALSE
+gambling disorder;Serotonin 5-HT2 receptor;Partial Agonist;-219.91;35.09;11.63;0.094468;0.91; 76;0,0256323777;FALSE
+impaired work ability;Dopamine transporter;Antagonist;3.51;-0.45;0.24;0.094492;-0.53; 77;0,0259696459;FALSE
+impulsive behaviour;Serotonin 5-HT2 receptor;Inverse Agonist;-630.35;75.8;35.03;0.096493;0.73; 78;0,0263069140;FALSE
+gambling;Dopamine transporter;Antagonist;6.11;-0.86;0.36;0.096538;-0.81; 79;0,0266441821;FALSE
+gambling;Norepinephrine transporter;Antagonist;-14.24;2.46;1.33;0.097422;0.52; 80;0,0269814503;FALSE
+aggression;Dopamine D1 receptor;Antagonist;-24.16;3.73;1.9;0.097493;0.63; 81;0,0273187184;FALSE
+impulse-control disorder;Serotonin 5-HT1 receptor;Partial Agonist;85.47;-9.24;4.71;0.097657;-0.62; 82;0,0276559865;FALSE
+loss of personal independence in daily activities;Muscarinic M4 receptor;Antagonist;-3.63;0.57;0.31;0.098437;0.52; 83;0,0279932546;FALSE
+gambling disorder;Norepinephrine transporter;Antagonist;-18.81;3.28;1.77;0.10036;0.55; 84;0,0283305228;FALSE
+loss of personal independence in daily activities;Dopamine transporter;Antagonist;2.52;-0.32;0.18;0.101096;-0.52; 85;0,0286677909;FALSE
+loss of personal independence in daily activities;Serotonin transporter;Antagonist;1.39;-0.11;0.06;0.10185;-0.35; 86;0,0290050590;FALSE
+impaired quality of life;Dopamine D2 receptor;Antagonist;-0.17;0.04;0.02;0.102132;0.9; 87;0,0293423272;FALSE
+disturbance in attention;Dopamine D1 receptor;Antagonist;-7.55;1.15;0.56;0.110177;0.72; 88;0,0296795953;FALSE
+theft;Mu opioid receptor;Agonist;8.71;-0.71;0.32;0.110768;-0.79; 89;0,0300168634;FALSE
+hypersexuality;Dopamine D4 receptor;Antagonist;153.31;-18.68;6.8;0.111055;-0.89; 90;0,0303541315;FALSE
+social avoidant behaviour;Dopamine D5 receptor;Antagonist;-14.15;2.39;1.07;0.112797;0.79; 91;0,0306913997;FALSE
+impaired self-care;Dopamine transporter;Antagonist;5.11;-0.69;0.26;0.114699;-0.89; 92;0,0310286678;FALSE
+hypersexuality;Norepinephrine transporter;Antagonist;2.04;-0.19;0.1;0.115267;-0.6; 93;0,0313659359;FALSE
+speech disorder;Glucocorticoid receptor;Agonist;-0.22;0.15;0.09;0.117544;0.46; 94;0,0317032040;FALSE
+social avoidant behaviour;Muscarinic M3 receptor;Antagonist;-2.26;0.38;0.14;0.119352;0.88; 95;0,0320404722;FALSE
+verbal abuse;Serotonin transporter;Antagonist;-1.37;0.4;0.23;0.119661;0.52; 96;0,0323777403;FALSE
+impulse-control disorder;Serotonin 5-HT2 receptor;Antagonist;127.65;-18.04;9.63;0.12005;-0.64; 97;0,0327150084;FALSE
+drug diversion;GABA A receptor;Agonist;-12.76;2.28;1.06;0.121095;0.78; 98;0,0330522766;FALSE
+speech disorder;Adrenergic Beta2 receptor;Partial Agonist;19.65;-3.18;1.23;0.122259;-0.88; 99;0,0333895447;FALSE
+hypersexuality;Dopamine D2 receptor;Agonist;93.89;-7.1;3.36;0.125424;-0.77;100;0,0337268128;FALSE
+disability;Muscarinic M3 receptor;Antagonist;-4.53;0.69;0.39;0.126204;0.55;101;0,0340640809;FALSE
+crime;Serotonin transporter;Antagonist;44.1;-4.79;2.71;0.127145;-0.59;102;0,0344013491;FALSE
+hypersexuality;Dopamine D2 receptor;Partial Agonist;147.56;-14.63;5.79;0.127371;-0.87;103;0,0347386172;FALSE
+impulsive behaviour;Dopamine transporter;Antagonist;-7.48;1.76;0.97;0.130308;0.63;104;0,0350758853;FALSE
+speech disorder;Dopamine D1 receptor;Agonist;13.22;-1.99;0.96;0.131326;-0.77;105;0,0354131535;FALSE
+impaired self-care;Serotonin 5-HT2 receptor;Inverse Agonist;50.34;-5.54;2.7;0.132758;-0.76;106;0,0357504216;FALSE
+speech disorder;Serotonin 5-HT2 receptor;Inverse Agonist;6.16;-0.58;0.35;0.137052;-0.54;107;0,0360876897;FALSE
+speech disorder;Adrenergic Beta2 receptor;Agonist;15.47;-1.45;0.87;0.139016;-0.53;108;0,0364249578;FALSE
+disability;Serotonin 5-HT1 receptor;Partial Agonist;25.3;-3.13;1.78;0.139492;-0.62;109;0,0367622260;FALSE
+physical assault;Serotonin 5-HT1 receptor;Partial Agonist;-92.75;12.79;6.41;0.14006;0.76;110;0,0370994941;FALSE
+gambling;Adrenergic Alpha1 receptor;Antagonist;92.94;-11;4.63;0.140965;-0.86;111;0,0374367622;FALSE
+impulsive behaviour;Serotonin 5-HT1 receptor;Agonist;3.65;-0.32;0.13;0.141118;-0.86;112;0,0377740304;FALSE
+aggression;Norepinephrine transporter;Antagonist;-2.01;0.59;0.39;0.141183;0.28;113;0,0381112985;FALSE
+aggression;Serotonin 5-HT7 receptor;Inverse Agonist;-7.02;1.23;0.73;0.141527;0.57;114;0,0384485666;FALSE
+social avoidant behaviour;Dopamine D1 receptor;Antagonist;-24.66;3.83;1.94;0.142332;0.75;115;0,0387858347;FALSE
+aggression;Serotonin 5-HT1 receptor;Antagonist;-3.96;1.15;0.7;0.142936;0.53;116;0,0391231029;FALSE
+gambling disorder;Dopamine transporter;Antagonist;4.9;-0.69;0.3;0.144618;-0.86;117;0,0394603710;FALSE
+aggression;Acetylcholinesterase;Antagonist;9.63;-0.86;0.37;0.145773;-0.85;118;0,0397976391;FALSE
+disturbance in attention;Dopamine D5 receptor;Antagonist;-4.55;0.74;0.38;0.146748;0.75;119;0,0401349073;FALSE
+social problem;Dopamine transporter;Antagonist;-0.71;0.16;0.07;0.146931;0.85;120;0,0404721754;FALSE
+verbal abuse;Serotonin 5-HT7 receptor;Inverse Agonist;112.24;-13.3;6.84;0.146947;-0.75;121;0,0408094435;FALSE
+speech disorder;Serotonin 5-HT1 receptor;Agonist;-5.03;1.05;0.63;0.148869;0.56;122;0,0411467116;FALSE
+gambling;Serotonin 5-HT2 receptor;Antagonist;48.12;-6.8;3.83;0.150065;-0.66;123;0,0414839798;FALSE
+family stress;Dopamine D2 receptor;Antagonist;-0.4;0.08;0.04;0.153048;0.74;124;0,0418212479;FALSE
+impaired quality of life;Adrenergic Beta2 receptor;Agonist;10.86;-1.16;0.52;0.153875;-0.85;125;0,0421585160;FALSE
+disability;Serotonin 5-HT7 receptor;Inverse Agonist;4.46;-0.49;0.28;0.155539;-0.66;126;0,0424957841;FALSE
+marital problem;Norepinephrine transporter;Antagonist;5.84;-0.68;0.41;0.156531;-0.6;127;0,0428330523;FALSE
+disability;Serotonin 5-HT6 receptor;Antagonist;7.9;-1.16;0.62;0.156975;-0.74;128;0,0431703204;FALSE
+educational problem;Histamine H1 receptor;Antagonist;5.15;-0.55;0.34;0.157372;-0.55;129;0,0435075885;FALSE
+impaired work ability;Norepinephrine transporter;Antagonist;1.88;-0.15;0.11;0.164059;-0.33;130;0,0438448567;FALSE
+impaired driving ability;Adrenergic Beta2 receptor;Agonist;2.76;-0.22;0.1;0.164918;-0.84;131;0,0441821248;FALSE
+impaired work ability;Histamine H1 receptor;Antagonist;-1.81;0.32;0.22;0.165127;0.34;132;0,0445193929;FALSE
+disability;Muscarinic M1 receptor;Antagonist;-4.89;0.74;0.48;0.166127;0.5;133;0,0448566610;FALSE
+physical assault;Histamine H1 receptor;Antagonist;-1.84;0.5;0.34;0.166469;0.38;134;0,0451939292;FALSE
+impaired quality of life;Norepinephrine transporter;Antagonist;0.39;-0.06;0.03;0.167378;-0.83;135;0,0455311973;FALSE
+physical assault;Norepinephrine transporter;Antagonist;4.67;-0.45;0.29;0.167709;-0.47;136;0,0458684654;FALSE
+loss of personal independence in daily activities;Adrenergic Beta2 receptor;Agonist;-4.65;0.95;0.57;0.169112;0.64;137;0,0462057336;FALSE
+social anxiety disorder;Norepinephrine transporter;Antagonist;-468.56;80.75;54.37;0.171692;0.44;138;0,0465430017;FALSE
+crime;GABA A receptor;Agonist;45.24;-5.12;2.46;0.172332;-0.83;139;0,0468802698;FALSE
+physical assault;Glucocorticoid receptor;Agonist;7.55;-0.73;0.35;0.173037;-0.83;140;0,0472175379;FALSE
+impaired work ability;Muscarinic M4 receptor;Antagonist;-1.23;0.25;0.16;0.175734;0.58;141;0,0475548061;FALSE
+impaired work ability;Muscarinic M5 receptor;Antagonist;-1.46;0.27;0.17;0.175951;0.63;142;0,0478920742;FALSE
+physical assault;Dopamine D3 receptor;Antagonist;4.92;-0.42;0.21;0.175993;-0.82;143;0,0482293423;FALSE
+gambling;Serotonin 5-HT1 receptor;Partial Agonist;-75.83;15.22;9.33;0.178263;0.63;144;0,0485666105;FALSE
+aggression;Dopamine D3 receptor;Agonist;10.27;-1.18;0.58;0.178736;-0.82;145;0,0489038786;FALSE
+imprisonment;Serotonin transporter;Antagonist;9.05;-0.79;0.55;0.181076;-0.44;146;0,0492411467;FALSE
+gambling;Dopamine D2 receptor;Agonist;210.62;-20.85;12.03;0.181423;-0.71;147;0,0495784148;FALSE
+homicide;Dopamine transporter;Antagonist;10.11;-1.37;0.85;0.181992;-0.63;148;0,0499156830;FALSE
+family stress;Serotonin 5-HT2 receptor;Antagonist;-2.86;0.51;0.29;0.182014;0.71;149;0,0502529511;FALSE
+impaired work ability;Muscarinic M2 receptor;Antagonist;-0.95;0.22;0.14;0.182875;0.57;150;0,0505902192;FALSE
+antisocial behaviour;Histamine H1 receptor;Antagonist;-1.9;0.49;0.34;0.185355;0.46;151;0,0509274874;FALSE
+aggression;Muscarinic M4 receptor;Antagonist;8.56;-0.82;0.57;0.185793;-0.43;152;0,0512647555;FALSE
+imprisonment;Dopamine D4 receptor;Antagonist;15.42;-1.5;0.76;0.186972;-0.81;153;0,0516020236;FALSE
+drug diversion;Norepinephrine transporter;Antagonist;98.73;-14;9.4;0.187056;-0.52;154;0,0519392917;FALSE
+impaired work ability;Delta opioid receptor;Agonist;3.19;-0.36;0.21;0.187348;-0.7;155;0,0522765599;FALSE
+impaired work ability;Kappa opioid receptor;Agonist;3.68;-0.39;0.2;0.188005;-0.81;156;0,0526138280;FALSE
+verbal abuse;Serotonin 5-HT2 receptor;Inverse Agonist;-13.87;1.89;1.12;0.188817;0.7;157;0,0529510961;FALSE
+impulse-control disorder;Dopamine D3 receptor;Agonist;-91.7;14.17;7.24;0.189383;0.81;158;0,0532883642;FALSE
+legal problem;Histamine H1 receptor;Antagonist;9.73;-0.98;0.65;0.192319;-0.56;159;0,0536256324;FALSE
+aggression;Muscarinic M1 receptor;Antagonist;8.62;-0.82;0.59;0.19349;-0.37;160;0,0539629005;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT7 receptor;Antagonist;0.54;-0.04;0.02;0.199105;-0.61;161;0,0543001686;FALSE
+loss of employment;Dopamine transporter;Antagonist;18.07;-2.63;1.78;0.199708;-0.55;162;0,0546374368;FALSE
+aggression;Glucocorticoid receptor;Agonist;-0.79;0.22;0.16;0.204595;0.39;163;0,0549747049;FALSE
+impaired driving ability;Delta opioid receptor;Agonist;3.47;-0.33;0.18;0.206551;-0.79;164;0,0553119730;FALSE
+physical assault;Serotonin 5-HT6 receptor;Inverse Agonist;43.04;-5.17;2.82;0.208541;-0.79;165;0,0556492411;FALSE
+antisocial behaviour;Serotonin 5-HT2 receptor;Inverse Agonist;10.1;-1;0.62;0.209304;-0.68;166;0,0559865093;FALSE
+impaired work ability;Mu opioid receptor;Agonist;1.69;-0.13;0.1;0.214157;-0.43;167;0,0563237774;FALSE
+social avoidant behaviour;Dopamine D2 receptor;Antagonist;-2.83;0.67;0.5;0.215709;0.41;168;0,0566610455;FALSE
+impulse-control disorder;Dopamine D5 receptor;Agonist;60.92;-5.87;3.3;0.216896;-0.78;169;0,0569983137;FALSE
+impulsive behaviour;Dopamine D2 receptor;Agonist;-4.2;1.12;0.63;0.216987;0.78;170;0,0573355818;FALSE
+impulsive behaviour;Serotonin 5-HT2 receptor;Antagonist;8.39;-0.76;0.58;0.219282;-0.4;171;0,0576728499;FALSE
+social avoidant behaviour;Serotonin 5-HT1 receptor;Antagonist;-10.89;2.15;1.22;0.219571;0.78;172;0,0580101180;FALSE
+compulsive shopping;Serotonin 5-HT2 receptor;Partial Agonist;-203.12;31.32;17.8;0.220605;0.78;173;0,0583473862;FALSE
+social avoidant behaviour;Muscarinic M2 receptor;Antagonist;-1.59;0.32;0.18;0.221437;0.78;174;0,0586846543;FALSE
+sexual abuse;Serotonin transporter;Antagonist;7.41;-0.63;0.47;0.221967;-0.45;175;0,0590219224;FALSE
+speech disorder;Serotonin 5-HT1 receptor;Antagonist;-4.99;1.07;0.82;0.22278;0.4;176;0,0593591906;FALSE
+sexual abuse;Histamine H1 receptor;Antagonist;21.3;-2.3;1.6;0.223408;-0.58;177;0,0596964587;FALSE
+verbal abuse;GABA A receptor;Agonist;14;-1.61;0.93;0.224935;-0.78;178;0,0600337268;FALSE
+gambling;Histamine H1 receptor;Antagonist;140.37;-15.55;10.89;0.226399;-0.58;179;0,0603709949;FALSE
+gambling disorder;Serotonin 5-HT2 receptor;Antagonist;61.66;-8.74;5.79;0.228685;-0.66;180;0,0607082631;FALSE
+speech disorder;Dopamine D2 receptor;Antagonist;-5.31;0.93;0.75;0.231071;0.27;181;0,0610455312;FALSE
+gambling disorder;Histamine H1 receptor;Antagonist;122.92;-13.59;9.7;0.23354;-0.57;182;0,0613827993;FALSE
+speech disorder;Dopamine D3 receptor;Partial Agonist;2.2;-0.18;0.12;0.234127;-0.65;183;0,0617200675;FALSE
+impulse-control disorder;Dopamine D3 receptor;Partial Agonist;123.91;-12.46;8.39;0.234229;-0.65;184;0,0620573356;FALSE
+impulsive behaviour;Dopamine D2 receptor;Partial Agonist;-4.46;0.93;0.56;0.23518;0.76;185;0,0623946037;FALSE
+compulsive shopping;Serotonin transporter;Antagonist;2.11;-0.19;0.14;0.236944;-0.51;186;0,0627318718;FALSE
+gambling disorder;Dopamine D2 receptor;Agonist;178.14;-17.22;11.7;0.237685;-0.65;187;0,0630691400;FALSE
+verbal abuse;Norepinephrine transporter;Antagonist;3.42;-0.26;0.2;0.237765;-0.47;188;0,0634064081;FALSE
+verbal abuse;Dopamine D2 receptor;Antagonist;-22.79;3.44;2.57;0.23869;0.51;189;0,0637436762;FALSE
+compulsive shopping;Dopamine D3 receptor;Partial Agonist;89.28;-9.15;6.24;0.239026;-0.65;190;0,0640809444;FALSE
+impulsive behaviour;Histamine H1 receptor;Antagonist;96.74;-10.84;8.71;0.239048;-0.35;191;0,0644182125;FALSE
+educational problem;Progesterone receptor;Agonist;-6.26;1.02;0.62;0.239067;0.76;192;0,0647554806;FALSE
+social problem;Serotonin 5-HT2 receptor;Inverse Agonist;4.15;-0.43;0.26;0.239086;-0.76;193;0,0650927487;FALSE
+imprisonment;Serotonin 5-HT7 receptor;Inverse Agonist;15.72;-1.48;0.91;0.243958;-0.76;194;0,0654300169;FALSE
+theft;Histamine H1 receptor;Antagonist;72.82;-8.41;5.83;0.24465;-0.64;195;0,0657672850;FALSE
+aggression;Delta opioid receptor;Agonist;3.14;-0.28;0.21;0.244717;-0.56;196;0,0661045531;FALSE
+homicide;Kappa opioid receptor;Agonist;11.68;-1.23;0.77;0.249366;-0.75;197;0,0664418212;FALSE
+antisocial behaviour;Serotonin 5-HT2 receptor;Antagonist;12;-1.52;1.08;0.251638;-0.63;198;0,0667790894;FALSE
+hypersexuality;Serotonin 5-HT2 receptor;Inverse Agonist;9.39;-0.94;0.67;0.251677;-0.63;199;0,0671163575;FALSE
+compulsive shopping;Serotonin 5-HT2 receptor;Antagonist;94.73;-13.31;9.44;0.253362;-0.63;200;0,0674536256;FALSE
+impaired driving ability;Serotonin 5-HT3 receptor;Antagonist;2.71;-0.29;0.2;0.255334;-0.63;201;0,0677908938;FALSE
+loss of employment;Norepinephrine transporter;Antagonist;7.9;-0.97;0.81;0.258253;-0.37;202;0,0681281619;FALSE
+hypersexuality;Serotonin 5-HT1 receptor;Partial Agonist;111.77;-11.62;9.15;0.260145;-0.49;203;0,0684654300;FALSE
+loss of personal independence in daily activities;Dopamine D3 receptor;Antagonist;-2.51;0.37;0.29;0.261718;0.49;204;0,0688026981;FALSE
+educational problem;Norepinephrine transporter;Antagonist;-9.04;2.02;1.63;0.26182;0.45;205;0,0691399663;FALSE
+speech disorder;Adrenergic Beta1 receptor;Antagonist;-1.88;0.63;0.51;0.263125;0.45;206;0,0694772344;FALSE
+theft;Delta opioid receptor;Agonist;-8;1.47;0.96;0.264789;0.74;207;0,0698145025;FALSE
+disability;Norepinephrine transporter;Antagonist;0.8;-0.07;0.06;0.265068;-0.33;208;0,0701517707;FALSE
+crime;Histamine H1 receptor;Antagonist;-12.89;2.46;2.06;0.266271;0.39;209;0,0704890388;FALSE
+language disorder;Serotonin 5-HT2 receptor;Antagonist;-3.14;0.8;0.59;0.267201;0.62;210;0,0708263069;FALSE
+disturbance in attention;Dopamine D2 receptor;Partial Agonist;-0.43;0.11;0.08;0.267808;0.54;211;0,0711635750;FALSE
+shoplifting;Serotonin transporter;Antagonist;-3.86;0.64;0.42;0.27042;0.73;212;0,0715008432;FALSE
+crime;Norepinephrine transporter;Antagonist;-14.46;2.94;2.43;0.272648;0.44;213;0,0718381113;FALSE
+impulsive behaviour;Mu opioid receptor;Agonist;2.7;-0.26;0.21;0.274452;-0.53;214;0,0721753794;FALSE
+disability;Serotonin 5-HT3 receptor;Antagonist;-2.48;0.55;0.42;0.276699;0.61;215;0,0725126476;FALSE
+speech disorder;Muscarinic M4 receptor;Antagonist;-0.61;0.29;0.25;0.277812;0.34;216;0,0728499157;FALSE
+disturbance in attention;Adrenergic Beta1 receptor;Antagonist;6.54;-0.69;0.57;0.279241;-0.48;217;0,0731871838;FALSE
+educational problem;Dopamine transporter;Antagonist;-24.22;4.84;3.69;0.280975;0.6;218;0,0735244519;FALSE
+hypersexuality;Adrenergic Alpha2 receptor;Antagonist;343.77;-43.13;33.13;0.283945;-0.6;219;0,0738617201;FALSE
+poor personal hygiene;Norepinephrine transporter;Antagonist;5.01;-0.56;0.43;0.285927;-0.6;220;0,0741989882;FALSE
+disturbance in attention;Dopamine D3 receptor;Partial Agonist;-0.23;0.08;0.06;0.28652;0.6;221;0,0745362563;FALSE
+poor personal hygiene;Serotonin 5-HT2 receptor;Inverse Agonist;39.41;-4.18;2.94;0.29118;-0.71;222;0,0748735245;FALSE
+speech disorder;Serotonin 5-HT3 receptor;Antagonist;-3.69;0.93;0.79;0.293004;0.47;223;0,0752107926;FALSE
+disability;Muscarinic M5 receptor;Antagonist;-4.4;0.73;0.61;0.293537;0.52;224;0,0755480607;FALSE
+social anxiety disorder;Serotonin transporter;Antagonist;622.93;-68.79;62.42;0.294002;-0.32;225;0,0758853288;FALSE
+physical assault;Serotonin 5-HT2 receptor;Antagonist;-2.27;0.69;0.61;0.295143;0.39;226;0,0762225970;FALSE
+speech disorder;Histamine H1 receptor;Antagonist;8.26;-0.66;0.63;0.295821;-0.18;227;0,0765598651;FALSE
+aggression;Serotonin 5-HT1 receptor;Agonist;4.85;-0.42;0.35;0.297014;-0.51;228;0,0768971332;FALSE
+impaired quality of life;Glucocorticoid receptor;Agonist;3.96;-0.33;0.3;0.297192;-0.39;229;0,0772344013;FALSE
+loss of employment;Serotonin 5-HT1 receptor;Agonist;-1.72;0.38;0.27;0.298105;0.7;230;0,0775716695;FALSE
+disturbance in attention;Serotonin 5-HT1 receptor;Agonist;-0.6;0.21;0.18;0.300168;0.51;231;0,0779089376;FALSE
+disability;Dopamine D3 receptor;Antagonist;-12.15;1.68;1.42;0.301976;0.51;232;0,0782462057;FALSE
+physical assault;Serotonin transporter;Antagonist;-1.43;0.47;0.44;0.30225;0.3;233;0,0785834739;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT2 receptor;Partial Agonist;2.49;-0.3;0.22;0.306119;-0.69;234;0,0789207420;FALSE
+compulsive shopping;Adrenergic Alpha2 receptor;Antagonist;291.33;-37.06;27.24;0.306788;-0.69;235;0,0792580101;FALSE
+poor personal hygiene;Serotonin transporter;Antagonist;5.98;-0.54;0.46;0.308117;-0.5;236;0,0795952782;FALSE
+speech disorder;Dopamine D1 receptor;Antagonist;39.26;-4.98;4.48;0.308744;-0.41;237;0,0799325464;FALSE
+marital problem;Dopamine transporter;Antagonist;13.98;-1.94;1.46;0.314404;-0.69;238;0,0802698145;FALSE
+impulse-control disorder;Norepinephrine transporter;Antagonist;-1.7;0.54;0.51;0.315325;0.33;239;0,0806070826;FALSE
+aggression;Serotonin 5-HT1 receptor;Partial Agonist;-0.66;0.24;0.22;0.315403;0.3;240;0,0809443508;FALSE
+loss of personal independence in daily activities;Adrenergic Beta1 receptor;Antagonist;0.04;0.17;0.15;0.316224;0.5;241;0,0812816189;FALSE
+social avoidant behaviour;Serotonin 5-HT2 receptor;Inverse Agonist;10.65;-1.04;0.91;0.318137;-0.5;242;0,0816188870;FALSE
+impaired work ability;Adrenergic Beta2 receptor;Antagonist;1.56;-0.11;0.09;0.319384;-0.57;243;0,0819561551;FALSE
+impaired driving ability;Dopamine transporter;Antagonist;4.57;-0.56;0.53;0.321014;-0.37;244;0,0822934233;FALSE
+physical assault;Serotonin 5-HT2 receptor;Inverse Agonist;8.05;-0.74;0.65;0.321274;-0.49;245;0,0826306914;FALSE
+impaired driving ability;Serotonin 5-HT1 receptor;Agonist;-4.82;0.86;0.73;0.321916;0.56;246;0,0829679595;FALSE
+educational problem;Dopamine D2 receptor;Antagonist;-1.89;0.32;0.25;0.327133;0.67;247;0,0833052277;FALSE
+drug diversion;Mu opioid receptor;Agonist;-15.47;6.17;5.98;0.329326;0.33;248;0,0836424958;FALSE
+speech disorder;Dopamine D5 receptor;Antagonist;6.24;-0.61;0.55;0.329997;-0.48;249;0,0839797639;FALSE
+impulsive behaviour;Serotonin 5-HT1 receptor;Antagonist;-386.42;65.96;56.88;0.330103;0.56;250;0,0843170320;FALSE
+job dissatisfaction;Histamine H1 receptor;Antagonist;-2.57;0.41;0.33;0.332562;0.67;251;0,0846543002;FALSE
+social avoidant behaviour;Serotonin 5-HT6 receptor;Inverse Agonist;47.09;-5.67;4.49;0.333928;-0.67;252;0,0849915683;FALSE
+disability;Serotonin 5-HT2 receptor;Antagonist;-0.5;0.15;0.15;0.333951;0.32;253;0,0853288364;FALSE
+homicide;Histamine H1 receptor;Antagonist;-2.06;0.59;0.58;0.334086;0.31;254;0,0856661046;FALSE
+language disorder;Dopamine D3 receptor;Antagonist;-36.85;6.42;6.07;0.338344;0.43;255;0,0860033727;FALSE
+impulsive behaviour;GABA A receptor;Agonist;-1.84;0.39;0.35;0.3406;0.55;256;0,0863406408;FALSE
+social avoidant behaviour;Norepinephrine transporter;Antagonist;2.93;-0.2;0.21;0.341009;-0.23;257;0,0866779089;FALSE
+verbal abuse;Dopamine transporter;Antagonist;4.78;-0.47;0.38;0.34337;-0.66;258;0,0870151771;FALSE
+speech disorder;Serotonin transporter;Antagonist;3.24;-0.25;0.26;0.344531;-0.18;259;0,0873524452;FALSE
+impaired driving ability;Progesterone receptor;Agonist;-1.07;0.26;0.24;0.346596;0.47;260;0,0876897133;FALSE
+social anxiety disorder;Serotonin 5-HT1 receptor;Partial Agonist;42.72;-5.23;4.29;0.346812;-0.65;261;0,0880269815;FALSE
+physical assault;Dopamine D2 receptor;Antagonist;-0.86;0.4;0.4;0.348384;0.33;262;0,0883642496;FALSE
+marital problem;Serotonin transporter;Antagonist;-2.83;0.63;0.63;0.353684;0.38;263;0,0887015177;FALSE
+disturbance in attention;Serotonin 5-HT2 receptor;Inverse Agonist;7.57;-0.77;0.77;0.353838;-0.35;264;0,0890387858;FALSE
+gambling;Dopamine D2 receptor;Antagonist;-1.12;0.19;0.18;0.353901;0.53;265;0,0893760540;FALSE
+theft;Serotonin transporter;Antagonist;-1.68;0.36;0.36;0.355773;0.41;266;0,0897133221;FALSE
+impaired work ability;Serotonin 5-HT1 receptor;Agonist;-2.73;0.52;0.48;0.358282;0.53;267;0,0900505902;FALSE
+impulse-control disorder;Dopamine D2 receptor;Partial Agonist;128.11;-13.2;11.17;0.358922;-0.64;268;0,0903878583;FALSE
+impaired self-care;GABA A receptor;Agonist;-2.05;0.41;0.35;0.359915;0.64;269;0,0907251265;FALSE
+marital problem;Histamine H1 receptor;Antagonist;12.19;-1.37;1.17;0.360753;-0.64;270;0,0910623946;FALSE
+impulse-control disorder;GABA A receptor;Agonist;-0.15;0.12;0.1;0.361631;0.64;271;0,0913996627;FALSE
+gambling disorder;Dopamine D2 receptor;Antagonist;-1.38;0.24;0.22;0.364122;0.52;272;0,0917369309;FALSE
+speech disorder;Androgen Receptor;Antagonist;16.95;-1.91;1.64;0.364605;-0.64;273;0,0920741990;FALSE
+impaired work ability;Muscarinic M3 receptor;Antagonist;-0.47;0.16;0.16;0.36596;0.37;274;0,0924114671;FALSE
+disability;Adrenergic Alpha2 receptor;Antagonist;3.43;-0.4;0.35;0.36794;-0.63;275;0,0927487352;FALSE
+disability;Serotonin transporter;Antagonist;-0.22;0.07;0.08;0.368904;0.25;276;0,0930860034;FALSE
+loss of personal independence in daily activities;Histamine H1 receptor;Antagonist;-0.18;0.08;0.09;0.374188;0.2;277;0,0934232715;FALSE
+impaired work ability;Muscarinic M1 receptor;Antagonist;-0.9;0.2;0.21;0.375095;0.34;278;0,0937605396;FALSE
+aggression;Dopamine D5 receptor;Agonist;0.08;0.08;0.07;0.376376;0.62;279;0,0940978078;FALSE
+social fear;Norepinephrine transporter;Antagonist;7.55;-0.8;0.77;0.376646;-0.51;280;0,0944350759;FALSE
+imprisonment;Dopamine D3 receptor;Antagonist;12.18;-1.09;0.98;0.379681;-0.62;281;0,0947723440;FALSE
+poor personal hygiene;Histamine H1 receptor;Antagonist;-3.03;0.79;0.82;0.380396;0.4;282;0,0951096121;FALSE
+physical assault;Serotonin 5-HT7 receptor;Inverse Agonist;14.24;-1.5;1.47;0.381588;-0.51;283;0,0954468803;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT7 receptor;Inverse Agonist;-1.8;0.29;0.29;0.381799;0.44;284;0,0957841484;FALSE
+impulse-control disorder;Adrenergic Alpha2 receptor;Antagonist;361.45;-45.43;40.97;0.382978;-0.62;285;0,0961214165;FALSE
+compulsive shopping;Norepinephrine transporter;Antagonist;-0.37;0.14;0.14;0.386563;0.44;286;0,0964586847;FALSE
+loss of personal independence in daily activities;Dopamine D4 receptor;Antagonist;0.7;-0.06;0.06;0.387676;-0.44;287;0,0967959528;FALSE
+gambling;Dopamine D3 receptor;Partial Agonist;-55.82;10.23;10.17;0.388638;0.5;288;0,0971332209;FALSE
+loss of personal independence in daily activities;Dopamine D2 receptor;Partial Agonist;-0.54;0.12;0.12;0.392936;0.43;289;0,0974704890;FALSE
+hypersexuality;Dopamine D3 receptor;Partial Agonist;97.61;-7.36;7.39;0.393101;-0.5;290;0,0978077572;FALSE
+family stress;Dopamine transporter;Antagonist;2.57;-0.34;0.32;0.393351;-0.61;291;0,0981450253;FALSE
+social avoidant behaviour;Serotonin 5-HT1 receptor;Partial Agonist;-4;0.73;0.68;0.395353;0.6;292;0,0984822934;FALSE
+aggression;Dopamine D5 receptor;Antagonist;4.72;-0.33;0.35;0.395648;-0.43;293;0,0988195616;FALSE
+speech disorder;Progesterone receptor;Agonist;3.97;-0.31;0.32;0.397197;-0.43;294;0,0991568297;FALSE
+crime;Dopamine D2 receptor;Antagonist;-5.89;1.12;1.05;0.399816;0.6;295;0,0994940978;FALSE
+impaired work ability;Progesterone receptor;Agonist;-0.21;0.25;0.27;0.40367;0.42;296;0,0998313659;FALSE
+gambling;GABA A receptor;Agonist;-0.5;0.09;0.08;0.403778;0.6;297;0,1001686341;FALSE
+theft;Norepinephrine transporter;Antagonist;2.3;-0.19;0.2;0.404822;-0.38;298;0,1005059022;FALSE
+loss of personal independence in daily activities;Dopamine D2 receptor;Agonist;0.02;0.03;0.04;0.405106;0.42;299;0,1008431703;FALSE
+loss of employment;Mu opioid receptor;Agonist;2.07;-0.18;0.2;0.406002;-0.34;300;0,1011804384;FALSE
+disability;Muscarinic M2 receptor;Antagonist;-2.31;0.46;0.51;0.407802;0.37;301;0,1015177066;FALSE
+impulsive behaviour;Serotonin 5-HT7 receptor;Antagonist;-2.42;0.69;0.72;0.410457;0.48;302;0,1018549747;FALSE
+crime;Mu opioid receptor;Agonist;-146.11;21.19;22.34;0.412884;0.48;303;0,1021922428;FALSE
+impulse-control disorder;Serotonin transporter;Antagonist;5.07;-0.41;0.48;0.413192;-0.24;304;0,1025295110;FALSE
+disability;Muscarinic M4 receptor;Antagonist;-2.32;0.45;0.5;0.414075;0.37;305;0,1028667791;FALSE
+aggression;Serotonin 5-HT2 receptor;Partial Agonist;4.72;-0.51;0.5;0.416382;-0.58;306;0,1032040472;FALSE
+physical assault;Dopamine transporter;Antagonist;-0.52;0.25;0.26;0.4171;0.48;307;0,1035413153;FALSE
+hypersexuality;Serotonin 5-HT2 receptor;Antagonist;47.66;-4.94;5.59;0.417642;-0.37;308;0,1038785835;FALSE
+family stress;Norepinephrine transporter;Antagonist;0.58;-0.04;0.04;0.418799;-0.33;309;0,1042158516;FALSE
+hypersexuality;Serotonin transporter;Antagonist;1.92;-0.14;0.16;0.421274;-0.31;310;0,1045531197;FALSE
+physical assault;Serotonin 5-HT6 receptor;Antagonist;-3.95;0.82;0.82;0.422309;0.58;311;0,1048903879;FALSE
+impaired self-care;Histamine H1 receptor;Antagonist;-2.89;0.69;0.8;0.426413;0.36;312;0,1052276560;FALSE
+aggression;Serotonin 5-HT3 receptor;Antagonist;3.1;-0.33;0.36;0.426946;-0.47;313;0,1055649241;FALSE
+impaired work ability;Adrenergic Beta1 receptor;Antagonist;2.37;-0.22;0.22;0.428586;-0.57;314;0,1059021922;FALSE
+loss of personal independence in daily activities;Norepinephrine transporter;Antagonist;0.95;-0.06;0.07;0.431034;-0.19;315;0,1062394604;FALSE
+language disorder;Dopamine transporter;Antagonist;15.37;-2.18;2.23;0.431764;-0.57;316;0,1065767285;FALSE
+language disorder;Norepinephrine transporter;Antagonist;-5.59;1.4;1.72;0.439847;0.28;317;0,1069139966;FALSE
+aggression;Serotonin 5-HT7 receptor;Antagonist;-0.82;0.51;0.62;0.440576;0.3;318;0,1072512648;FALSE
+disturbance in attention;Serotonin 5-HT3 receptor;Antagonist;-3.25;0.74;0.86;0.440961;0.39;319;0,1075885329;FALSE
+family stress;Serotonin 5-HT2 receptor;Inverse Agonist;-0.94;0.14;0.14;0.442385;0.56;320;0,1079258010;FALSE
+job dissatisfaction;Dopamine transporter;Antagonist;5.43;-0.56;0.59;0.44543;-0.55;321;0,1082630691;FALSE
+drug diversion;Kappa opioid receptor;Agonist;-73.97;15.43;16.41;0.446341;0.55;322;0,1086003373;FALSE
+physical assault;Serotonin 5-HT7 receptor;Antagonist;-3.83;0.93;1.07;0.446841;0.45;323;0,1089376054;FALSE
+divorced;Norepinephrine transporter;Antagonist;-0.46;0.21;0.23;0.447488;0.55;324;0,1092748735;FALSE
+impulse-control disorder;Dopamine D1 receptor;Agonist;66.22;-7.98;8.52;0.448149;-0.55;325;0,1096121417;FALSE
+impaired work ability;Dopamine D3 receptor;Antagonist;-0.35;0.07;0.07;0.449785;0.55;326;0,1099494098;FALSE
+compulsive shopping;Dopamine D5 receptor;Agonist;31.86;-2.66;2.86;0.449924;-0.55;327;0,1102866779;FALSE
+language disorder;Dopamine D2 receptor;Antagonist;-21.56;4.21;5.3;0.453036;0.29;328;0,1106239460;FALSE
+loss of personal independence in daily activities;Mu opioid receptor;Agonist;0.93;-0.03;0.04;0.456573;-0.25;329;0,1109612142;FALSE
+aggression;Adrenergic Beta2 receptor;Partial Agonist;6.47;-0.98;1.07;0.456792;-0.54;330;0,1112984823;FALSE
+social anxiety disorder;Dopamine transporter;Antagonist;17.2;-2.13;2.64;0.457513;-0.34;331;0,1116357504;FALSE
+aggression;Serotonin 5-HT6 receptor;Antagonist;-2.84;0.78;1;0.460887;0.28;332;0,1119730185;FALSE
+disturbance in attention;Progesterone receptor;Agonist;4.39;-0.39;0.48;0.461107;-0.34;333;0,1123102867;FALSE
+social problem;Norepinephrine transporter;Antagonist;0.69;-0.04;0.05;0.462901;-0.3;334;0,1126475548;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT1 receptor;Partial Agonist;-0.17;0.09;0.12;0.464488;0.21;335;0,1129848229;FALSE
+homicide;Serotonin transporter;Antagonist;-0.73;0.6;0.79;0.465759;0.2;336;0,1133220911;FALSE
+drug diversion;Dopamine transporter;Antagonist;-1.13;0.48;0.6;0.468299;0.37;337;0,1136593592;FALSE
+disability;Dopamine D2 receptor;Antagonist;-3.62;0.57;0.76;0.4693;0.24;338;0,1139966273;FALSE
+imprisonment;Mu opioid receptor;Agonist;-0.14;0.23;0.28;0.469324;0.37;339;0,1143338954;FALSE
+impaired driving ability;Serotonin transporter;Antagonist;1.53;-0.08;0.11;0.475035;-0.17;340;0,1146711636;FALSE
+gambling disorder;Serotonin 5-HT1 receptor;Partial Agonist;-19.2;7.9;9.74;0.476292;0.42;341;0,1150084317;FALSE
+social avoidant behaviour;Progesterone receptor;Agonist;-3.49;0.59;0.76;0.476762;0.37;342;0,1153456998;FALSE
+impaired self-care;Dopamine D2 receptor;Antagonist;-15.64;2.88;3.83;0.480763;0.29;343;0,1156829680;FALSE
+aggression;Dopamine D2 receptor;Partial Agonist;2.62;-0.17;0.22;0.481865;-0.36;344;0,1160202361;FALSE
+disturbance in attention;Mu opioid receptor;Agonist;1.25;-0.06;0.08;0.490007;-0.22;345;0,1163575042;FALSE
+social avoidant behaviour;Serotonin transporter;Antagonist;1.07;0.07;0.1;0.490575;0.16;346;0,1166947723;FALSE
+aggression;Adrenergic Alpha2 receptor;Partial Agonist;-12.48;2.32;2.99;0.494605;0.41;347;0,1170320405;FALSE
+speech disorder;Adrenergic Alpha1 receptor;Antagonist;-2.32;0.6;0.84;0.495507;0.24;348;0,1173693086;FALSE
+educational problem;Serotonin transporter;Antagonist;8.52;-0.83;1.16;0.495731;-0.26;349;0,1177065767;FALSE
+disability;Serotonin 5-HT1 receptor;Antagonist;-1.87;0.41;0.5;0.497676;0.5;350;0,1180438449;FALSE
+aggression;Dopamine D2 receptor;Agonist;2.15;-0.18;0.24;0.500174;-0.35;351;0,1183811130;FALSE
+impaired driving ability;Dopamine D3 receptor;Antagonist;-0.43;0.08;0.1;0.500869;0.5;352;0,1187183811;FALSE
+legal problem;Norepinephrine transporter;Antagonist;3.1;-0.23;0.33;0.503352;-0.26;353;0,1190556492;FALSE
+sexual abuse;Dopamine D2 receptor;Antagonist;5.18;-0.43;0.54;0.505537;-0.49;354;0,1193929174;FALSE
+impaired work ability;Glucocorticoid receptor;Agonist;-1.6;0.51;0.75;0.506661;0.19;355;0,1197301855;FALSE
+impaired driving ability;Norepinephrine transporter;Antagonist;1.51;-0.09;0.13;0.507578;-0.17;356;0,1200674536;FALSE
+homicide;GABA A receptor;Agonist;19.85;-1.77;2.37;0.509399;-0.4;357;0,1204047218;FALSE
+unemployment;Histamine H1 receptor;Antagonist;13.22;-1.31;1.65;0.510595;-0.49;358;0,1207419899;FALSE
+impaired work ability;Serotonin 5-HT3 receptor;Antagonist;-0.54;0.22;0.3;0.513295;0.39;359;0,1210792580;FALSE
+social avoidant behaviour;GABA A receptor;Agonist;-3.24;0.61;0.78;0.516608;0.48;360;0,1214165261;FALSE
+homicide;Norepinephrine transporter;Antagonist;5.06;-0.37;0.55;0.517854;-0.21;361;0,1217537943;FALSE
+antisocial behaviour;Serotonin transporter;Antagonist;0.31;0.25;0.37;0.518283;0.21;362;0,1220910624;FALSE
+speech disorder;Dopamine D3 receptor;Agonist;7.79;-0.86;1.18;0.518623;-0.39;363;0,1224283305;FALSE
+social problem;Mu opioid receptor;Agonist;0.03;0.04;0.05;0.52374;0.48;364;0,1227655987;FALSE
+disturbance in attention;Dopamine D2 receptor;Agonist;-0.26;0.12;0.17;0.523864;0.38;365;0,1231028668;FALSE
+disturbance in attention;Serotonin 5-HT1 receptor;Partial Agonist;-2.13;0.49;0.75;0.527863;0.19;366;0,1234401349;FALSE
+loss of employment;Serotonin 5-HT2 receptor;Inverse Agonist;-1.69;0.25;0.33;0.528972;0.47;367;0,1237774030;FALSE
+impaired self-care;Dopamine D3 receptor;Antagonist;-26.24;4.34;5.75;0.529695;0.47;368;0,1241146712;FALSE
+impulse-control disorder;Dopamine D2 receptor;Agonist;5.55;2.09;3.04;0.529907;0.32;369;0,1244519393;FALSE
+aggression;Adrenergic Beta1 receptor;Antagonist;1.73;-0.14;0.2;0.531945;-0.38;370;0,1247892074;FALSE
+marital problem;GABA A receptor;Agonist;-0.02;0.14;0.19;0.532543;0.47;371;0,1251264755;FALSE
+family stress;Mu opioid receptor;Agonist;0.4;-0.01;0.02;0.535001;-0.46;372;0,1254637437;FALSE
+speech disorder;Dopamine D4 receptor;Antagonist;9.67;-0.87;1.34;0.538507;-0.24;373;0,1258010118;FALSE
+speech disorder;Muscarinic M1 receptor;Antagonist;0.26;0.17;0.28;0.539405;0.17;374;0,1261382799;FALSE
+disability;Histamine H1 receptor;Antagonist;2.26;-0.17;0.27;0.542984;-0.15;375;0,1264755481;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT1 receptor;Agonist;-0.51;0.16;0.24;0.544236;0.37;376;0,1268128162;FALSE
+compulsive shopping;Dopamine D1 receptor;Agonist;44.13;-5.24;7.25;0.545046;-0.45;377;0,1271500843;FALSE
+impaired driving ability;Mu opioid receptor;Agonist;0.6;0.1;0.15;0.548057;0.25;378;0,1274873524;FALSE
+loss of employment;Glucocorticoid receptor;Agonist;-0.15;0.11;0.15;0.553412;0.45;379;0,1278246206;FALSE
+disturbance in attention;Serotonin transporter;Antagonist;0.59;0.17;0.28;0.555062;0.11;380;0,1281618887;FALSE
+gambling;Dopamine D5 receptor;Agonist;-54.03;12.24;17.49;0.556383;0.44;381;0,1284991568;FALSE
+social avoidant behaviour;Serotonin 5-HT7 receptor;Antagonist;5.87;-0.43;0.64;0.556407;-0.36;382;0,1288364250;FALSE
+speech disorder;Serotonin 5-HT2 receptor;Antagonist;4.37;-0.28;0.48;0.55765;-0.13;383;0,1291736931;FALSE
+compulsive shopping;Dopamine D2 receptor;Agonist;33.7;-1.94;2.97;0.56066;-0.35;384;0,1295109612;FALSE
+impaired self-care;Serotonin 5-HT2 receptor;Antagonist;4.88;-0.5;0.77;0.56197;-0.35;385;0,1298482293;FALSE
+theft;Dopamine transporter;Antagonist;-1.66;0.42;0.62;0.566083;0.43;386;0,1301854975;FALSE
+gambling disorder;Dopamine D5 receptor;Agonist;-57.73;13.1;19.29;0.567128;0.43;387;0,1305227656;FALSE
+impaired driving ability;Serotonin 5-HT6 receptor;Antagonist;4;-0.48;0.75;0.570216;-0.34;388;0,1308600337;FALSE
+loss of personal independence in daily activities;Delta opioid receptor;Agonist;0.51;0.02;0.04;0.576868;0.34;389;0,1311973019;FALSE
+disability;Progesterone receptor;Agonist;3.98;-0.32;0.53;0.580796;-0.29;390;0,1315345700;FALSE
+impaired quality of life;Histamine H1 receptor;Antagonist;1.11;-0.1;0.17;0.583859;-0.25;391;0,1318718381;FALSE
+loss of employment;GABA A receptor;Agonist;3.15;-0.31;0.49;0.585822;-0.41;392;0,1322091062;FALSE
+loss of employment;Delta opioid receptor;Agonist;0.77;-0.07;0.1;0.58774;-0.41;393;0,1325463744;FALSE
+drug diversion;Delta opioid receptor;Agonist;-23.74;8.75;14.54;0.589701;0.33;394;0,1328836425;FALSE
+disability;Serotonin 5-HT7 receptor;Antagonist;2.39;-0.23;0.38;0.591402;-0.33;395;0,1332209106;FALSE
+loss of personal independence in daily activities;Dopamine D3 receptor;Agonist;0.97;-0.09;0.14;0.595788;-0.4;396;0,1335581788;FALSE
+aggression;Mu opioid receptor;Agonist;1.63;-0.06;0.11;0.604155;-0.17;397;0,1338954469;FALSE
+loss of personal independence in daily activities;Dopamine D3 receptor;Partial Agonist;0.1;0.03;0.05;0.614608;0.26;398;0,1342327150;FALSE
+disturbance in attention;Serotonin 5-HT7 receptor;Antagonist;5.64;-0.49;0.94;0.617459;-0.18;399;0,1345699831;FALSE
+impulsive behaviour;Dopamine D2 receptor;Antagonist;-52.83;8.17;15.75;0.617947;0.18;400;0,1349072513;FALSE
+social avoidant behaviour;Serotonin 5-HT7 receptor;Inverse Agonist;-9.31;1.5;2.71;0.619838;0.3;401;0,1352445194;FALSE
+family stress;Serotonin transporter;Antagonist;0.19;0.03;0.06;0.619932;0.17;402;0,1355817875;FALSE
+speech disorder;Delta opioid receptor;Agonist;2.67;-0.23;0.43;0.621173;-0.26;403;0,1359190556;FALSE
+language disorder;GABA A receptor;Agonist;-5.73;1.14;2.13;0.621218;0.26;404;0,1362563238;FALSE
+social avoidant behaviour;Dopamine D3 receptor;Antagonist;-1;0.43;0.78;0.621823;0.3;405;0,1365935919;FALSE
+social problem;Serotonin transporter;Antagonist;0.16;0.03;0.07;0.626149;0.19;406;0,1369308600;FALSE
+gambling;Dopamine D1 receptor;Agonist;-101.29;20.19;35.67;0.628456;0.37;407;0,1372681282;FALSE
+disturbance in attention;Adrenergic Alpha1 receptor;Antagonist;-0.46;0.2;0.4;0.628573;0.2;408;0,1376053963;FALSE
+imprisonment;Serotonin 5-HT2 receptor;Inverse Agonist;13.17;-1.15;2.15;0.630199;-0.29;409;0,1379426644;FALSE
+homicide;Serotonin 5-HT2 receptor;Inverse Agonist;9.92;-0.99;1.75;0.630268;-0.37;410;0,1382799325;FALSE
+disability;Glucocorticoid receptor;Agonist;-0.45;0.18;0.36;0.634517;0.17;411;0,1386172007;FALSE
+school refusal;Serotonin transporter;Antagonist;11.12;-0.89;1.73;0.639931;-0.29;412;0,1389544688;FALSE
+impulse-control disorder;Dopamine transporter;Antagonist;3.36;-0.24;0.49;0.641981;-0.2;413;0,1392917369;FALSE
+impaired work ability;Dopamine D2 receptor;Antagonist;0.89;-0.06;0.13;0.644165;-0.18;414;0,1396290051;FALSE
+social avoidant behaviour;Serotonin 5-HT3 receptor;Antagonist;2.58;-0.18;0.36;0.645471;-0.28;415;0,1399662732;FALSE
+disability;Mu opioid receptor;Agonist;0.13;0.04;0.09;0.650479;0.19;416;0,1403035413;FALSE
+impulsive behaviour;Dopamine D4 receptor;Antagonist;-90.36;15.16;30.34;0.651673;0.28;417;0,1406408094;FALSE
+social avoidant behaviour;Serotonin 5-HT6 receptor;Antagonist;-2.91;0.81;1.64;0.653636;0.28;418;0,1409780776;FALSE
+impulsive behaviour;Dopamine D3 receptor;Antagonist;-117.04;17.8;36.12;0.655862;0.27;419;0,1413153457;FALSE
+social avoidant behaviour;Serotonin 5-HT1 receptor;Agonist;3.21;-0.13;0.26;0.656441;-0.34;420;0,1416526138;FALSE
+impulse-control disorder;Serotonin 5-HT2 receptor;Inverse Agonist;12.01;-1.17;2.41;0.658821;-0.27;421;0,1419898820;FALSE
+gambling;Dopamine D2 receptor;Partial Agonist;-17.2;4.69;9.68;0.660958;0.27;422;0,1423271501;FALSE
+gambling disorder;Dopamine D3 receptor;Partial Agonist;-8.92;5.41;10.68;0.662826;0.34;423;0,1426644182;FALSE
+disturbance in attention;Serotonin 5-HT2 receptor;Antagonist;2.75;-0.18;0.4;0.662883;-0.1;424;0,1430016863;FALSE
+loss of personal independence in daily activities;Dopamine D2 receptor;Antagonist;-0.1;0.08;0.17;0.663159;0.14;425;0,1433389545;FALSE
+speech disorder;Adrenergic Alpha2 receptor;Partial Agonist;-2.24;0.48;1.03;0.664198;0.2;426;0,1436762226;FALSE
+impaired work ability;Serotonin 5-HT6 receptor;Antagonist;2.91;-0.3;0.64;0.664598;-0.27;427;0,1440134907;FALSE
+impaired work ability;Serotonin 5-HT1 receptor;Partial Agonist;2.78;-0.22;0.49;0.665518;-0.17;428;0,1443507589;FALSE
+homicide;Dopamine D2 receptor;Antagonist;3.16;-0.2;0.43;0.666345;-0.23;429;0,1446880270;FALSE
+loss of personal independence in daily activities;Dopamine D5 receptor;Agonist;0.03;0.04;0.09;0.66696;0.33;430;0,1450252951;FALSE
+loss of personal independence in daily activities;Adrenergic Alpha1 receptor;Antagonist;1.25;-0.08;0.18;0.667495;-0.17;431;0,1453625632;FALSE
+disability;Adrenergic Beta2 receptor;Agonist;0.06;0.25;0.51;0.668545;0.33;432;0,1456998314;FALSE
+loss of employment;Dopamine D2 receptor;Antagonist;-0.08;0.09;0.2;0.670973;0.2;433;0,1460370995;FALSE
+speech disorder;Muscarinic M3 receptor;Antagonist;3.1;-0.13;0.29;0.67422;-0.12;434;0,1463743676;FALSE
+gambling disorder;Serotonin transporter;Antagonist;0.96;-0.06;0.13;0.675782;-0.15;435;0,1467116358;FALSE
+impaired work ability;Serotonin 5-HT7 receptor;Antagonist;1.73;-0.15;0.34;0.67584;-0.26;436;0,1470489039;FALSE
+social avoidant behaviour;Delta opioid receptor;Agonist;0.22;0.06;0.12;0.676109;0.32;437;0,1473861720;FALSE
+verbal abuse;Histamine H1 receptor;Antagonist;-5.49;1.68;3.88;0.676214;0.15;438;0,1477234401;FALSE
+aggression;Kappa opioid receptor;Agonist;2.24;-0.13;0.28;0.680983;-0.25;439;0,1480607083;FALSE
+legal problem;Dopamine transporter;Antagonist;-2.92;0.7;1.48;0.681841;0.32;440;0,1483979764;FALSE
+homicide;Serotonin 5-HT2 receptor;Antagonist;9.88;-0.89;2.02;0.683449;-0.21;441;0,1487352445;FALSE
+impulse-control disorder;Histamine H1 receptor;Antagonist;4.68;-0.31;0.72;0.684502;-0.15;442;0,1490725126;FALSE
+language disorder;Histamine H1 receptor;Antagonist;-1.38;0.51;1.2;0.685295;0.16;443;0,1494097808;FALSE
+job dissatisfaction;Serotonin transporter;Antagonist;3.82;-0.19;0.46;0.686416;-0.16;444;0,1497470489;FALSE
+impaired work ability;Adrenergic Beta2 receptor;Agonist;2.12;-0.06;0.13;0.687044;-0.31;445;0,1500843170;FALSE
+disturbance in attention;Delta opioid receptor;Agonist;0.32;0.06;0.14;0.688662;0.21;446;0,1504215852;FALSE
+impaired driving ability;Muscarinic M5 receptor;Antagonist;2.77;-0.17;0.39;0.691806;-0.21;447;0,1507588533;FALSE
+aggression;GABA A receptor;Agonist;2.37;-0.13;0.31;0.692401;-0.21;448;0,1510961214;FALSE
+disability;Dopamine transporter;Antagonist;0.78;-0.07;0.17;0.693159;-0.21;449;0,1514333895;FALSE
+speech disorder;Serotonin 5-HT1 receptor;Partial Agonist;0.09;0.16;0.4;0.69426;0.12;450;0,1517706577;FALSE
+imprisonment;Histamine H1 receptor;Antagonist;1.5;0.23;0.56;0.696434;0.13;451;0,1521079258;FALSE
+disturbance in attention;Acetylcholinesterase;Antagonist;0.65;-0.04;0.09;0.699185;-0.24;452;0,1524451939;FALSE
+disturbance in attention;Serotonin 5-HT1 receptor;Antagonist;-0.64;0.28;0.69;0.699673;0.16;453;0,1527824621;FALSE
+hypersexuality;Serotonin 5-HT2 receptor;Partial Agonist;-54.13;10.88;24.47;0.700098;0.3;454;0,1531197302;FALSE
+impulsive behaviour;Glucocorticoid receptor;Agonist;1.77;-0.12;0.26;0.70062;-0.3;455;0,1534569983;FALSE
+antisocial behaviour;Norepinephrine transporter;Antagonist;2.91;-0.1;0.25;0.702612;-0.14;456;0,1537942664;FALSE
+impaired driving ability;Serotonin 5-HT7 receptor;Inverse Agonist;-1.33;0.22;0.51;0.708705;0.29;457;0,1541315346;FALSE
+gambling disorder;Adrenergic Alpha2 receptor;Antagonist;100.86;-11.4;27.77;0.708989;-0.23;458;0,1544688027;FALSE
+speech disorder;Dopamine D5 receptor;Agonist;4.5;-0.48;1.18;0.709375;-0.23;459;0,1548060708;FALSE
+legal problem;Mu opioid receptor;Agonist;0.49;0.24;0.59;0.710036;0.23;460;0,1551433390;FALSE
+social anxiety disorder;Histamine H1 receptor;Antagonist;-2.21;0.92;2.44;0.716411;0.14;461;0,1554806071;FALSE
+disturbance in attention;Dopamine D3 receptor;Agonist;2.73;-0.25;0.59;0.717187;-0.28;462;0,1558178752;FALSE
+disability;Adrenergic Beta2 receptor;Antagonist;1.44;-0.06;0.14;0.72115;-0.22;463;0,1561551433;FALSE
+social anxiety disorder;GABA A receptor;Agonist;-0.47;0.44;1.06;0.721177;0.28;464;0,1564924115;FALSE
+aggression;Monoamine oxidase B;Antagonist;-4.35;1.19;2.92;0.723528;0.28;465;0,1568296796;FALSE
+impaired self-care;Serotonin transporter;Antagonist;1.74;-0.09;0.24;0.723582;-0.14;466;0,1571669477;FALSE
+loss of employment;Serotonin 5-HT2 receptor;Antagonist;0.39;0.07;0.19;0.727631;0.18;467;0,1575042159;FALSE
+social problem;Dopamine D2 receptor;Antagonist;0.72;-0.04;0.11;0.730146;-0.18;468;0,1578414840;FALSE
+drug diversion;Histamine H1 receptor;Antagonist;2.19;-0.12;0.32;0.732102;-0.18;469;0,1581787521;FALSE
+loss of personal independence in daily activities;Glucocorticoid receptor;Agonist;-0.34;0.58;1.68;0.735172;0.1;470;0,1585160202;FALSE
+speech disorder;Mu opioid receptor;Agonist;0.45;0.08;0.24;0.736247;0.11;471;0,1588532884;FALSE
+physical assault;GABA A receptor;Agonist;5.8;-0.37;0.95;0.736465;-0.26;472;0,1591905565;FALSE
+disability;GABA A receptor;Agonist;-0.15;0.07;0.18;0.736988;0.26;473;0,1595278246;FALSE
+stress at work;Norepinephrine transporter;Antagonist;1.41;-0.08;0.21;0.737887;-0.26;474;0,1598650927;FALSE
+disability;Serotonin 5-HT2 receptor;Inverse Agonist;-0.44;0.11;0.29;0.741582;0.2;475;0,1602023609;FALSE
+social avoidant behaviour;Mu opioid receptor;Agonist;0.58;0.02;0.07;0.742542;0.14;476;0,1605396290;FALSE
+disability;Delta opioid receptor;Agonist;1.71;-0.17;0.46;0.743553;-0.26;477;0,1608768971;FALSE
+sexual abuse;GABA A receptor;Agonist;28.91;-2.54;7.11;0.744385;-0.2;478;0,1612141653;FALSE
+speech disorder;Dopamine D3 receptor;Antagonist;-0.63;0.4;1.23;0.751903;0.09;479;0,1615514334;FALSE
+social avoidant behaviour;Dopamine transporter;Antagonist;1.81;-0.05;0.14;0.752166;-0.11;480;0,1618887015;FALSE
+disturbance in attention;Dopamine D2 receptor;Antagonist;0.3;0.12;0.37;0.756579;0.07;481;0,1622259696;FALSE
+job dissatisfaction;Norepinephrine transporter;Antagonist;1.1;0.11;0.34;0.756719;0.13;482;0,1625632378;FALSE
+impulse-control disorder;Dopamine D2 receptor;Antagonist;3.72;-0.21;0.64;0.757072;-0.13;483;0,1629005059;FALSE
+social problem;Delta opioid receptor;Agonist;0.01;0.05;0.14;0.757267;0.24;484;0,1632377740;FALSE
+loss of personal independence in daily activities;Adrenergic Alpha2 receptor;Antagonist;0.95;-0.09;0.26;0.758045;-0.16;485;0,1635750422;FALSE
+impaired self-care;Serotonin 5-HT7 receptor;Antagonist;5.8;-0.34;0.98;0.758776;-0.24;486;0,1639123103;FALSE
+theft;GABA A receptor;Agonist;7.3;-0.64;1.82;0.75993;-0.24;487;0,1642495784;FALSE
+impulsive behaviour;Serotonin transporter;Antagonist;1.6;0.14;0.45;0.761789;0.08;488;0,1645868465;FALSE
+aggression;Histamine H1 receptor;Antagonist;1.77;0.07;0.24;0.763531;0.06;489;0,1649241147;FALSE
+aggression;Progesterone receptor;Agonist;-0.06;0.08;0.24;0.765926;0.16;490;0,1652613828;FALSE
+loss of personal independence in daily activities;Adrenergic Beta2 receptor;Antagonist;1.03;0.04;0.14;0.766341;0.13;491;0,1655986509;FALSE
+marital problem;Estrogen Alpha receptor;Agonist;-382.82;60.36;177.65;0.766372;0.23;492;0,1659359191;FALSE
+impaired quality of life;Serotonin transporter;Antagonist;-0.05;0.03;0.08;0.768615;0.18;493;0,1662731872;FALSE
+disturbance in attention;Norepinephrine transporter;Antagonist;1.45;0.05;0.18;0.769384;0.06;494;0,1666104553;FALSE
+social anxiety disorder;Serotonin 5-HT2 receptor;Antagonist;23.9;-2.3;7.43;0.769621;-0.14;495;0,1669477234;FALSE
+physical assault;Delta opioid receptor;Agonist;1.97;-0.15;0.44;0.772817;-0.23;496;0,1672849916;FALSE
+impulsive behaviour;Serotonin 5-HT1 receptor;Partial Agonist;1.73;0.19;0.66;0.778865;0.13;497;0,1676222597;FALSE
+compulsive shopping;Serotonin 5-HT1 receptor;Partial Agonist;50.38;-3.76;12.6;0.780126;-0.15;498;0,1679595278;FALSE
+impaired self-care;Mu opioid receptor;Agonist;0.55;0.06;0.2;0.783409;0.22;499;0,1682967960;FALSE
+impaired driving ability;Dopamine D2 receptor;Agonist;1.09;-0.05;0.16;0.785195;-0.21;500;0,1686340641;FALSE
+physical assault;Serotonin 5-HT1 receptor;Antagonist;-6.28;1.49;4.79;0.785453;0.21;501;0,1689713322;FALSE
+aggression;Adrenergic Beta2 receptor;Antagonist;0.97;-0.04;0.13;0.790296;-0.12;502;0,1693086003;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT6 receptor;Inverse Agonist;1.04;-0.1;0.34;0.792996;-0.16;503;0,1696458685;FALSE
+family stress;GABA A receptor;Agonist;0.71;-0.04;0.15;0.795535;-0.2;504;0,1699831366;FALSE
+stress at work;Serotonin transporter;Antagonist;0.43;0.05;0.18;0.796084;0.12;505;0,1703204047;FALSE
+impaired driving ability;Muscarinic M2 receptor;Antagonist;1.72;-0.04;0.16;0.799949;-0.13;506;0,1706576728;FALSE
+speech disorder;Kappa opioid receptor;Agonist;0.22;0.13;0.5;0.805357;0.15;507;0,1709949410;FALSE
+loss of personal independence in daily activities;GABA A receptor;Agonist;0.02;0.05;0.17;0.805591;0.15;508;0,1713322091;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT3 receptor;Antagonist;9.24;-0.78;2.92;0.806379;-0.15;509;0,1716694772;FALSE
+gambling disorder;Dopamine D2 receptor;Partial Agonist;50.64;-2.76;10.19;0.812069;-0.19;510;0,1720067454;FALSE
+impaired driving ability;Muscarinic M4 receptor;Antagonist;0.82;0.07;0.29;0.813086;0.11;511;0,1723440135;FALSE
+disability;Serotonin 5-HT1 receptor;Agonist;0.23;0.03;0.13;0.814986;0.15;512;0,1726812816;FALSE
+legal problem;Serotonin transporter;Antagonist;1.29;0.16;0.66;0.818833;0.08;513;0,1730185497;FALSE
+speech disorder;Serotonin 5-HT6 receptor;Antagonist;2.06;-0.11;0.48;0.82207;-0.09;514;0,1733558179;FALSE
+sexual abuse;Dopamine transporter;Antagonist;0.99;0.05;0.19;0.82499;0.18;515;0,1736930860;FALSE
+impaired work ability;Serotonin 5-HT2 receptor;Antagonist;0.4;0.02;0.08;0.826947;0.09;516;0,1740303541;FALSE
+gambling;Adrenergic Alpha2 receptor;Antagonist;57.99;-5.91;25.28;0.830131;-0.13;517;0,1743676223;FALSE
+hypersexuality;Dopamine D2 receptor;Antagonist;0.77;0.1;0.43;0.830925;0.1;518;0,1747048904;FALSE
+speech disorder;Dopamine D2 receptor;Agonist;1.58;-0.08;0.35;0.832848;-0.1;519;0,1750421585;FALSE
+disturbance in attention;Serotonin 5-HT6 receptor;Antagonist;0.1;0.33;1.53;0.834204;0.08;520;0,1753794266;FALSE
+aggression;Dopamine D1 receptor;Agonist;-0.66;0.26;1.11;0.835344;0.16;521;0,1757166948;FALSE
+disturbance in attention;Glucocorticoid receptor;Agonist;0.54;0.02;0.09;0.836569;0.06;522;0,1760539629;FALSE
+hypersexuality;Dopamine D1 receptor;Agonist;-3.14;5.89;25.46;0.83858;0.16;523;0,1763912310;FALSE
+loss of personal independence in daily activities;Adrenergic Alpha2 receptor;Partial Agonist;-1.96;0.43;1.99;0.839942;0.11;524;0,1767284992;FALSE
+loss of employment;Histamine H1 receptor;Antagonist;2.82;-0.17;0.84;0.842083;-0.08;525;0,1770657673;FALSE
+shoplifting;Norepinephrine transporter;Antagonist;1.42;-0.05;0.21;0.842216;-0.12;526;0,1774030354;FALSE
+imprisonment;Serotonin 5-HT2 receptor;Antagonist;-0.51;0.46;2.11;0.842531;0.12;527;0,1777403035;FALSE
+compulsive shopping;Dopamine D2 receptor;Partial Agonist;46.71;-2.51;11.84;0.845873;-0.12;528;0,1780775717;FALSE
+disturbance in attention;Kappa opioid receptor;Agonist;0.48;0.03;0.16;0.848448;0.12;529;0,1784148398;FALSE
+impaired driving ability;Muscarinic M3 receptor;Antagonist;0.93;0.05;0.27;0.85094;0.08;530;0,1787521079;FALSE
+antisocial behaviour;Dopamine transporter;Antagonist;1.4;0.09;0.45;0.852786;0.12;531;0,1790893761;FALSE
+impaired driving ability;Histamine H1 receptor;Antagonist;0.52;0.05;0.25;0.854209;0.05;532;0,1794266442;FALSE
+social fear;Serotonin transporter;Antagonist;5.65;-0.28;1.41;0.855452;-0.11;533;0,1797639123;FALSE
+aggression;Dopamine D3 receptor;Antagonist;1.71;0.09;0.5;0.857045;0.06;534;0,1801011804;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT1 receptor;Antagonist;0.06;0.03;0.13;0.857309;0.14;535;0,1804384486;FALSE
+aggression;Serotonin transporter;Antagonist;1.6;0.07;0.41;0.858199;0.03;536;0,1807757167;FALSE
+social avoidant behaviour;Serotonin 5-HT2 receptor;Antagonist;3.03;-0.07;0.37;0.858208;-0.06;537;0,1811129848;FALSE
+social problem;Histamine H1 receptor;Antagonist;0.94;-0.04;0.22;0.863088;-0.07;538;0,1814502530;FALSE
+impaired self-care;Norepinephrine transporter;Antagonist;1.7;-0.08;0.45;0.866392;-0.08;539;0,1817875211;FALSE
+disturbance in attention;Histamine H1 receptor;Antagonist;1.29;-0.02;0.12;0.867742;-0.03;540;0,1821247892;FALSE
+disturbance in attention;Adrenergic Alpha2 receptor;Antagonist;1.23;-0.08;0.44;0.867997;-0.07;541;0,1824620573;FALSE
+social avoidant behaviour;Histamine H1 receptor;Antagonist;2.44;-0.07;0.39;0.868144;-0.04;542;0,1827993255;FALSE
+speech disorder;Serotonin 5-HT7 receptor;Antagonist;0.9;0.08;0.5;0.873558;0.06;543;0,1831365936;FALSE
+family stress;Histamine H1 receptor;Antagonist;0.32;-0.01;0.07;0.874136;-0.07;544;0,1834738617;FALSE
+unemployment;Norepinephrine transporter;Antagonist;2.11;0.08;0.45;0.877191;0.12;545;0,1838111298;FALSE
+poor personal hygiene;Dopamine D2 receptor;Antagonist;1.73;0.44;2.81;0.880624;0.07;546;0,1841483980;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT2 receptor;Antagonist;0.39;0.01;0.06;0.886429;0.04;547;0,1844856661;FALSE
+aggression;Serotonin 5-HT2 receptor;Antagonist;1.5;0.03;0.19;0.887725;0.03;548;0,1848229342;FALSE
+imprisonment;Delta opioid receptor;Agonist;0.79;0.07;0.49;0.89263;0.11;549;0,1851602024;FALSE
+physical assault;Mu opioid receptor;Agonist;1.91;-0.07;0.46;0.89557;-0.07;550;0,1854974705;FALSE
+antisocial behaviour;Mu opioid receptor;Agonist;0.74;0.02;0.13;0.898274;0.1;551;0,1858347386;FALSE
+impaired driving ability;Serotonin 5-HT1 receptor;Partial Agonist;2.5;-0.09;0.75;0.909071;-0.04;552;0,1861720067;FALSE
+disability;Dopamine D4 receptor;Antagonist;0.17;0.04;0.28;0.909318;0.09;553;0,1865092749;FALSE
+disturbance in attention;GABA A receptor;Agonist;0.76;0.03;0.23;0.909529;0.06;554;0,1868465430;FALSE
+impaired work ability;GABA A receptor;Agonist;0.86;-0.03;0.26;0.912408;-0.09;555;0,1871838111;FALSE
+impulse-control disorder;Dopamine D3 receptor;Antagonist;3.55;-0.18;1.54;0.916523;-0.08;556;0,1875210793;FALSE
+language disorder;Serotonin transporter;Antagonist;2.24;0.16;1.57;0.919356;0.03;557;0,1878583474;FALSE
+loss of personal independence in daily activities;Kappa opioid receptor;Agonist;0.67;0.01;0.07;0.919644;0.08;558;0,1881956155;FALSE
+speech disorder;Adrenergic Beta2 receptor;Antagonist;2.28;0.04;0.34;0.919781;0.04;559;0,1885328836;FALSE
+speech disorder;Muscarinic M2 receptor;Antagonist;1.66;0.03;0.26;0.920645;0.03;560;0,1888701518;FALSE
+loss of personal independence in daily activities;Serotonin 5-HT6 receptor;Antagonist;0.47;-0.01;0.13;0.921877;-0.05;561;0,1892074199;FALSE
+impaired driving ability;Serotonin 5-HT2 receptor;Antagonist;0.64;0.01;0.14;0.922215;0.04;562;0,1895446880;FALSE
+homicide;Serotonin 5-HT7 receptor;Antagonist;2.94;-0.06;0.53;0.922229;-0.08;563;0,1898819562;FALSE
+language disorder;Serotonin 5-HT2 receptor;Inverse Agonist;-8.35;1.44;14.66;0.930793;0.07;564;0,1902192243;FALSE
+aggression;Dopamine D3 receptor;Partial Agonist;0.9;0.02;0.24;0.930823;0.05;565;0,1905564924;FALSE
+loss of personal independence in daily activities;Dopamine D1 receptor;Agonist;0.41;-0.01;0.15;0.939251;-0.06;566;0,1908937605;FALSE
+hypersexuality;Dopamine D5 receptor;Agonist;23.4;1.33;15.7;0.940369;0.06;567;0,1912310287;FALSE
+disturbance in attention;Serotonin 5-HT6 receptor;Inverse Agonist;1.35;-0.07;0.86;0.941661;-0.03;568;0,1915682968;FALSE
+divorced;Serotonin transporter;Antagonist;1.79;-0.03;0.4;0.943113;-0.04;569;0,1919055649;FALSE
+social problem;GABA A receptor;Agonist;0.68;-0.02;0.28;0.945377;-0.05;570;0,1922428331;FALSE
+impaired driving ability;Dopamine D2 receptor;Antagonist;0.51;-0.01;0.15;0.946021;-0.03;571;0,1925801012;FALSE
+impulsive behaviour;Serotonin 5-HT6 receptor;Antagonist;1.46;-0.04;0.56;0.94945;-0.05;572;0,1929173693;FALSE
+aggression;Adrenergic Alpha1 receptor;Antagonist;2.14;-0.03;0.55;0.95475;-0.02;573;0,1932546374;FALSE
+imprisonment;Dopamine transporter;Antagonist;0.91;0.06;0.87;0.955213;0.04;574;0,1935919056;FALSE
+homicide;Mu opioid receptor;Agonist;2.45;0.03;0.5;0.956845;0.02;575;0,1939291737;FALSE
+impaired driving ability;Muscarinic M1 receptor;Antagonist;1.55;-0.02;0.34;0.9602;-0.02;576;0,1942664418;FALSE
+imprisonment;Dopamine D2 receptor;Antagonist;2.59;0.04;0.75;0.964369;0.02;577;0,1946037099;FALSE
+impulse-control disorder;Serotonin 5-HT2 receptor;Partial Agonist;17.7;-0.59;12.14;0.965498;-0.03;578;0,1949409781;FALSE
+imprisonment;Adrenergic Alpha2 receptor;Antagonist;4.84;-0.23;5.17;0.967957;-0.03;579;0,1952782462;FALSE
+impulsive behaviour;Serotonin 5-HT7 receptor;Inverse Agonist;1.28;0.04;0.87;0.969529;0.03;580;0,1956155143;FALSE
+social avoidant behaviour;Glucocorticoid receptor;Agonist;0.41;0;0.08;0.977543;0.01;581;0,1959527825;FALSE
+speech disorder;Acetylcholinesterase;Antagonist;4.63;-0.09;2.99;0.97806;-0.02;582;0,1962900506;FALSE
+hypersexuality;Histamine H1 receptor;Antagonist;2.21;0.03;0.94;0.978194;0.01;583;0,1966273187;FALSE
+antisocial behaviour;Dopamine D2 receptor;Antagonist;2.82;-0.03;1.39;0.984068;-0.01;584;0,1969645868;FALSE
+social problem;Serotonin 5-HT2 receptor;Antagonist;0.41;0;0.08;0.984862;-0.02;585;0,1973018550;FALSE
+disturbance in attention;Adrenergic Beta2 receptor;Antagonist;1.2;0;0.16;0.986572;0.01;586;0,1976391231;FALSE
+aggression;Adrenergic Alpha2 receptor;Antagonist;1.85;0.03;1.7;0.987467;0.01;587;0,1979763912;FALSE
+aggression;Adrenergic Beta2 receptor;Agonist;0.41;0;0.1;0.991153;-0.01;588;0,1983136594;FALSE
+disturbance in attention;Dopamine D3 receptor;Antagonist;1.65;-0.01;0.73;0.992749;0;589;0,1986509275;FALSE
+impaired driving ability;Adrenergic Beta2 receptor;Antagonist;1.13;0;0.16;0.993968;0;590;0,1989881956;FALSE
+impaired driving ability;Glucocorticoid receptor;Agonist;0.89;0;0.13;0.995748;0;591;0,1993254637;FALSE
+gambling;Serotonin transporter;Antagonist;0.46;0;0.1;0.996343;0;592;0,1996627319;FALSE
+impaired driving ability;Serotonin 5-HT7 receptor;Antagonist;0.75;0;0.37;0.998375;0;593;0,2000000000;FALSE
