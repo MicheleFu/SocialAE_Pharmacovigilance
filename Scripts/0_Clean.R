@@ -145,6 +145,7 @@ save(ICSR_df, file = "RDA/ICSR_df.RDA")
 
 # D_list ----------------------------------------------------------------------
 # List of suspect product active ingredients reported in FAERS
+load("Rda/ICSR_df.Rda")
 ICSR_df <- ICSR_df %>% 
   separate_rows(`Suspect Product Active Ingredients`, sep = ";") %>%
   separate_rows(`Suspect Product Active Ingredients`, sep = "\\\\")
@@ -156,6 +157,11 @@ D_list <- list(unique(ICSR_df$`Suspect Product Active Ingredients`)) %>%
   sort()
 D_list <- D_list[D_list != "altro"]
 save(D_list, file = "Rda/D_list.Rda")
+D_Code_list <- D_list
+for (i in 1:length(D_Code_list)){
+  D_Code_list[i] <- ATC$Code[ATC$Substance == D_Code_list[i]]
+  }
+save(D_Code_list, file = "Rda/D_Code_list.Rda")
 
 # HCP_df and C_df-------------------------------------------------------------
 # divide the dataframe by reporter type
@@ -166,7 +172,7 @@ HCP_df <- ICSR_df %>%
 save(HCP_df, file = "RDA/HCP_df.RDA")
 C_df <- ICSR_df %>%
   filter(`Reporter Type` == "Consumer")
-save(PZ_df, file = "RDA/C_df.RDA")
+save(C_df, file = "RDA/C_df.RDA")
 NS_df <- ICSR_df %>%
   filter(`Reporter Type` == "Not Specified")
 save(NS_df, file = "RDA/NS_df.RDA")
@@ -202,6 +208,6 @@ Pop_char_df <- Descr(HCP_df)
 Pop_char_df <- Descr(C_df)
 Pop_char_df <- Descr(NS_df)
 Pop_char_df <- Pop_char_df[-1,]
-write_csv2(Pop_char_df,"Population characteristics/Population_characteristics.csv")
+write_csv(Pop_char_df,"Population characteristics/Population_characteristics.csv")
 
 
