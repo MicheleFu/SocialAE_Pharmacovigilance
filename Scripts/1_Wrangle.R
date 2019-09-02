@@ -307,7 +307,7 @@ for (i in AE_list){
 dev.off()
 
 # LRM -------------------------------------------------------------------------
-
+load("Rda/ROR_df.Rda")
 PhD <- read_delim("Databases Used/PhD.csv", ";", escape_double = FALSE, trim_ws = TRUE)
 PhD$pCHEMBL <- PhD$pCHEMBL/1000000
 LRM <- function(df, PhD_df){
@@ -348,7 +348,7 @@ LRM <- function(df, PhD_df){
                                                    "     Slope: ", Slope,
                                                    "     SE: ", SE,
                                                    "     p-value: ", p_value,
-                                                   "     Pearson: ", Pearson))
+                                                   "     Pearson: ", Pearson), , size = 10)
             plot2 <- ggplot(data = z, aes(x=z$pCHEMBL, y=z$ROR, main= paste("ROR ~ ", t))) +
               geom_smooth(aes(color = Drug_Family), method ="lm") +
               geom_point(aes(color = Drug_Family)) +
