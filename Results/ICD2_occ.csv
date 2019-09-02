@@ -1,0 +1,69 @@
+AE;Target;Action;Intercept;Slope;SE;p_value;Pearson;Rank;BH20;Sign20
+compulsive shopping;D5;Agonist;17.38;-0.1;0.01;0.000996;-0.97; 1;0,002941176;TRUE
+impulse-control disorder;D5;Agonist;26.33;-0.16;0.03;0.003731;-0.95; 2;0,005882353;TRUE
+compulsive shopping;D1;Agonist;16.39;-0.1;0.02;0.003811;-0.95; 3;0,008823529;TRUE
+hypersexuality;5HT1a;Agonist;-4.22;0.56;0.15;0.008781;0.84; 4;0,011764706;TRUE
+compulsive shopping;D2;Agonist;324.91;-3.13;1.02;0.022384;-0.78; 5;0,014705882;FALSE
+gambling;D2;Agonist;1069.36;-10.57;3.53;0.024079;-0.77; 6;0,017647059;FALSE
+impulse-control disorder;D1;Agonist;24.54;-0.15;0.04;0.027189;-0.86; 7;0,020588235;FALSE
+impulse-control disorder;5HT2b;Agonist;25.84;-0.09;0.02;0.027792;-0.97; 8;0,023529412;FALSE
+compulsive shopping;5HT2a;Agonist;17.81;-0.08;0.01;0.031721;-0.97; 9;0,026470588;FALSE
+hypersexuality;5HT2c;Agonist;23.26;0.5;0.09;0.032089;0.97;10;0,029411765;FALSE
+hypersexuality;D4;Agonist;13.81;0.34;0.12;0.0493;0.81;11;0,032352941;FALSE
+compulsive shopping;5HT2b;Agonist;18.58;-0.07;0.02;0.054608;-0.95;12;0,035294118;FALSE
+gambling;5HT2a;Agonist;7.02;0.42;0.1;0.056168;0.94;13;0,038235294;FALSE
+hypersexuality;ADRA2c;Antagonist;15.59;0.29;0.12;0.068049;0.78;14;0,041176471;FALSE
+hypersexuality;5HT1b;Agonist;25.06;0.37;0.15;0.086576;0.82;15;0,044117647;FALSE
+gambling;5HT2c;Agonist;17.2;0.59;0.19;0.091648;0.91;16;0,047058824;FALSE
+hypersexuality;ADRA2b;Antagonist;15.52;0.29;0.14;0.108467;0.72;17;0,050000000;FALSE
+impulse-control disorder;5HT2a;Agonist;26.93;-0.1;0.04;0.127854;-0.87;18;0,052941176;FALSE
+hypersexuality;5HT1d;Agonist;18.88;0.27;0.15;0.130127;0.63;19;0,055882353;FALSE
+hypersexuality;ADRA2a;Antagonist;17.21;0.28;0.15;0.164298;0.73;20;0,058823529;FALSE
+compulsive shopping;5HT2c;Agonist;15.79;-0.09;0.04;0.165286;-0.83;21;0,061764706;FALSE
+hypersexuality;ADRA1d;Antagonist;19.26;0.25;0.12;0.174419;0.83;22;0,064705882;FALSE
+hypersexuality;ADRA1a;Antagonist;20.4;0.24;0.14;0.188092;0.7;23;0,067647059;FALSE
+impulse-control disorder;D2;Agonist;258.66;-2.38;1.68;0.206882;-0.5;24;0,070588235;FALSE
+gambling;5HT2b;Agonist;14.86;0.3;0.19;0.247036;0.75;25;0,073529412;FALSE
+impulse-control disorder;ADRA2a;Antagonist;14.82;0.27;0.19;0.259941;0.62;26;0,076470588;FALSE
+hypersexuality;5HT2a;Agonist;19.28;0.26;0.17;0.26476;0.74;27;0,079411765;FALSE
+hypersexuality;D2;Agonist;239.61;-2.06;1.71;0.27267;-0.44;28;0,082352941;FALSE
+hypersexuality;D1;Agonist;29.09;0.15;0.13;0.314721;0.5;29;0,085294118;FALSE
+compulsive shopping;ADRA2a;Antagonist;10.84;0.18;0.15;0.337977;0.55;30;0,088235294;FALSE
+gambling;D4;Agonist;-0.45;0.63;0.59;0.346416;0.47;31;0,091176471;FALSE
+hypersexuality;D5;Agonist;28.45;0.13;0.14;0.379129;0.44;32;0,094117647;FALSE
+hypersexuality;D3;Agonist;12.8;0.28;0.3;0.3828;0.36;33;0,097058824;FALSE
+gambling;ADRA2b;Antagonist;30.11;-0.18;0.19;0.395946;-0.43;34;0,100000000;FALSE
+impulse-control disorder;5HT1d;Agonist;27.22;-0.09;0.1;0.41033;-0.37;35;0,102941176;FALSE
+gambling;D3;Agonist;-27.54;0.72;0.89;0.452479;0.31;36;0,105882353;FALSE
+compulsive shopping;ADRA1b;Antagonist;25.43;-0.14;0.17;0.462243;-0.44;37;0,108823529;FALSE
+compulsive shopping;5HT1d;Agonist;21.99;-0.1;0.12;0.466251;-0.33;38;0,111764706;FALSE
+impulse-control disorder;5HT2c;Agonist;23.42;-0.09;0.11;0.468321;-0.53;39;0,114705882;FALSE
+hypersexuality;5HT2b;Agonist;24.99;0.17;0.21;0.494096;0.51;40;0,117647059;FALSE
+impulse-control disorder;ADRA1a;Antagonist;18.1;0.18;0.25;0.522166;0.39;41;0,120588235;FALSE
+gambling;5HT1a;Agonist;2.19;0.46;0.77;0.576244;0.23;42;0,123529412;FALSE
+impulse-control disorder;5HT1b;Agonist;23.89;-0.1;0.16;0.577778;-0.34;43;0,126470588;FALSE
+gambling;ADRA2a;Antagonist;16.53;0.1;0.17;0.588393;0.33;44;0,129411765;FALSE
+gambling;5HT1d;Agonist;18.87;0.32;0.61;0.618513;0.23;45;0,132352941;FALSE
+impulse-control disorder;ADRA1b;Antagonist;33.26;-0.13;0.25;0.626511;-0.3;46;0,135294118;FALSE
+impulse-control disorder;ADRA2b;Antagonist;18.27;0.13;0.26;0.629919;0.25;47;0,138235294;FALSE
+compulsive shopping;ADRA2b;Antagonist;12.41;0.1;0.19;0.636168;0.25;48;0,141176471;FALSE
+gambling;ADRA1d;Antagonist;19.45;-0.09;0.17;0.636476;-0.36;49;0,144117647;FALSE
+impulse-control disorder;D3;Agonist;39.7;-0.15;0.32;0.64636;-0.19;50;0,147058824;FALSE
+impulse-control disorder;ADRA2c;Antagonist;19.45;0.11;0.24;0.6535;0.24;51;0,150000000;FALSE
+compulsive shopping;ADRA2c;Antagonist;13.2;0.08;0.17;0.655931;0.23;52;0,152941176;FALSE
+compulsive shopping;ADRA1a;Antagonist;14.39;0.09;0.19;0.680948;0.25;53;0,155882353;FALSE
+gambling;5HT1b;Agonist;31.93;0.39;0.93;0.703728;0.23;54;0,158823529;FALSE
+gambling;ADRA1b;Antagonist;18.59;-0.06;0.16;0.721544;-0.22;55;0,161764706;FALSE
+impulse-control disorder;ADRA1d;Antagonist;20.57;0.11;0.28;0.724374;0.28;56;0,164705882;FALSE
+compulsive shopping;ADRA1d;Antagonist;15.6;0.07;0.2;0.756408;0.24;57;0,167647059;FALSE
+gambling;ADRA2c;Antagonist;22.4;-0.06;0.19;0.77985;-0.15;58;0,170588235;FALSE
+impulse-control disorder;D4;Agonist;22.64;-0.03;0.11;0.785244;-0.14;59;0,173529412;FALSE
+hypersexuality;ADRA1b;Antagonist;29.46;0.06;0.19;0.787769;0.17;60;0,176470588;FALSE
+gambling;ADRA1a;Antagonist;17.39;-0.04;0.17;0.840579;-0.13;61;0,179411765;FALSE
+compulsive shopping;5HT1b;Agonist;17.1;-0.04;0.21;0.844315;-0.12;62;0,182352941;FALSE
+gambling;D1;Agonist;25.8;-0.04;0.23;0.869637;-0.09;63;0,185294118;FALSE
+compulsive shopping;D4;Agonist;14.89;0.02;0.14;0.893223;0.07;64;0,188235294;FALSE
+impulse-control disorder;5HT1a;Agonist;23.03;0.04;0.28;0.89928;0.05;65;0,191176471;FALSE
+gambling;D5;Agonist;23.57;0.03;0.23;0.917204;0.06;66;0,194117647;FALSE
+compulsive shopping;D3;Agonist;16.9;0.02;0.28;0.93217;0.04;67;0,197058824;FALSE
+compulsive shopping;5HT1a;Agonist;18.08;0.01;0.23;0.956088;0.02;68;0,200000000;FALSE
