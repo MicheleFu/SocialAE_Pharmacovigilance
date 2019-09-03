@@ -231,6 +231,55 @@ Print_Heatmap <- function(df) {
 
 Print_Heatmap(ROR_df)
 
+# Specific Heatmaps -----------------------------------------------------------
+
+N04_code <- subset(D_Code_list, str_detect(D_Code_list,"N04B"))
+AE_ICD_list <- c("compulsive shopping","gambling","gambling disorder","hypersexuality","impulse-control disorder", "impulsive behaviour")
+Parkinson <- ROR_df %>%
+  filter(Drug_Code %in% N04_code) %>%
+  filter(AE %in% AE_ICD_list)
+
+opioids_code <- subset(D_Code_list, str_detect(D_Code_list,"N02A"))
+Diversion <- c("drug diversion")
+Opioids <- ROR_df %>%
+  filter(Drug_Code %in% opioids_code) %>%
+  filter(AE %in% Diversion)
+
+bisfosfonati_code <- subset(D_Code_list, str_detect(D_Code_list,"M05B"))
+Diversion <- c("poor personal hygiene")
+Bisfosfonati <- ROR_df %>%
+  filter(Drug_Code %in% bisfosfonati_code) %>%
+  filter(AE %in% Diversion)
+
+lassativi_code <- subset(D_Code_list, str_detect(D_Code_list,"A06A"))
+Diversion <- c("social avoidant behaviour")
+Lassativi <- ROR_df %>%
+  filter(Drug_Code %in% lassativi_code) %>%
+  filter(AE %in% Diversion)
+
+psicostimolanti_code <- subset(D_Code_list, str_detect(D_Code_list,"N06B"))
+Diversion <- c("educational problems","impulsive behaviour","fight in school","drug diversion","crime")
+ADHD <- ROR_df %>%
+  filter(Drug_Code %in% psicostimolanti_code) %>%
+  filter(AE %in% Diversion)
+
+
+draw_tile <- function(df,h,w){
+  l <- paste("Visualization/", (deparse(substitute(df))), ".png", sep="")
+  png(filename = l,height = h, width = w)
+  x <- ggplot(data = df, aes(x = AE, y = Drug_Name)) +
+    geom_tile(aes(fill = ROR)) +
+    geom_text(aes(label = IC)) +
+    scale_fill_gradient(low = "yellow", high = "red")
+  print(x)
+  dev.off()
+}
+draw_tile(Parkinson,800,1200)
+draw_tile(Opioids,800,400)
+draw_tile(Bisfosfonati,800,400)
+draw_tile(Lassativi,800,400)
+draw_tile(ADHD,800,1200)
+
 # HCP-PZ ROR ------------------------------------------------------------------
 HCP_ROR_df <- Wrangle(HCP_df,D_list) %>%
   mutate(Reporter_Type = "HCP")
