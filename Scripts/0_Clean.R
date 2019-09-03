@@ -5,6 +5,7 @@
 # Libraries -------------------------------------------------------------------
 library(tidyverse)
 library(readxl)
+library(scales)
 
 # Files needed ----------------------------------------------------------------
 # ATC code integrated and adapted
@@ -114,6 +115,7 @@ for (i in 1:nrow(ICSR_df)){
     ICSR_df$`Age (YR)`[i] <- round((ICSR_df$`Age (YR)`[i]/365)*7,1)
   }
 }
+ICSR_df$`Age (YR)` <- abs(ICSR_df$`Age (YR)`)
 ICSR_df$`Patient Weight` <-  na_if(ICSR_df$`Patient Weight`, "Not Specified")
 ICSR_df <- ICSR_df %>%
   separate(`Patient Weight`, into = c("Weight (KG)","Weight_Unit"), sep = " ", convert = TRUE)
@@ -130,6 +132,16 @@ for (i in 1:nrow(ICSR_df)){
 ICSR_df <- ICSR_df %>%
   select(-Weight_Unit, -Age_Unit)
 ICSR_df$`Weight (KG)` <- round(ICSR_df$`Weight (KG)`,1)
+for (i in 1:nrow(ICSR_df)){
+  if(isTRUE((ICSR_df$`Age (YR)`[i] <= 0) & (ICSR_df$`Weight (KG)`[i] >= 12))){
+    ICSR_df$`Age (YR)`[i] <- NA
+  }
+}
+for (i in 1:nrow(ICSR_df)){
+  if(isTRUE((ICSR_df$`Weight (KG)`[i] >= 200))){
+    ICSR_df$`Weight (KG)`[i] <- NA
+  }
+}
 # when not specified the date of the event,
 # the first report to FDA was considered as the event date
 for (i in 1:nrow(ICSR_df)){
@@ -210,4 +222,59 @@ Pop_char_df <- Descr(NS_df)
 Pop_char_df <- Pop_char_df[-1,]
 write_csv(Pop_char_df,"Population characteristics/Population_characteristics.csv")
 
+load("Rda/ICSR_df.Rda")
+draw_pie <- function(df, var){
+  x <- df
+  x$var <- x[[var]]
+  x <- x %>%
+    group_by(var) %>%
+    count() %>%
+    ungroup() %>%
+    mutate(per = `n`/sum(`n`)) %>%
+    arrange(desc(var)) %>%
+    mutate(label = scales::percent(per)) %>%
+    mutate(r = rank(desc(n)))
+  l <- paste(as.name(var),".pdf", sep = "")
+  pdf(paste("Population characteristics/", l))
+  ggplot(data = subset(x, r < 7)) +
+    geom_bar(aes(x="", y = per, fill = var), stat = "identity", width = 1) +
+    coord_polar ("y", start = 0) +
+    theme_void() +
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 3) +
+    ggtitle(var) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+draw_pie(ICSR_df, "Reporter Type")
+dev.off()
+draw_pie(ICSR_df, "Sex")
+dev.off()
+draw_pie(ICSR_df,"Country where Event occurred")
+dev.off()
+draw_pie(ICSR_df,"Outcomes")
+dev.off()
+draw_pie(ICSR_df,"Serious")
+dev.off()
+
+draw_bar <- function(df, var){
+  x <- df
+  x$var <- x[[var]]
+  x <- x %>%
+    group_by(var) %>%
+    count() %>%
+    ungroup() %>%
+    arrange(desc(var))
+  l <- paste(as.name(var),".pdf", sep = "")
+  pdf(paste("Population characteristics/", l))
+  ggplot(data = x, aes(x= var)) +
+    geom_bar(aes(y = n), fill = "blue", stat = "identity", width = 1) +
+    ggtitle(var) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    geom_density(alpha=.2, fill="#FF6666")
+}
+
+draw_bar(ICSR_df, "Age (YR)")
+dev.off()
+draw_bar(ICSR_df, "Weight (KG)")
+dev.off()
 
