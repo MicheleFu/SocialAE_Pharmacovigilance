@@ -142,6 +142,11 @@ for (i in 1:nrow(ICSR_df)){
     ICSR_df$`Weight (KG)`[i] <- NA
   }
 }
+for (i in 1:nrow(ICSR_df)){
+  if(isTRUE((ICSR_df$`Weight (KG)`[i] <= 20) & (ICSR_df$`Age (YR)`[i]) >= 20)){
+    ICSR_df$`Weight (KG)`[i] <- NA
+  }
+}
 # when not specified the date of the event,
 # the first report to FDA was considered as the event date
 for (i in 1:nrow(ICSR_df)){
@@ -153,6 +158,21 @@ for (i in 1:nrow(ICSR_df)){
   }
 ICSR_df <- ICSR_df %>%
   select(-`Initial FDA Event Date`)
+ICSR_df$`Event Date` <- as.numeric(ICSR_df$`Event Date`)
+for (i in 1:nrow(ICSR_df)){
+  print(i)
+  if(ICSR_df$`Event Date`[i] > 19){
+    ICSR_df$`Event Date`[i] <- ICSR_df$`Event Date`[i] + 1900
+  } else {
+    ICSR_df$`Event Date`[i] <- ICSR_df$`Event Date`[i] + 2000
+  }
+}
+for (i in 1:nrow(ICSR_df)){
+  print(i)
+  if(ICSR_df$`Event Date`[i] <1970){
+    ICSR_df$`Event Date`[i] <- NA
+  }
+}
 save(ICSR_df, file = "RDA/ICSR_df.RDA")
 
 # D_list ----------------------------------------------------------------------
@@ -240,7 +260,7 @@ draw_pie <- function(df, var){
     geom_bar(aes(x="", y = per, fill = var), stat = "identity", width = 1) +
     coord_polar ("y", start = 0) +
     theme_void() +
-    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 3) +
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5) +
     ggtitle(var) +
     theme(plot.title = element_text(hjust = 0.5))
 }
@@ -249,11 +269,32 @@ draw_pie(ICSR_df, "Reporter Type")
 dev.off()
 draw_pie(ICSR_df, "Sex")
 dev.off()
-draw_pie(ICSR_df,"Country where Event occurred")
-dev.off()
-draw_pie(ICSR_df,"Outcomes")
-dev.off()
+#draw_pie(ICSR_df,"Country where Event occurred")
+#dev.off()
+#draw_pie(ICSR_df,"Outcomes")
+#dev.off()
 draw_pie(ICSR_df,"Serious")
+dev.off()
+
+draw_density <- function(df, var){
+  x <- df
+  x$var <- x[[var]]
+  x <- x %>%
+    group_by(var) %>%
+    count() %>%
+    ungroup() %>%
+    arrange(desc(var))
+  l <- paste(as.name(var),".pdf", sep = "")
+  pdf(paste("Population characteristics/", l))
+  ggplot(data = x, aes(x= var)) +
+    ggtitle(var) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    geom_density(alpha=.2, fill="blue")
+}
+
+draw_density(ICSR_df,"Age (YR)")
+dev.off()
+draw_density(ICSR_df,"Weight (KG)")
 dev.off()
 
 draw_bar <- function(df, var){
@@ -267,14 +308,11 @@ draw_bar <- function(df, var){
   l <- paste(as.name(var),".pdf", sep = "")
   pdf(paste("Population characteristics/", l))
   ggplot(data = x, aes(x= var)) +
-    geom_bar(aes(y = n), fill = "blue", stat = "identity", width = 1) +
+    geom_histogram(aes(y = n), fill = "blue", stat = "identity", width = 1) +
     ggtitle(var) +
-    theme(plot.title = element_text(hjust = 0.5)) +
-    geom_density(alpha=.2, fill="#FF6666")
+    theme(plot.title = element_text(hjust = 0.5))
 }
 
-draw_bar(ICSR_df, "Age (YR)")
-dev.off()
-draw_bar(ICSR_df, "Weight (KG)")
+draw_bar(ICSR_df,"Event Date")
 dev.off()
 
