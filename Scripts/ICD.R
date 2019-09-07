@@ -210,3 +210,89 @@ dev.off()
 png("Visualization/impulse-control disorder.png")
 print(plot_pearson("impulse-control disorder"))
 dev.off()
+
+
+# Descriptive plots -----------------------------------------------------------
+
+draw_pie <- function(df, var,f){
+  x <- df
+  x$var <- x[[var]]
+  x <- x %>%
+    group_by(var) %>%
+    count() %>%
+    ungroup() %>%
+    mutate(per = `n`/sum(`n`)) %>%
+    arrange(desc(var)) %>%
+    mutate(label = scales::percent(per)) %>%
+    mutate(r = rank(desc(n)))
+  l <- paste(as.name(var),".pdf", sep = "")
+  pdf(paste("Population characteristics/",f, l,sep=""))
+  print(ggplot(data = subset(x, r < 7)) +
+          geom_bar(aes(x="", y = per, fill = var), stat = "identity", width = 1) +
+          coord_polar ("y", start = 0) +
+          theme_void() +
+          geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5) +
+          ggtitle(var) +
+          theme(plot.title = element_text(hjust = 0.5)))
+  dev.off()
+}
+draw_density <- function(df, var,f){
+  x <- df
+  x$var <- x[[var]]
+  x <- x %>%
+    group_by(var) %>%
+    count() %>%
+    ungroup() %>%
+    arrange(desc(var))
+  l <- paste(as.name(var),".pdf", sep = "")
+  pdf(paste("Population characteristics/",f, l,sep=""))
+  print(ggplot(data = x, aes(x= var)) +
+          ggtitle(var) +
+          theme(plot.title = element_text(hjust = 0.5)) +
+          geom_density(alpha=.2, fill="blue"))
+  dev.off()
+}
+draw_bar <- function(df, var,f){
+  x <- df
+  x$var <- x[[var]]
+  x <- x %>%
+    group_by(var) %>%
+    count() %>%
+    ungroup() %>%
+    arrange(desc(var))
+  l <- paste(as.name(var),".pdf", sep = "")
+  pdf(paste("Population characteristics/",f, l,sep = ""))
+  print(ggplot(data = x, aes(x= var)) +
+          geom_histogram(aes(y = n), fill = "blue", stat = "identity", width = 1) +
+          ggtitle(var) +
+          theme(plot.title = element_text(hjust = 0.5)))
+  dev.off()
+}
+
+draw_plots <- function(df, f){
+  draw_pie(df, "Reporter Type",f)
+  draw_pie(df, "Sex",f)
+  #draw_pie(df,"Country where Event occurred")
+  #dev.off()
+  #draw_pie(df,"Outcomes")
+  #dev.off()
+  draw_pie(df,"Serious",f)
+  draw_density(df,"Age (YR)",f)
+  draw_density(df,"Weight (KG)",f)
+  draw_bar(df,"Event Date",f)
+}
+
+Gambling <- ICD_df %>% 
+  filter(str_detect(ICD_df$`Reactions`, "gambling") == TRUE)
+CS <- ICD_df %>% 
+  filter(str_detect(ICD_df$`Reactions`, "compulsive shopping") == TRUE)
+HS <- ICD_df %>% 
+  filter(str_detect(ICD_df$`Reactions`, "hypersexuality") == TRUE)
+ICD <- ICD_df %>% 
+  filter(str_detect(ICD_df$`Reactions`, "impulse-control disorder") == TRUE)
+draw_plots(ICD_df, "DAA/")
+draw_plots(Gambling, "Gambling/")
+draw_plots(CS, "Compulsive Shopping/")
+draw_plots(HS, "Hypersexuality/")
+draw_plots(ICD, "Impulse-Control Disorder/")
+

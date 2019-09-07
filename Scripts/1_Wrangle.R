@@ -24,67 +24,6 @@ ATC <- read_delim("Databases Used/ATC.csv", ";", escape_double = FALSE,
 ATC <- ATC[!grepl("&", ATC$Code),]
 
 # Calculate ROR ---------------------------------------------------------------
-Wrangle <- function(df, D) {
-  #
-  # Args:
-  #   df  : Dataframe of observations
-  #   D   : List of drugs
-  #
-  # Returns:
-  #   Wrangle_df : Disproportionality Analysis and summarized data
-  Wrangle_df <- data.frame(matrix(ncol = 12, nrow = 0))
-  colnames(Wrangle_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA", "F_nEA", "nF_EA","nF_nEA", "ROR", "s", "ROR_m", "ROR_M", "IC")
-  for (i in 1:length(AE_list)) {
-    EA_Name <- AE_list[i]
-    print(EA_Name)
-    x <- subset(df, str_detect(Reactions, AE_list[i]))
-    for (d in D) {
-      D_Name <- ATC$Substance[ATC$Code == d]
-      y <- subset(df,!str_detect(`Suspect Product Active Ingredients`,d))
-      if (sum(str_detect(x$`Suspect Product Active Ingredients`, d))==0) {
-        F_nEA <- sum(str_detect(df$`Suspect Product Active Ingredients`, d))
-        nF_EA <- sum(str_detect(y$Reactions,EA_Name))
-        nF_nEA <- sum(!str_detect(y$Reactions,EA_Name))
-        new_row <- list(d, D_Name, EA_Name, 0, F_nEA, nF_EA, nF_nEA, NA, NA, NA, NA, NA)
-      } else {
-        tab <- table(str_detect(df$`Suspect Product Active Ingredients`, d),
-                     str_detect(df$Reactions, AE_list[i]))
-        colnames(tab)[1] <- "nEA" # other reactions
-        colnames(tab)[2] <- "EA"  # reaction e
-        rownames(tab)[1] <- "nF"  # other drugs
-        rownames(tab)[2] <- "F"   # drug d
-        t <- as.data.frame.matrix(tab)
-        F_EA <- t["F","EA"]
-        F_nEA <- t["F","nEA"]
-        nF_EA <- t["nF","EA"]
-        nF_nEA <- t["nF","nEA"]
-        ROR_m <- NA
-        ROR_M <- NA
-        ROR <- NA
-        IC <- NA
-        s <- NA
-        if (F_EA>=3) {
-          ROR <- F_EA * nF_nEA / nF_EA / F_nEA
-          s <- sqrt(1/F_EA + 1/F_nEA + 1/nF_EA + 1/nF_nEA)
-          ROR_m <- exp(log(ROR) - 1.96*s)
-          ROR_M <- exp(log(ROR) + 1.96*s)
-          if (is.infinite(ROR)) {IC <- "[|Inf|]"} else {
-            ROR_m <- round(ROR_m, digits = 1)
-            ROR <- round(ROR, digits = 1)
-            ROR_M <- round(ROR_M, digits = 1)
-            IC <- paste("[", ROR_m,
-                        "|", ROR, "|",
-                        ROR_M, "]",
-                        sep = "")
-          }
-        }
-        new_row <- list(d, D_Name, EA_Name, F_EA, F_nEA, nF_EA, nF_nEA, ROR, s, ROR_m, ROR_M, IC)
-      }
-      Wrangle_df[nrow(Wrangle_df)+1,] <-  new_row
-    }
-  }
-  return(Wrangle_df)
-}
 
 Wrangle <- function(df, D) {
   #
@@ -289,12 +228,13 @@ C_ROR_df <- Wrangle(C_df,D_list) %>%
 save(C_ROR_df,file="RDA/C_ROR_df")
 HCP_C_ROR_df <- rbind(HCP_ROR_df,C_ROR_df) %>%
   arrange(Drug_Code, AE)
-save(HCP_C_ROR_df, file = "Rda/HCP_PZ_ROR_df.Rda")
+save(HCP_C_ROR_df, file = "Rda/HCP_C_ROR_df.Rda")
 
 HCP <- filter(HCP_C_ROR_df, HCP_C_ROR_df$Reporter_Type == "HCP")
 Print_Heatmap(HCP)
 C <- filter(HCP_C_ROR_df, HCP_C_ROR_df$Reporter_Type == "C")
-Print_Heatmap(C)Comparation_df <- data.frame(matrix(ncol = 16, nrow = 0))
+Print_Heatmap(C)
+Comparation_df <- data.frame(matrix(ncol = 16, nrow = 0))
 colnames(Comparation_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA_HCP",
                               "F_nEA_HCP", "nF_EA_HCP","nF_nEA_HCP",
                               "F_EA_C","F_nEA_C", "nF_EA_C", "nF_nEA_C",
@@ -302,7 +242,7 @@ colnames(Comparation_df) <- c("Drug_Code", "Drug_Name", "AE", "F_EA_HCP",
                               "Log(Odds)_F_HCP","Comparation_Index", "Pr")
 for (e in AE_list) {
   print(e)
-  for (d in D_list) {
+  for (d in D_Code_list) {
     print(d)
     x <- subset(HCP_C_ROR_df, Drug_Code == d & AE == e)
     y <- matrix(ncol=4, nrow=4)
