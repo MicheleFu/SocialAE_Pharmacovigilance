@@ -243,76 +243,133 @@ Pop_char_df <- Pop_char_df[-1,]
 write_csv(Pop_char_df,"Population characteristics/Population_characteristics.csv")
 
 load("Rda/ICSR_df.Rda")
-draw_pie <- function(df, var){
+draw_sex <- function(df){
   x <- df
-  x$var <- x[[var]]
   x <- x %>%
-    group_by(var) %>%
+    group_by(Sex) %>%
     count() %>%
     ungroup() %>%
     mutate(per = `n`/sum(`n`)) %>%
-    arrange(desc(var)) %>%
+    arrange(desc(Sex)) %>%
     mutate(label = scales::percent(per)) %>%
     mutate(r = rank(desc(n)))
-  l <- paste(as.name(var),".pdf", sep = "")
-  pdf(paste("Population characteristics/", l))
-  ggplot(data = subset(x, r < 7)) +
-    geom_bar(aes(x="", y = per, fill = var), stat = "identity", width = 1) +
-    coord_polar ("y", start = 0) +
-    theme_void() +
-    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5) +
-    ggtitle(var) +
-    theme(plot.title = element_text(hjust = 0.5))
+  p <- ggplot(data = subset(x, r < 7)) +
+    geom_bar(aes(x="", y = per, fill = Sex), stat = "identity", width = 0.5) +
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
+    ggtitle("Genere dei pazienti") +
+    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
+    scale_fill_manual(values = c("#E06B6F","#1282A2","#93905B")) +
+    labs(y = "Frazione") +
+    scale_fill_discrete(name = "Genere", labels = c("Femmine", "Maschi", "Non specificato")
+                        )
+  return(p)
 }
-
-draw_pie(ICSR_df, "Reporter Type")
-dev.off()
-draw_pie(ICSR_df, "Sex")
-dev.off()
-#draw_pie(ICSR_df,"Country where Event occurred")
-#dev.off()
-#draw_pie(ICSR_df,"Outcomes")
-#dev.off()
-draw_pie(ICSR_df,"Serious")
-dev.off()
-
-draw_density <- function(df, var){
+draw_reporter <- function(df){
   x <- df
-  x$var <- x[[var]]
   x <- x %>%
-    group_by(var) %>%
+    group_by(`Reporter Type`) %>%
     count() %>%
     ungroup() %>%
-    arrange(desc(var))
-  l <- paste(as.name(var),".pdf", sep = "")
-  pdf(paste("Population characteristics/", l))
-  ggplot(data = x, aes(x= var)) +
-    ggtitle(var) +
-    theme(plot.title = element_text(hjust = 0.5)) +
-    geom_density(alpha=.2, fill="blue")
+    mutate(per = `n`/sum(`n`)) %>%
+    arrange(desc(`Reporter Type`)) %>%
+    mutate(label = scales::percent(per)) %>%
+    mutate(r = rank(desc(n)))
+  p <- ggplot(data = subset(x, r < 7)) +
+    geom_bar(aes(x="", y = per, fill = `Reporter Type`), stat = "identity", width = 0.5) +
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
+    ggtitle("Tipologia dei segnalatori") +
+    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
+    scale_fill_manual(values = c("#EFC000FF","#0073C2FF","#605E3C")) +
+    labs(y = "Frazione") +
+    scale_fill_discrete(name = "Segnalatore", labels = c("Consumatore", "Professionista sanitario", "Non specificato")
+    )
+  return(p)
 }
-
-draw_density(ICSR_df,"Age (YR)")
-dev.off()
-draw_density(ICSR_df,"Weight (KG)")
-dev.off()
-
-draw_bar <- function(df, var){
+draw_serious <- function(df){
   x <- df
-  x$var <- x[[var]]
   x <- x %>%
-    group_by(var) %>%
+    group_by(Serious) %>%
     count() %>%
     ungroup() %>%
-    arrange(desc(var))
-  l <- paste(as.name(var),".pdf", sep = "")
-  pdf(paste("Population characteristics/", l))
-  ggplot(data = x, aes(x= var)) +
+    mutate(per = `n`/sum(`n`)) %>%
+    arrange(desc(Serious)) %>%
+    mutate(label = scales::percent(per)) %>%
+    mutate(r = rank(desc(n)))
+  p <- ggplot(data = subset(x, r < 7)) +
+    geom_bar(aes(x="", y = per, fill = Serious), stat = "identity", width = 0.5) +
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
+    ggtitle("Gravità riportata") +
+    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
+    scale_fill_manual(values = c("#95C623","#E55812","")) +
+    labs(y = "Frazione") +
+    scale_fill_discrete(name = "Gravità"#, labels = c("Consumatore", "Professionista sanitario", "Non specificato")
+    )
+  return(p)
+}
+draw_date <- function(df){
+  x <- df
+  x <- x %>%
+    group_by(`Event Date`) %>%
+    count() %>%
+    ungroup() %>%
+    mutate(per = `n`/sum(`n`)) %>%
+    arrange(desc(`Event Date`)) %>%
+    mutate(label = scales::percent(per)) %>%
+    mutate(r = rank(desc(n)))
+  p <- ggplot(data = x, aes(x= `Event Date`)) +
     geom_histogram(aes(y = n), fill = "blue", stat = "identity", width = 1) +
-    ggtitle(var) +
-    theme(plot.title = element_text(hjust = 0.5))
+    ggtitle("Data di occorrenza dell'evento") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = "Anno di occorrenza", y = "Numero segnalazioni")
+  return(p)
+}
+draw_age <- function(df){
+  x <- df
+  x <- x %>%
+    group_by(`Age (YR)`) %>%
+    count() %>%
+    ungroup() %>%
+    arrange(desc(`Age (YR)`))
+  ggplot(data = x, aes(x= `Age (YR)`)) +
+    ggtitle("Distribuzione dell'età") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    geom_density(alpha=.2, fill="blue") +
+    labs(x = "Età in anni", y = "Densità")
+}
+draw_weight <- function(df){
+  x <- df
+  x <- x %>%
+    group_by(`Weight (KG)`) %>%
+    count() %>%
+    ungroup() %>%
+    arrange(desc(`Weight (KG)`))
+  ggplot(data = x, aes(x= `Weight (KG)`)) +
+    ggtitle("Distribuzione del peso in Kg") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    geom_density(alpha=.2, fill="blue") +
+    labs(x = "Peso in Kg", y = "Densità")
 }
 
-draw_bar(ICSR_df,"Event Date")
+pdf("Population characteristics/Tot/Sex.pdf")
+draw_sex(ICSR_df)
 dev.off()
 
+pdf("Population characteristics/Tot/Reporter.pdf")
+draw_reporter(ICSR_df)
+dev.off()
+
+pdf("Population characteristics/Tot/Serious.pdf")
+draw_serious(ICSR_df)
+dev.off()
+
+pdf("Population characteristics/Tot/Dates.pdf")
+draw_date(ICSR_df)
+dev.off()
+
+pdf("Population characteristics/Tot/Age.pdf")
+draw_age(ICSR_df)
+dev.off()
+
+pdf("Population characteristics/Tot/Weight.pdf")
+draw_weight(ICSR_df)
+dev.off()

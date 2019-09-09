@@ -4,6 +4,11 @@
 # impulse-control disorder and hypersexuality
 # Fusaroli Michele, 2019, SDR of Social ADR.
 
+#libraries --------------------------------------------------------------------
+library(tidyverse)
+library(ggplot2)
+
+
 #ICD_Char_df ------------------------------------------------------------------
 # Describe the subpopulation that takes DAA, considering ICD
 ICD_Code_list <- c("G04BE07, N04BC07", "N04BC01, G02CB01","N04BC06, G02CB03",
@@ -296,3 +301,45 @@ draw_plots(CS, "Compulsive Shopping/")
 draw_plots(HS, "Hypersexuality/")
 draw_plots(ICD, "Impulse-Control Disorder/")
 
+pdf("Visualization/pCHEMBL_graph.pdf")
+ggplot(data = ICD_PhD) +
+  geom_point(mapping = aes(x = Target, y = pCHEMBL, group = Substance, color =Substance), size =1) +
+  geom_line(mapping = aes(x = Target, y = pCHEMBL, group = Substance, color =Substance), size =0.5) +
+  coord_polar() +
+  facet_wrap(~Substance, nrow = 3) +
+  ggtitle("AFFINITY") +
+  theme(axis.line=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        plot.title = element_text(hjust = 0.5))
+dev.off()
+
+pdf("Visualization/Occupancy_graph.pdf")
+ggplot(data = ICD_PhD) +
+  geom_point(mapping = aes(x = Target, y = Occupancy, group = Substance, color =Substance), size =1) +
+  geom_line(mapping = aes(x = Target, y = Occupancy, group = Substance, color =Substance), size =0.5) +
+  coord_polar() +
+  facet_wrap(~Substance, nrow = 3) +
+  ggtitle("OCCUPANCY") +
+  theme(axis.line=element_blank(),
+        axis.text.y=element_blank(),
+        axis.text.x = element_text(size = 5.5),
+        axis.ticks=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        plot.title = element_text(hjust = 0.5))
+dev.off()
+
+D3 <- ICD_PhD
+D3 <- D3 %>%
+  filter(Target == "D3")
+pdf("Visualization/D3_affinity.pdf")
+ggplot(data = D3) +
+  geom_col(aes(x=reorder(Substance,pCHEMBL), y = pCHEMBL, color = Substance), size =2)
+dev.off()
+pdf("Visualization/D3_occupancy.pdf")
+ggplot(data = D3) +
+  geom_col(aes(x=reorder(Substance,Occupancy), y = Occupancy, color = Substance), size =2)
+dev.off()
