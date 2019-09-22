@@ -219,87 +219,108 @@ dev.off()
 
 # Descriptive plots -----------------------------------------------------------
 
-draw_pie <- function(df, var,f){
+draw_sex <- function(df){
   x <- df
-  x$var <- x[[var]]
   x <- x %>%
-    group_by(var) %>%
+    group_by(Sex) %>%
     count() %>%
     ungroup() %>%
     mutate(per = `n`/sum(`n`)) %>%
-    arrange(desc(var)) %>%
+    arrange(desc(Sex)) %>%
     mutate(label = scales::percent(per)) %>%
     mutate(r = rank(desc(n)))
-  l <- paste(as.name(var),".pdf", sep = "")
-  pdf(paste("Population characteristics/",f, l,sep=""))
-  print(ggplot(data = subset(x, r < 7)) +
-          geom_bar(aes(x="", y = per, fill = var), stat = "identity", width = 1) +
-          coord_polar ("y", start = 0) +
-          theme_void() +
-          geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5) +
-          ggtitle(var) +
-          theme(plot.title = element_text(hjust = 0.5)))
-  dev.off()
+  p <- ggplot(data = subset(x, r < 7)) +
+    geom_bar(aes(x="", y = per, fill = Sex), stat = "identity", width = 0.5) +
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
+    ggtitle("Genere dei pazienti") +
+    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
+    labs(y = "Frazione") +
+    scale_fill_manual(name = "Genere", values = c("#E06B6F","#1282A2","#93905B"), labels = c("Femmine", "Maschi", "Non specificato")
+    )
+  return(p)
 }
-draw_density <- function(df, var,f){
+DAA <- ICD_df
+
+prepare <- function(df,arg){
   x <- df
-  x$var <- x[[var]]
+  l <- deparse(substitute(df))
+  l1 <- deparse(substitute(arg))
   x <- x %>%
-    group_by(var) %>%
+    group_by(x[[arg]]) %>%
     count() %>%
     ungroup() %>%
-    arrange(desc(var))
-  l <- paste(as.name(var),".pdf", sep = "")
-  pdf(paste("Population characteristics/",f, l,sep=""))
-  print(ggplot(data = x, aes(x= var)) +
-          ggtitle(var) +
-          theme(plot.title = element_text(hjust = 0.5)) +
-          geom_density(alpha=.2, fill="blue"))
-  dev.off()
-}
-draw_bar <- function(df, var,f){
-  x <- df
-  x$var <- x[[var]]
+    mutate(per = `n`/sum(`n`))
   x <- x %>%
-    group_by(var) %>%
-    count() %>%
-    ungroup() %>%
-    arrange(desc(var))
-  l <- paste(as.name(var),".pdf", sep = "")
-  pdf(paste("Population characteristics/",f, l,sep = ""))
-  print(ggplot(data = x, aes(x= var)) +
-          geom_histogram(aes(y = n), fill = "blue", stat = "identity", width = 1) +
-          ggtitle(var) +
-          theme(plot.title = element_text(hjust = 0.5)))
-  dev.off()
+    rename("arg" = "x[[arg]]")
+  x <- x %>%
+    arrange(desc(arg)) %>%
+    mutate(label = scales::percent(per)) %>%
+    mutate(r = rank(desc(n))) %>%
+    mutate(df = l) %>%
+    mutate(text_pos = cumsum(per) - per/2)
 }
 
-draw_plots <- function(df, f){
-  draw_pie(df, "Reporter Type",f)
-  draw_pie(df, "Sex",f)
-  #draw_pie(df,"Country where Event occurred")
-  #dev.off()
-  #draw_pie(df,"Outcomes")
-  #dev.off()
-  draw_pie(df,"Serious",f)
-  draw_density(df,"Age (YR)",f)
-  draw_density(df,"Weight (KG)",f)
-  draw_bar(df,"Event Date",f)
-}
+x <- as.data.frame(matrix(nrow=1,ncol = 6))
+j <- prepare(DAA,"Sex")
+y <- prepare(Gioco_Compulsivo,"Sex")
+w <- prepare(Shopping_Compulsivo,"Sex")
+z <- prepare(Ipersessualità,"Sex")
+k <- prepare(ICD,"Sex")
+x <- do.call(rbind, list(j,y,w,z,k))
+p <- ggplot(data = x) +
+    geom_bar(aes(x= df, y = per, fill = arg), stat = "identity", width = 0.8) +
+    geom_text(aes(x=df, y = text_pos, label = label), size = 7, color = "white") +
+    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(),
+          axis.text.x = element_text(size = 15, angle = 30),
+          axis.text.y = element_blank(),axis.title.y = element_blank(),
+          axis.ticks.y = element_blank(),legend.text = element_text(size = 10)) +
+    scale_fill_manual(name = NULL, values = c("#E06B6F","#1282A2","#93905B"), labels = c("Femmine", "Maschi", "Non specificato")
+    )
+pdf("Population characteristics/DAA/Sex.pdf")
+p
+dev.off()
 
-Gambling <- ICD_df %>% 
-  filter(str_detect(ICD_df$`Reactions`, "gambling") == TRUE)
-CS <- ICD_df %>% 
-  filter(str_detect(ICD_df$`Reactions`, "compulsive shopping") == TRUE)
-HS <- ICD_df %>% 
-  filter(str_detect(ICD_df$`Reactions`, "hypersexuality") == TRUE)
-ICD <- ICD_df %>% 
-  filter(str_detect(ICD_df$`Reactions`, "impulse-control disorder") == TRUE)
-draw_plots(ICD_df, "DAA/")
-draw_plots(Gambling, "Gambling/")
-draw_plots(CS, "Compulsive Shopping/")
-draw_plots(HS, "Hypersexuality/")
-draw_plots(ICD, "Impulse-Control Disorder/")
+x <- as.data.frame(matrix(nrow=1,ncol = 6))
+j <- prepare(DAA,"Reporter Type")
+y <- prepare(Gioco_Compulsivo,"Reporter Type")
+w <- prepare(Shopping_Compulsivo,"Reporter Type")
+z <- prepare(Ipersessualità,"Reporter Type")
+k <- prepare(ICD,"Reporter Type")
+x <- do.call(rbind, list(j,y,w,z,k))
+p <- ggplot(data = subset(x, r < 7)) +
+  geom_bar(aes(x=df, y = per, fill = arg), stat = "identity", width = 0.8) +
+  geom_text(aes(x=df, y = text_pos, label = label), size = 7, color = "white") +
+  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(),
+        axis.text.x = element_text(size = 15, angle = 30),
+        axis.text.y = element_blank(),axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),legend.text = element_text(size = 10)) +
+  scale_fill_manual(values = c("#EFC000FF","#0073C2FF","#605E3C"), name = NULL, labels = c("Consumatore", "Professionista sanitario", "Non specificato")
+  )
+pdf("Population characteristics/DAA/Reporter.pdf")
+p
+dev.off()
+
+x <- as.data.frame(matrix(nrow=1,ncol = 6))
+j <- prepare(DAA,"Serious")
+y <- prepare(Gioco_Compulsivo,"Serious")
+w <- prepare(Shopping_Compulsivo,"Serious")
+z <- prepare(Ipersessualità,"Serious")
+k <- prepare(ICD,"Serious")
+x <- do.call(rbind, list(j,y,w,z,k))
+p <- ggplot(data = x) +
+  geom_bar(aes(x=df, y = per, fill = arg), stat = "identity", width = 0.8) +
+  geom_text(aes(x=df, y = text_pos, label = label), size = 7, color = "white") +
+  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(),
+        axis.text.x = element_text(size = 15, angle = 30),
+        axis.text.y = element_blank(),axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),legend.text = element_text(size = 10)) +
+  scale_fill_manual(values = c("#95C623","#E55812",""), name = NULL, labels = c("Non grave", "Grave", "Non specificato")
+  )
+pdf("Population characteristics/DAA/Serious.pdf")
+p
+dev.off()
+
+# pharmacodynamics-------------------------------------------------------------
 
 pdf("Visualization/pCHEMBL_graph.pdf")
 ggplot(data = ICD_PhD) +
@@ -310,6 +331,7 @@ ggplot(data = ICD_PhD) +
   ggtitle("AFFINITY") +
   theme(axis.line=element_blank(),
         axis.text.y=element_blank(),
+        axis.text.x = element_text(size = 5.5),
         axis.ticks=element_blank(),
         axis.title.x=element_blank(),
         axis.title.y=element_blank(),

@@ -209,7 +209,8 @@ draw_tile <- function(df,h,w){
   x <- ggplot(data = df, aes(x = AE, y = Drug_Name)) +
     geom_tile(aes(fill = ROR)) +
     geom_text(aes(label = IC)) +
-    scale_fill_gradient(low = "yellow", high = "red")
+    scale_fill_gradient(low = "yellow", high = "red") +
+    labs(x = "Evento Avverso", y = "Farmaco")
   print(x)
   dev.off()
 }

@@ -255,12 +255,9 @@ draw_sex <- function(df){
     mutate(r = rank(desc(n)))
   p <- ggplot(data = subset(x, r < 7)) +
     geom_bar(aes(x="", y = per, fill = Sex), stat = "identity", width = 0.5) +
-    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
-    ggtitle("Genere dei pazienti") +
-    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
-    scale_fill_manual(values = c("#E06B6F","#1282A2","#93905B")) +
-    labs(y = "Frazione") +
-    scale_fill_discrete(name = "Genere", labels = c("Femmine", "Maschi", "Non specificato")
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 10, color = "white") +
+    theme(axis.title.x = element_blank(),axis.title.y = element_blank(), axis.ticks.x = element_blank(),axis.ticks.y = element_blank(), legend.text = element_text(size=14), axis.text.y = element_blank()) +
+    scale_fill_manual(name = NULL,values = c("#E06B6F","#1282A2","#93905B"), labels = c("Femmine", "Maschi", "Non specificato")
                         )
   return(p)
 }
@@ -276,12 +273,9 @@ draw_reporter <- function(df){
     mutate(r = rank(desc(n)))
   p <- ggplot(data = subset(x, r < 7)) +
     geom_bar(aes(x="", y = per, fill = `Reporter Type`), stat = "identity", width = 0.5) +
-    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
-    ggtitle("Tipologia dei segnalatori") +
-    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
-    scale_fill_manual(values = c("#EFC000FF","#0073C2FF","#605E3C")) +
-    labs(y = "Frazione") +
-    scale_fill_discrete(name = "Segnalatore", labels = c("Consumatore", "Professionista sanitario", "Non specificato")
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 10, color = "white") +
+    theme(axis.title.x = element_blank(),axis.title.y = element_blank(), axis.ticks.x = element_blank(),axis.ticks.y = element_blank(), legend.text = element_text(size=14), axis.text.y = element_blank()) +
+    scale_fill_manual(name = NULL, values = c("#EFC000FF","#0073C2FF","#605E3C"), labels = c("Consumatore", "Professionista sanitario", "Non specificato")
     )
   return(p)
 }
@@ -297,12 +291,9 @@ draw_serious <- function(df){
     mutate(r = rank(desc(n)))
   p <- ggplot(data = subset(x, r < 7)) +
     geom_bar(aes(x="", y = per, fill = Serious), stat = "identity", width = 0.5) +
-    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size = 5, color = "white") +
-    ggtitle("Gravità riportata") +
-    theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.ticks.x = element_blank()) +
-    scale_fill_manual(values = c("#95C623","#E55812","")) +
-    labs(y = "Frazione") +
-    scale_fill_discrete(name = "Gravità"#, labels = c("Consumatore", "Professionista sanitario", "Non specificato")
+    geom_text(aes(x=1, y = cumsum(per) - per/2, label = label), size =10, color = "white") +
+    theme(axis.title.x = element_blank(),axis.title.y = element_blank(), axis.ticks.x = element_blank(),axis.ticks.y = element_blank(), legend.text = element_text(size=14), axis.text.y = element_blank()) +
+    scale_fill_manual(values = c("#95C623","#E55812",""), name = NULL, labels = c("Non grave", "Grave", "Non specificato")
     )
   return(p)
 }
