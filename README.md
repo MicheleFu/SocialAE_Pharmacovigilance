@@ -10,12 +10,17 @@ The repository contains:
 N.B. the actual data processed is not shared to avoid redistribution rights issues.
 
 Materials and preprocessing:
-* In the file Databases Used are saved:
+* In the file *Databases Used*:
   * *ATC.csv*: csv that links the ATC-code to the drug name used by WHO and to different search terms that can be found in the FAERS. The ATC code has been integrated with drugs reported in the FAERS but not in the ATC code. (3103 Search Terms, 2157 drugs [D_list.Rda]). The ATC code was not shared to avoid redistribution rights issues.
   * *PhD.csv*: csv with drug and target interacting, human pCHEMBL (-pLog of molar IC50, XC50, EC50, AC50, Ki, Kd or Potency; gathered from CHEMBL, Guidetopharmacology.org, and PDSP databases) and action. Where multiple data for the same interaction was found, the geometrical mean was calculated (784 pCHEMBL: 342 drugs x 58 Targets x 6 actions)
   * *ICD_PhD.csv*: csv with drug and target interacting, pChEMBL, Occupancy and Action.
-* In the file FAERS ID_AE are saved:
+* In the file *FAERS ID_AE*:
   * *FAERS ID/*: 1 xlsx with all the observations for each Adverse Event considered (42 events [AE_list.Rda]). All the observations were merged, and duplicates were removed (175590 raw ICSR), and then the resulting ICSR_df.Rda was filtered for higher quality data (only ICSR with known reporter type and sex: 151612 ICSR [56898 HCP + 94714 Consumer])
+* In the file *Scripts*:
+  * *0_Clean.R* is the script that makes the environment and cleans the data.
+  * *1_Wrangle.R* contains the functions to wrangle data through all the dataset.
+  * *ICD.R* contains the functions needed to focus on ICD by DAA
+  * *Code.rmd* contains the functions as they are shown in the thesis.
 
 
 Method:
