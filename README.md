@@ -28,6 +28,12 @@ Method:
 * With the data from ROR_df.Rda a matrix was printed, with drugs as rows (gathered in drug families by ATC code) and events as column, and with the specific ROR in every cell. Every cell was then coloured using a gradient from white (ROR = 0 or not available), to red (ROR = 10), to brown(ROR = 50), to violet (ROR = 100 or above). The heatmap thus built has been saved as *HM_(ROR_df).png*
 * The passages above were conducted also for HCP and Consumer (PZ) reports separated.
 * For each combination of event, target and action a linear regression model was produced, if possible, for the entire database and for individual drug classes (*LRM.pdf*). Slope, intercept and p-value were reported inside the *LRM_csv* folder. The Benjamini-Hochberg multiple comparison test was applied to the results.
+* GLM were calculate also for ICD by DAA, using the Occupancy instead of the pChEMBL.
+
+Results:
+* In *Population characteristic* have been saved plots that describe the population
+* In *Results* have been saved matrixes with the results of the operations
+* In *Visualization* have been saved plots that visualize the results.
 
 
 Further developement:
