@@ -1,16 +1,4 @@
----
-title: "Funzioni utilizzate nella tesi"
-author: Michele Fusaroli
-date: 2019
-output:
-  pdf_document:
-    fig_caption: yes
----
 \pagenumbering{gobble}
-
-Il seguente metodo è stato sviluppato ricorrendo al linguaggio di programmazione R, versione 3.5.2 (2018-12-20).
-
-Il materiale utilizzato è stato condiviso sulla piattaforma GitHub insieme agli script completi (con anche il codice per la pulizia dei database e l'analisi descrittiva), ai risultati e ai plot per la visualizzazione. Si riportano qui solo le funzioni principali di calcolo delle misure di associazione (ROR) e disegno della Heatmap, e di creazione dei modelli di regressione lineare.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,warning = FALSE, eval = FALSE)
@@ -29,14 +17,13 @@ library(RColorBrewer)
 Wrangle <- function(df, D) {
   #
   # Argomenti:
-  #   df  : Dataframe con tutte le segnalazioni già pulite
-  #   D   : Lista dei principi attivi
-  #
+  #   df     : Dataframe con tutte le segnalazioni già pulite
+  #   D      : Lista dei principi attivi
   # Materiali esterni:
-  #   AE_list : Lista di eventi avversi considerati
-  #   ATC     : Codice ATC esteso
+  #   AE_list        : Lista di eventi avversi considerati
+  #   ATC            : Codice ATC esteso
   #
-  # Risultato:
+  # Risultato    :
   #   Wrangle_df : Database contenente i dati riassuntivi
   #                 delle analisi di disproporzionalità
   Wrangle_df <- data.frame(matrix(ncol = 12, nrow = 0))
@@ -131,9 +118,9 @@ Create_Matrix <- function(df, index) {
 Print_Heatmap <- function(df) {
   #
   # Argomenti:
-  #   df  : Dataframe con i risultati delle analisi di disproporzionalità
+  #   df     : Dataframe con i risultati delle analisi di disproporzionalità
   #
-  # Risultato:
+  # Risultato     :
   #   Heatmap.png : Grafico che facilita la visualizzazione dei ROR
   Heatmatrix <- Create_Matrix(df,"ROR")
   Code_member <- substr(Heatmatrix$Drug, start = 1, stop = 4)
@@ -180,7 +167,6 @@ Print_Heatmap <- function(df) {
 }
 ```
 
-
 ## Funzione per produrre i modelli di regressione lineare
 ```{r}
 LRM <- function(df, PhD_df,index){
@@ -189,11 +175,10 @@ LRM <- function(df, PhD_df,index){
   #   df     : Dataframe con i risultati delle analisi di disproporzionalità
   #   PhD_df : Database contenente i dati di farmacodinamica
   #   index  : indice farmacodinamico (pChEMBL o Occupancy)
-  #
   # Materiali esterni:
-  #   AE_list : Lista degli eventi avversi considerati
+  #   AE_list        : Lista degli eventi avversi considerati
   #
-  # Risultato:
+  # Risultato :
   #   LRM.csv : Database contenente i dati riassuntivi
   #             dei modelli di regressione lineare
   #   LRM.pdf : Grafici rappresentanti i modelli di regressione lineare
@@ -249,6 +234,5 @@ LRM <- function(df, PhD_df,index){
     mutate(Sign20 = (p_value <= BH20))
   write_csv2(LRM_df, "Results/LRM.csv")
 }
-
 ```
 
